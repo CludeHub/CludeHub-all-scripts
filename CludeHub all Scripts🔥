@@ -1,0 +1,585 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/CludeHub/CludeHub/main/CludeHub')))()
+local Window = OrionLib:MakeWindow({Name = "CludeHub By Paul🔥", HidePremium = true, SaveConfig = true, ConfigFolder = "OrionLibrary"})
+local Tab = Window:MakeTab({
+	Name = "brookhaven",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Players"
+})
+OrionLib:MakeNotification({
+	Name = "script",
+	Content = "your script loaded!",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+Tab:AddButton({
+	Name = "speed 50",
+	Callback = function()
+-- This walkspeed script is the same as others , but does not change to default speed when you reset. ENJOY !    
+_G.HackedWalkSpeed = 50
+
+local Plrs = game:GetService("Players")
+
+local MyPlr = Plrs.LocalPlayer
+local MyChar = MyPlr.Character
+
+if MyChar then
+local Hum = MyChar.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end
+
+
+MyPlr.CharacterAdded:connect(function(Char)
+MyChar = Char
+repeat wait() until Char:FindFirstChild("Humanoid")
+local Hum = Char.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+
+-- end of script :)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "speed 100",
+	Callback = function()
+-- This walkspeed script is the same as others , but does not change to default speed when you reset. ENJOY !    
+_G.HackedWalkSpeed = 100
+
+local Plrs = game:GetService("Players")
+
+local MyPlr = Plrs.LocalPlayer
+local MyChar = MyPlr.Character
+
+if MyChar then
+local Hum = MyChar.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end
+
+
+MyPlr.CharacterAdded:connect(function(Char)
+MyChar = Char
+repeat wait() until Char:FindFirstChild("Humanoid")
+local Hum = Char.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+
+-- end of script :)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "speed 500",
+	Callback = function()
+    -- This walkspeed script is the same as others , but does not change to default speed when you reset. ENJOY !    
+_G.HackedWalkSpeed = 500
+
+local Plrs = game:GetService("Players")
+
+local MyPlr = Plrs.LocalPlayer
+local MyChar = MyPlr.Character
+
+if MyChar then
+local Hum = MyChar.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end
+
+
+MyPlr.CharacterAdded:connect(function(Char)
+MyChar = Char
+repeat wait() until Char:FindFirstChild("Humanoid")
+local Hum = Char.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+
+-- end of script :)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "jump power",
+	Callback = function()
+local jump = 200 -- Add the amount of jump power you want here!
+
+spawn(function()
+while wait() do
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = jump
+end
+end)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "jump power 500",
+	Callback = function()
+local jump = 500 -- Add the amount of jump power you want here!
+
+spawn(function()
+while wait() do
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = jump
+end
+end)
+      		print("button pressed")
+  	end    
+})
+local Section = Tab:AddSection({
+	Name = "game"
+})
+Tab:AddButton({
+	Name = "shadern",
+	Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Hd-Graphics_1026"))()
+      		print("button pressed")
+  	end    
+})
+local Section = Tab:AddSection({
+	Name = "Avatar"
+})
+Tab:AddButton({
+	Name = "korblox and headless",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/nj3F5beU'))()
+      		print("button pressed")
+  	end    
+})
+local Section = Tab:AddSection({
+	Name = "other scripts"
+})
+Tab:AddButton({
+	Name = "infinite yield",
+	Callback = function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "fly gui v3",
+	Callback = function()
+loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Blox fruit",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Blox Fruit Loader",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Minhtriettt/Free-Script/main/MTriet-Hub.lua"))()
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Blade Ball",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "combat"
+})
+Tab:AddButton({
+	Name = "Parry",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/yBawVcE7'))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+       Name = "manual spam",
+       Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/KB4xQe4j'))()
+                print("button pressed")
+        end
+})
+Tab:AddButton({
+      Name = "ESP",
+     Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-3d-Box-ESP-5346"))()
+               print("button pressed")
+       end
+})
+Tab:AddButton({
+      Name = "Follow ball",
+     Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/kmmwhocare/Crazzy-Hub/main/Blade%20Ball"))()
+               print("button pressed")
+       end
+})
+Tab:AddButton({
+	Name = "Infinite yield",
+	Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Infinite-Yield_500"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+  Name = "circle",
+  Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/UPD-Blade-Ball-Red-Circle-AutoBlock-REALLY-OP-8242"))()
+           print("button pressed")
+   end
+})
+Tab:AddButton({
+  Name = "freeze ball",
+  Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/UPD-Blade-Ball-infinity-Freeze-8480"))()
+           print("button pressed")
+end
+})
+Tab:AddButton({
+  Name = "free abilities",
+  Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/hV0p40Fv'))()
+           print("button pressed")
+end
+})
+local Section = Tab:AddSection({
+	Name = "other"
+})
+Tab:AddButton({
+	Name = "INFJump",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/b6EaD89h'))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+  Name = "ffpboost",
+  Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-minimal-impact-fps-booster-6169"))().  
+          print("button pressed")
+end
+})
+Tab:AddButton({
+  Name = "Super Human",
+  Callback = function()
+-- This walkspeed script is the same as others , but does not change to default speed when you reset. ENJOY !    
+_G.HackedWalkSpeed = 60
+
+local Plrs = game:GetService("Players")
+
+local MyPlr = Plrs.LocalPlayer
+local MyChar = MyPlr.Character
+
+if MyChar then
+local Hum = MyChar.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end
+
+
+MyPlr.CharacterAdded:connect(function(Char)
+MyChar = Char
+repeat wait() until Char:FindFirstChild("Humanoid")
+local Hum = Char.Humanoid
+Hum.Changed:connect(function()
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+Hum.WalkSpeed = _G.HackedWalkSpeed
+end)
+
+-- end of script :)
+           print("button pressed")
+end
+})
+Tab:AddButton({
+  Name = "fly",
+  Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-FLY-GUI-V3-8031"))()
+           print("button pressed")
+end
+})
+Tab:AddButton({
+  Name = "no cooldown",
+  Callback = function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local tool = character:FindFirstChildOfClass("Tool") or player.Backpack:FindFirstChildOfClass("Tool")
+
+while character.Humanoid.Health ~= 0 do
+local localscript = tool:FindFirstChildOfClass("LocalScript")
+local localscriptclone = localscript:Clone()
+localscriptclone = localscript:Clone()
+localscriptclone:Clone()
+localscript:Destroy()
+localscriptclone.Parent = tool
+wait(0.1)
+end
+        print("button pressed")
+end
+})
+Tab:AddButton({
+  Name = "night",
+  Callback = function()
+local StartTime = 7
+
+local showTime = true 
+
+function startDayLoop() 
+	local l = game.Lighting 
+	l.TimeOfDay = StartTime 
+	local t = StartTime 
+	local m = nil 
+	local am = " AM" 
+	local pm = " PM" 
+	if (showTime) then 
+		local M = Instance.new("Hint") 
+		M.Name = " Time - " 
+		M.Text = " Time - " .. string.sub(l.TimeOfDay,1,2) .. string.sub(l.TimeOfDay,3,5) 
+		M.Parent = game.Workspace 
+		m = M 
+	end 
+	while true do 
+		l:SetMinutesAfterMidnight(l:GetMinutesAfterMidnight() +0.06) 
+		if (showTime) then 
+			if (tonumber(string.sub(l.TimeOfDay,1,2))/12 >= 1) then 
+				if (tonumber(string.sub(l.TimeOfDay,1,2))/12 == 1) then 
+					m.Text = " Time - 12" .. string.sub(l.TimeOfDay,3,5) .. pm 
+				else 
+					m.Text = " Time - " .. tostring(tonumber(string.sub(l.TimeOfDay,1,2))-12) .. string.sub(l.TimeOfDay,3,5) .. pm 
+				end 
+			else 
+				if (tonumber(string.sub(l.TimeOfDay,1,2)) == 0) then 
+					m.Text = " Time - 12" .. string.sub(l.TimeOfDay,3,5) .. am 
+				else 
+					m.Text = " Time - " .. string.sub(l.TimeOfDay,1,2) .. string.sub(l.TimeOfDay,3,5) .. am 
+				end 
+			end 
+		end 
+		wait(0.06) 
+	end 
+end 
+
+startDayLoop()
+                print("button pressed")
+end
+})
+Tab:AddButton({
+  Name = "graphics",
+  Callback = function()
+
+           print("button pressed")
+end
+})
+local Tab = Window:MakeTab({
+	Name = "Slap Battle",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "slap aura",
+	Callback = function()
+function isSpawned(player)
+   if workspace:FindFirstChild(player.Name) and player.Character:FindFirstChild("HumanoidRootPart") then
+       return true
+   else
+       return false
+   end
+end
+
+while wait() do
+   for i, v in pairs(game.Players:GetPlayers()) do
+       if isSpawned(v) and v ~= game.Players.LocalPlayer and not v.Character.Head:FindFirstChild("UnoReverseCard") then
+           if (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 50 then
+               game:GetService("ReplicatedStorage").b:FireServer(v.Character["Right Arm"])
+               wait(0.1)
+           end
+       end
+   end
+            end
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "no cooldown",
+	Callback = function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local tool = character:FindFirstChildOfClass("Tool") or player.Backpack:FindFirstChildOfClass("Tool")
+
+while character.Humanoid.Health ~= 0 do
+local localscript = tool:FindFirstChildOfClass("LocalScript")
+local localscriptclone = localscript:Clone()
+localscriptclone = localscript:Clone()
+localscriptclone:Clone()
+localscript:Destroy()
+localscriptclone.Parent = tool
+wait(0.1)
+            end
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "auto collect slapple",
+	Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/UPDATE-Slap-Battles-Get-ples-when-they-spawn-4837"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "god mode",
+	Callback = function()
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local teleport = game.Workspace.Lobby.Teleport1
+
+character.HumanoidRootPart.CFrame = teleport.CFrame
+wait(0.5)
+local tool = character:FindFirstChildOfClass("Tool")
+tool.Parent = game.ReplicatedStorage
+character.Humanoid.Health = 0
+wait(4)
+player = game.Players.LocalPlayer
+character = player.Character or player.CharacterAdded:Wait()
+tool.Parent = character
+character.HumanoidRootPart.CFrame = game.Workspace.Origo.CFrame
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "anti ragdoll",
+	Callback = function()
+deb = false
+plr = game.Players.LocalPlayer
+if deb == false then
+while true do
+plr.Character.Torso:WaitForChild("Ragdollballsocket")
+plr.Character.Torso.Anchored = true
+deb = true
+wait(1)
+deb = false
+plr.Character.Torso.Anchored = false
+task.wait()
+end
+            end
+            print("button pressed")
+    end    
+})
+Tab:AddButton({
+	Name = "ESP",
+	Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-3d-Box-ESP-5346"))()
+
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Fe visual script",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "kill aura",
+	Callback = function()
+loadstring(game:HttpGet('https://paste-drop.com/raw/3WQg7K6aRr'))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "things remover(tools)",
+	Callback = function()
+Instance.new("HopperBin", game.Players.LocalPlayer.Backpack).BinType = 4
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "old animation(only work r6)",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/dE6ed13J'))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "old graphics",
+	Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-minimal-impact-fps-booster-6169"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "FE giant avatar(set your avatar tall)",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/wdhuepBm'))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Fe small avatar(set your avatar small)",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/UMkzS9zf'))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "FE big head(use troll head)",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/ULhHc800'))()
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "prison life",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "John Doe",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/QD4hQpRJ'))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "thomas",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/nQBFsJ1u'))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "lost scythe",
+	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/e5qZM9ns'))()
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Pet Sim X",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "loader"
+})
+Tab:AddButton({
+	Name = "Cat Hub",
+	Callback = function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Cat-Hub-V2-Visual-6663"))()
+      		print("button pressed")
+  	end    
+})
+OrionLib:Init()
