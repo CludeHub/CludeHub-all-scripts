@@ -1,8 +1,8 @@
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib")))()
 MakeWindow({
   Hub = {
-    Title = "Zombie Attack",
-    Animation = "by : REDZ"
+    Title = "CludeV1☄️",
+    Animation = "by : Paul☄️"
   },
   Key = {
     KeySystem = false,
@@ -26,7 +26,7 @@ MinimizeButton({
   Stroke = false,
   StrokeColor = Color3.fromRGB(255, 0, 0)
 })
-local Main = MakeTab({Name = "Main"})
+local Main = MakeTab({Name = "Zombie attack"})
 local section = AddSection(Main, {"Combat"})
 AddButton(Main, {
   Name = "Auto Farm",
@@ -75,5 +75,112 @@ AddButton(Main, {
   Name = "Hitbox",
   Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/Extended-Hitbox.lua"))()
+  end
+})
+local Main = MakeTab({Name = "Tower of hell"})
+local section = AddSection(Main, {"Main"})
+AddButton(Main, {
+  Name = "Auto win",
+  Callback = function()
+    local P = game:GetService'Players'
+local HRP = P.LocalPlayer.Character.HumanoidRootPart
+local Sections = game:GetService("Workspace").tower.sections
+for _, Child in next, Sections:GetChildren() do
+  if Child.Name ~= "start" then
+    HRP.CFrame = Child.start.CFrame + Vector3.new(1,2,1)
+    task.wait()
+  end
+end
+HRP.CFrame = Sections.finish.FinishGlow.CFrame
+  end
+})
+AddButton(Main, {
+  Name = "Kill part",
+  Callback = function()
+    for i,v in pairs(workspace.tower.sections:GetDescendants()) do
+  if v.Name == "kills" then
+    v.Parent.Transparency = 1
+    v:Destroy()
+  end
+end
+  end
+})
+AddButton(Main, {
+  Name = "TP to end",
+  Callback = function()
+    local endzone = game.Workspace.tower.sections.finish.FinishGlow.CFrame
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = endzone
+  end
+})
+AddButton(Main, {
+  Name = "God mode",
+  Callback = function()
+    local old; old = hookmetamethod(game,"__index",function(self, idx)
+    if tostring(self) == "KillScript" and idx == "Parent" and Toggles["Godmode"] then
+        return wait(9e9)
+    end
+    return old(self,idx)
+end)
+  end
+})
+local section = AddSection(Main, {"Misc"})
+AddButton(Main, {
+  Name = "Anti afk",
+  Callback = function()
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+       wait(1)
+       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+  end
+})
+AddButton(Main, {
+  Name = "Get tools",
+  Callback = function()
+    for _,Tool in pairs(game.ReplicatedStorage.Gear:GetChildren()) do
+  if Tool:FindFirstChild("price") then
+    local Tools = Tool:Clone()
+    Tools.Parent = Player.Backpack
+  end
+end
+  end
+})
+AddButton(Main, {
+  Name = "Anti Cheat Bypass",
+  Callback = function()
+    local reg = getreg()
+ 
+    for i, Function in next, reg do
+        if type(Function) == 'function' then
+            local info = getinfo(Function)
+ 
+            if info.name == 'kick' then
+                if (hookfunction(info.func, function(...)end)) then
+                    print'succesfully hooked kick'
+                else
+                    print'failed to hook kick'
+                end
+            end
+        end
+    end
+    local playerscripts = game:GetService'Players'.LocalPlayer.PlayerScripts
+ 
+    local script1 = playerscripts.LocalScript
+    local script2 = playerscripts.LocalScript2
+ 
+    local script1signal = script1.Changed
+    local script2signal = script2.Changed
+ 
+    for i, connection in next, getconnections(script1signal) do
+        connection:Disable()
+    end
+    for i, connection in next, getconnections(script2signal) do
+        connection:Disable()
+    end
+ 
+    script1:Destroy()
+    script2:Destroy()
   end
 })
