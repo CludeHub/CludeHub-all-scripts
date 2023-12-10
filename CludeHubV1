@@ -456,3 +456,15 @@ shadow.Unequipped:Connect(function()
 end)
   end
 })
+local Main = MakeTab({Name = "Players"})
+AddTextBox(Main, {
+  Name = "WalkSpeed",
+  Default = "Speed",
+  PlaceholderText = "input",
+  ClearText = true,
+  Callback = function(Value)
+    else
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end	
+  end
+})
