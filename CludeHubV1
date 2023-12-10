@@ -463,6 +463,5 @@ AddTextBox(Main, {
   PlaceholderText = "input",
   ClearText = true,
   Callback = function(Value)
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
   end
 })
