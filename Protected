@@ -109,6 +109,46 @@ AddButton(Main, {
         Event:InvokeServer(A_1)
   end
 })
+local section = AddSection(Main, {"Hack tool"})
+AddButton(Main, {
+  Name = "Get Hammer",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["hammer"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "Get Card",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Keycard"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "Get crude knife",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Crude Knife"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "TP Tool",
+  Callback = function()
+    mouse = game.Players.LocalPlayer:GetMouse()
+        tool = Instance.new("Tool")
+        tool.RequiresHandle = false
+        tool.Name = "Equip to Click TP"
+        tool.Activated:connect(function()
+        local pos = mouse.Hit+Vector3.new(0,2.5,0)
+        pos = CFrame.new(pos.X,pos.Y,pos.Z)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+        end)
+        tool.Parent = game.Players.LocalPlayer.Backpack
+  end
+})
 local Main = MakeTab({Name = "Tower of hell"})
 local section = AddSection(Main, {"Main"})
 AddButton(Main, {
