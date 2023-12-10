@@ -1167,29 +1167,114 @@ AddButton(Main, {
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Breadido/upiversal/main/Universal%20Fly%20GUI.lua"))()
   end
 })
-local Main = MakeTab({Name = "Natural Disaster"})
-local Toggle = AddToggle(Main, {
-  Name = "Auto farm",
-  Default = false,
-  Callback = function(Value)
-    if Value then
-		event = runService.RenderStepped:Connect(function()
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264, 195, 288)
-		end)
-	else
-		event:Disconnect()
-	end
+local Main = MakeTab({Name = "Evade"})
+AddButton(Main, {
+  Name = "Auto Farm",
+  Callback = function()
+    --// Made by MMSVon Not YellowGreg he just put it here \\--
+repeat
+wait(5)
+   game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+until false
   end
 })
 AddButton(Main, {
-  Name = "Launch rocket",
+  Name = "God mode",
   Callback = function()
-    pcall(function()
-		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"]["SPACESHIP!!"].Shuttle.IgnitionButton.ClickDetector)
-		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleLower.ReleaseButtonLower.ClickDetector)
-		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleUpper.ReleaseButtonUpper.ClickDetector)
-		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].LoadingTower.Console.ReleaseEntryBridge.ClickDetector)
-	end)
+    local Character = Player.Character or Player.CharacterAdded:Wait()
+    local Hum = Character:WaitForChild("Humanoid")
+    Hum.Parent = nil;
+    Hum.Parent = Character;
+  end
+})
+AddButton(Main, {
+  Name = "Highlight",
+  Callback = function()
+    ESP:ClearESP();
+    Highlights_Active = true;
+
+    for i, v in ipairs(Players:GetPlayers()) do
+        if v ~= Player then
+            v.CharacterAdded:Connect(function(Char)
+                ESP:AddOutline(Char)
+                ESP:AddNameTag(Char)
+            end)
+
+            if v.Character then
+                ESP:AddOutline(v.Character)
+                ESP:AddNameTag(v.Character)
+            end
+        end
+    end
+  end
+})
+AddButton(Main, {
+  Name = "Emote",
+  Callback = function()
+    Events.UI.Purchase:InvokeServer("Emotes", "Test")
+  end
+})
+AddButton(Main, {
+  Name = "No shake camera",
+  Callback = function()
+    task.spawn(function()
+    while task.wait() do
+            Player.PlayerScripts:WaitForChild("CameraShake", 1234).Value = CFrame.new(0,0,0) * CFrame.Angles(0,0,0);
+        end
+    end
+end)
+  end
+})
+AddButton(Main, {
+  Name = "Respawn when down 1",
+  Callback = function()
+    --// Made By YellowGreg \\--
+
+game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
+  end
+})
+AddButton(Main, {
+  Name = "Respawn when down 2",
+  Callback = function()
+     local Reset = Events:FindFirstChild("Reset")
+    local Respawn = Events:FindFirstChild("Respawn")
+
+    if Reset and Respawn then
+        Reset:FireServer();
+        task.wait(2)
+        Respawn:FireServer();
+    end
+  end
+})
+AddButton(Main, {
+  Name = "Alpha Skin",
+  Callback = function()
+    Events.UI.Purchase:InvokeServer("Skins", "AlphaTester")
+  end
+})
+AddButton(Main, {
+  Name = "Monster ESP",
+  Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Evade/Monster-Esp.lua"))()
+  end
+})
+AddButton(Main, {
+  Name = "Boombox Skin",
+  Callback = function()
+    Events.UI.Purchase:InvokeServer("Skins", "Boombox")
+  end
+})
+AddButton(Main, {
+  Name = "Full Bright",
+  Callback = function()
+     local light = Instance.new("PointLight", Character.HumanoidRootPart)
+    light.Brightness = .3
+    light.Range = 10000
+    Lighting.TimeOfDay = "14:00:00"
+    Lighting.FogEnd = 10000;
+    Lighting.Brightness = 2;
+    Lighting.Ambient = Color3.fromRGB(255,255,255)
+    Lighting.FogColor = Color3.fromRGB(255,255,255)
   end
 })
 local Main = MakeTab({Name = "Players"})
