@@ -836,9 +836,22 @@ end
 })
 local Main = MakeTab({Name = "Dahood"})
 AddButton(Main, {
-  Name = "Caps lock | Fake macro",
+  Name = "Silent Aim",
   Callback = function()
-  loadstring(game:HttpGet("https://pastebin.com/raw/Us4xXzV1"))()
+  
+-- Configuration
+getgenv().Target = true
+getgenv().Key = Enum.KeyCode.Q
+getgenv().Prediction = 0.1433333333392
+getgenv().NotifMode = true
+    getgenv().PartMode = true
+    getgenv().AirshotFunccc = true
+    getgenv().Partz = "LowerTorso"
+getgenv().AutoPrediction = true
+
+-- Twish is daddy UwU --
+    
+loadstring(game:HttpGet("https://gist.githubusercontent.com/twishh/c4d67a9a0676e20165716d24b4944108/raw/0c1f052029185c1b7bb91b7bbb13472c49334aee/gistfile1.txt"))()
   end
 })
 local Main = MakeTab({Name = "Players"})
