@@ -251,3 +251,51 @@ AddButton(Main, {
 })
 local Main = MakeTab({Name = "Blade Ball"})
 local section = AddSection(Main, {"Combat"})
+AddButton(Main, {
+  Name = "Parry | Manual Spam",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "ESP",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "INF Jump",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "Get ability",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "Hub",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "Circle | Noob Parry",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "ffpboost",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "follow ball",
+  Callback = function()
+    
+  end
+})
