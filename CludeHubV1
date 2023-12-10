@@ -457,11 +457,13 @@ end)
   end
 })
 local Main = MakeTab({Name = "Players"})
-AddTextBox(Main, {
-  Name = "WalkSpeed",
-  Default = "Speed",
-  PlaceholderText = "input",
-  ClearText = true,
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 10,
+  MaxValue = 1000000,
+  Default = 23,
+  Increase = 1,
   Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
   end
 })
