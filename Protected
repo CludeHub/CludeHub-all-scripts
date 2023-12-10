@@ -78,6 +78,25 @@ AddButton(Main, {
   end
 })
 local Main = MakeTab({Name = "MM2"})
+AddButton(Main, {
+  Name = "Lag Server",
+  Callback = function()
+    local owner = '78n'
+local branch = 'NoobSploit'
+ 
+local function import(file)
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/%s/%s/main/%s'):format(owner,branch,file..'.lua')))()
+end
+ 
+import('MurderMysteryCrasher')
+  end
+})
+AddButton(Main, {
+  Name = "Get Emotes",
+  Callback = function()
+    require(EmoteModule).GeneratePage(EmoteList,Emotes,'Free Emotes');
+  end
+})
 local Main = MakeTab({Name = "Prison Life"})
 local section = AddSection(Main, {"Mods"})
 AddButton(Main, {
