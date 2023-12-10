@@ -1215,35 +1215,11 @@ AddButton(Main, {
   end
 })
 AddButton(Main, {
-  Name = "No shake camera",
-  Callback = function()
-    task.spawn(function()
-    while task.wait() do
-            Player.PlayerScripts:WaitForChild("CameraShake", 1234).Value = CFrame.new(0,0,0) * CFrame.Angles(0,0,0);
-        end
-    end
-end)
-  end
-})
-AddButton(Main, {
   Name = "Respawn when down 1",
   Callback = function()
     --// Made By YellowGreg \\--
 
 game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
-  end
-})
-AddButton(Main, {
-  Name = "Respawn when down 2",
-  Callback = function()
-     local Reset = Events:FindFirstChild("Reset")
-    local Respawn = Events:FindFirstChild("Respawn")
-
-    if Reset and Respawn then
-        Reset:FireServer();
-        task.wait(2)
-        Respawn:FireServer();
-    end
   end
 })
 AddButton(Main, {
@@ -1262,19 +1238,6 @@ AddButton(Main, {
   Name = "Boombox Skin",
   Callback = function()
     Events.UI.Purchase:InvokeServer("Skins", "Boombox")
-  end
-})
-AddButton(Main, {
-  Name = "Full Bright",
-  Callback = function()
-     local light = Instance.new("PointLight", Character.HumanoidRootPart)
-    light.Brightness = .3
-    light.Range = 10000
-    Lighting.TimeOfDay = "14:00:00"
-    Lighting.FogEnd = 10000;
-    Lighting.Brightness = 2;
-    Lighting.Ambient = Color3.fromRGB(255,255,255)
-    Lighting.FogColor = Color3.fromRGB(255,255,255)
   end
 })
 local Main = MakeTab({Name = "Players"})
