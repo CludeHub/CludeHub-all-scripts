@@ -502,3 +502,92 @@ AddTextBox(Main, {
 		game:GetService("Workspace").CurrentCamera.FieldOfView = Value -- Set it to the default value (70 is the default FOV)
   end
 })
+local Toggle = AddToggle(Main, {
+  Name = "Infinite Jump",
+  Default = false,
+  Callback = function(Value)
+    if Value == true then
+	--game:GetService("UserInputService").JumpRequest:connect(function()
+    --game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+    else
+    local infinityJumpEnabled = false
+    end
+  end
+})
+local Toggle = AddToggle(Main, {
+  Name = "Noclip",
+  Default = false,
+  Callback = function(Value)
+if Value == true then
+	-- Function to enable noclip for a player
+local function enableNoclip(player)
+    local character = player.Character
+    if character then
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = false
+            end
+        end
+    end
+end
+
+-- Function to disable noclip for a player
+local function disableNoclip(player)
+    local character = player.Character
+    if character then
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = true
+            end
+        end
+    end
+end
+
+-- Replace "PlayerName" with the name of the player you want to enable noclip for
+local player = game.Players.LocalPlayer
+
+-- Check if the player exists
+if player then
+    enableNoclip(player)
+end
+else
+-- Function to enable noclip for a player
+local function enableNoclip(player)
+    local character = player.Character
+    if character then
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = false
+            end
+        end
+    end
+end
+
+-- Function to disable noclip for a player
+local function disableNoclip(player)
+    local character = player.Character
+    if character then
+        for _, part in pairs(character:GetDescendants()) do
+            if part:IsA("BasePart") then
+                part.CanCollide = true
+            end
+        end
+    end
+end
+
+-- Replace "PlayerName" with the name of the player you want to enable noclip for
+local player = game.Players.LocalPlayer
+
+-- Check if the player exists
+if player then
+    disableNoclip(player)
+end
+end
+  end
+})
