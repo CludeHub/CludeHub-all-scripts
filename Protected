@@ -1169,21 +1169,6 @@ AddButton(Main, {
 })
 local Main = MakeTab({Name = "Natural Disaster"})
 local Toggle = AddToggle(Main, {
-  Name = "Walk On Water",
-  Default = false,
-  Callback = function(Value)
-    local water = game.Workspace.WaterLevel
-	if not Value then 
-		water.CanCollide = false
-		water.Size = Vector3.new(10, 1, 10)
-	end
-	if Value then 
-		water.CanCollide = true
-		water.Size = Vector3.new(1000, 1, 1000)
-	end
-  end
-})
-local Toggle = AddToggle(Main, {
   Name = "Auto farm",
   Default = false,
   Callback = function(Value)
@@ -1205,26 +1190,6 @@ AddButton(Main, {
 		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleUpper.ReleaseButtonUpper.ClickDetector)
 		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].LoadingTower.Console.ReleaseEntryBridge.ClickDetector)
 	end)
-  end
-})
-local Slider = AddSlider(Main, {
-  Name = "Set Speed",
-  MinValue = 9,
-  MaxValue = 100,
-  Default = 23,
-  Increase = 1,
-  Callback = function(Value)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-  end
-})
-local Slider = AddSlider(Main, {
-  Name = "Set Jump Power",
-  MinValue = 9,
-  MaxValue = 500,
-  Default = 50,
-  Increase = 1,
-  Callback = function(Value)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
   end
 })
 local Main = MakeTab({Name = "Players"})
