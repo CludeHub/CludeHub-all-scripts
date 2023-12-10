@@ -854,6 +854,18 @@ getgenv().AutoPrediction = true
 loadstring(game:HttpGet("https://gist.githubusercontent.com/twishh/c4d67a9a0676e20165716d24b4944108/raw/0c1f052029185c1b7bb91b7bbb13472c49334aee/gistfile1.txt"))()
   end
 })
+AddButton(Main, {
+  Name = "Fake Macro",
+  Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/Zk7tY25L"))()
+  end
+})
+AddButton(Main, {
+  Name = "Q",
+  Callback = function()
+    
+  end
+})
 local Main = MakeTab({Name = "Players"})
 local Slider = AddSlider(Main, {
   Name = "Set Speed",
