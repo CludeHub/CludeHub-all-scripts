@@ -275,21 +275,3 @@ AddButton(Main, {
     loadstring(game:HttpGet('https://pastebin.com/raw/hV0p40Fv'))()
   end
 })
-AddButton(Main, {
-  Name = "Hub",
-  Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/BladeBall/main/BladeBall"))()
-  end
-})
-AddButton(Main, {
-  Name = "Circle | Noob Parry",
-  Callback = function()
-    loadstring(game:HttpGet("https://scriptblox.com/raw/UPD-Blade-Ball-Red-Circle-AutoBlock-REALLY-OP-8242"))()
-  end
-})
-AddButton(Main, {
-  Name = "ffpboost",
-  Callback = function()
-    loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-minimal-impact-fps-booster-6169"))().  
-  end
-})
