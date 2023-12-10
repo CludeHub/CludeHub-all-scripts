@@ -257,3 +257,21 @@ AddButton(Main, {
     loadstring(game:HttpGet("https://pastebin.com/raw/NYTX0ui0"))()
   end
 })
+AddButton(Main, {
+  Name = "ESP",
+  Callback = function()
+    loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-3d-Box-ESP-5346"))()
+  end
+})
+AddButton(Main, {
+  Name = "INF Jump",
+  Callback = function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/b6EaD89h'))()
+  end
+})
+AddButton(Main, {
+  Name = "Get ability",
+  Callback = function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/hV0p40Fv'))()
+  end
+})
