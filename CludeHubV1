@@ -490,3 +490,15 @@ AddTextBox(Main, {
 	end
   end
 })
+AddTextBox(Main, {
+  Name = "Set Fov",
+  Default = "input",
+  PlaceholderText = "input",
+  ClearText = true,
+  Callback = function(Value)
+    if Value == "" then
+		Value = "70"
+		end
+		game:GetService("Workspace").CurrentCamera.FieldOfView = Value -- Set it to the default value (70 is the default FOV)
+  end
+})
