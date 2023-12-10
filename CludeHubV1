@@ -77,6 +77,225 @@ AddButton(Main, {
     loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/Extended-Hitbox.lua"))()
   end
 })
+local Main = MakeTab({Name = "Prison Life"})
+local section = AddSection(Main, {"Guns"})
+AddButton(Main, {
+  Name = "Mod M9",
+  Callback = function()
+    local player = game:GetService("Players").LocalPlayer
+        local gun = player.Backpack:FindFirstChild("M9")
+        local sM = require(gun:FindFirstChild("GunStates"))
+        sM["Damage"] = 999
+        sM["MaxAmmo"] = 9999991
+        sM["StoredAmmo"] = 9999991
+        sM["FireRate"] = 0.05
+        sM["AmmoPerClip"] = 9999991
+        sM["Range"] = 5000
+        sM["ReloadTime"] = 0.05
+        sM["Bullets"] = 1
+        sM["AutoFire"] = false
+  end
+})
+AddButton(Main, {
+  Name = "MOD M4AI",
+  Callback = function()
+    local player = game:GetService("Players").LocalPlayer
+        local gun = player.Backpack:FindFirstChild("M4A1")
+        local sM = require(gun:FindFirstChild("GunStates"))
+        sM["Damage"] = 999
+        sM["MaxAmmo"] = 9999991
+        sM["StoredAmmo"] = 9999991
+        sM["FireRate"] = 0.05
+        sM["AmmoPerClip"] = 9999991
+        sM["Range"] = 5000
+        sM["ReloadTime"] = 0.05
+        sM["Bullets"] = 1
+        sM["AutoFire"] = false
+  end
+})
+AddButton(Main, {
+  Name = "Mod AK-47",
+  Callback = function()
+    local player = game:GetService("Players").LocalPlayer
+        local gun = player.Backpack:FindFirstChild("AK-47")
+        local sM = require(gun:FindFirstChild("GunStates"))
+        sM["Damage"] = 999
+        sM["MaxAmmo"] = 9999991
+        sM["StoredAmmo"] = 9999991
+        sM["FireRate"] = 0.05
+        sM["AmmoPerClip"] = 9999991
+        sM["Range"] = 5000
+        sM["ReloadTime"] = 0.05
+        sM["Bullets"] = 1
+        sM["AutoFire"] = false
+  end
+})
+AddButton(Main, {
+  Name = "MOD Remington",
+  Callback = function()
+    local player = game:GetService("Players").LocalPlayer
+        local gun = player.Backpack:FindFirstChild("Remington 870")
+        local sM = require(gun:FindFirstChild("GunStates"))
+        sM["Damage"] = 999
+        sM["MaxAmmo"] = 9999991
+        sM["StoredAmmo"] = 9999991
+        sM["FireRate"] = 0.05
+        sM["AmmoPerClip"] = 9999991
+        sM["Range"] = 5000
+        sM["ReloadTime"] = 0.05
+        sM["Bullets"] = 1
+        sM["AutoFire"] = false
+  end
+})
+AddButton(Main, {
+  Name = "Get M9",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M9"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "Get AK-47",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "Get Reminton",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "Get M4AI",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M4A1"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+local section = AddSection(Main, {"Hack tool"})
+AddButton(Main, {
+  Name = "Get Hammer",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["hammer"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "Get Card",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Keycard"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "Get crude knife",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Crude Knife"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "TP Tool",
+  Callback = function()
+    mouse = game.Players.LocalPlayer:GetMouse()
+        tool = Instance.new("Tool")
+        tool.RequiresHandle = false
+        tool.Name = "Equip to Click TP"
+        tool.Activated:connect(function()
+        local pos = mouse.Hit+Vector3.new(0,2.5,0)
+        pos = CFrame.new(pos.X,pos.Y,pos.Z)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+        end)
+        tool.Parent = game.Players.LocalPlayer.Backpack
+  end
+})
+local section = AddSection(Main, {"Teams"})
+AddButton(Main, {
+  Name = "Inamate",
+  Callback = function()
+    workspace.Remote.TeamEvent:FireServer("Bright orange")
+  end
+})
+AddButton(Main, {
+  Name = "Officer",
+  Callback = function()
+    workspace.Remote.TeamEvent:FireServer("Bright blue")
+  end
+})
+AddButton(Main, {
+  Name = "Criminal",
+  Callback = function()
+    local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+        LCS = game.Workspace["Criminals Spawn"].SpawnLocation
+        LCS.CanCollide = false
+        LCS.Size = Vector3.new(51.05, 24.12, 54.76)
+        LCS.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        LCS.Transparency = 1
+        wait(0.5)
+        LCS.CFrame = CFrame.new(-920.510803, 92.2271957, 2138.27002, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+        LCS.Size = Vector3.new(6, 0.2, 6)
+        LCS.Transparency = 0
+        wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
+  end
+})
+AddButton(Main, {
+  Name = "Neutral",
+  Callback = function()
+    Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+  end
+})
+local section = AddSection(Main, {"Teste"})
+AddButton(Main, {
+  Name = "Cafe",
+  Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(879,99,2247)
+  end
+})
+AddButton(Main, {
+  Name = "Yard",
+  Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(779,99,2477)
+  end
+})
+AddButton(Main, {
+  Name = "Armory",
+  Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(798,99,2260)
+  end
+})
+AddButton(Main, {
+  Name = "Back",
+  Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(980, 101, 2327)
+  end
+})
+AddButton(Main, {
+  Name = "Prison Cell",
+  Callback = function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(910,99,2477
+  end
+})
 local Main = MakeTab({Name = "Tower of hell"})
 local section = AddSection(Main, {"Main"})
 AddButton(Main, {
