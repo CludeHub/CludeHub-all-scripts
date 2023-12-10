@@ -878,6 +878,12 @@ game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextL
 game:GetService("Players").LocalPlayer.Backpack.Wallet.Handle.BillboardGui.TextLabel.Value = _G.Cash
   end
 })
+AddButton(Main, {
+  Name = "Fly gui",
+  Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Breadido/upiversal/main/Universal%20Fly%20GUI.lua"))()
+  end
+})
 local Main = MakeTab({Name = "Players"})
 local Slider = AddSlider(Main, {
   Name = "Set Speed",
