@@ -477,13 +477,16 @@ local Slider = AddSlider(Main, {
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
   end
 })
-local Slider = AddSlider(Main, {
+AddTextBox(Main, {
   Name = "Set Gravity",
-  MinValue = 9,
-  MaxValue = 100,
-  Default = 30,
-  Increase = 1,
+  Default = "input",
+  PlaceholderText = "input",
+  ClearText = true,
   Callback = function(Value)
-    game.Workspace.Gravity = Value
+    if Value == "" then
+	Value = "200"
+	else
+	game.Workspace.Gravity = Value
+	end
   end
 })
