@@ -77,6 +77,26 @@ AddButton(Main, {
     loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/Extended-Hitbox.lua"))()
   end
 })
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 23,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Jump Power",
+  MinValue = 9,
+  MaxValue = 500,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+  end
+})
 local Main = MakeTab({Name = "MM2"})
 AddButton(Main, {
   Name = "Lag Server",
@@ -194,6 +214,26 @@ AddKeybind(Main, {
         end);
   end
 })
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 23,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Jump Power",
+  MinValue = 9,
+  MaxValue = 500,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+  end
+})
 local Main = MakeTab({Name = "Prison Life"})
 local section = AddSection(Main, {"Mods"})
 AddButton(Main, {
@@ -291,6 +331,26 @@ AddButton(Main, {
   Name = "ESP",
   Callback = function()
     loadstring(game:HttpGet("https://pastebin.com/raw/QMptYXnL"))()
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 23,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Jump Power",
+  MinValue = 9,
+  MaxValue = 500,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
   end
 })
 local Main = MakeTab({Name = "Tower of hell"})
@@ -400,6 +460,26 @@ AddButton(Main, {
     script2:Destroy()
   end
 })
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 23,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Jump Power",
+  MinValue = 9,
+  MaxValue = 500,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+  end
+})
 local Main = MakeTab({Name = "Legend of speed"})
 local section = AddSection(Main, {"Farm"})
 AddButton(Main, {
@@ -465,6 +545,26 @@ AddButton(Main, {
     loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/17"))()
   end
 })
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 23,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Jump Power",
+  MinValue = 5,
+  MaxValue = 100000000000000,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+  end
+})
 local Main = MakeTab({Name = "Blade Ball"})
 local section = AddSection(Main, {"Combat"})
 AddButton(Main, {
@@ -490,6 +590,26 @@ AddButton(Main, {
   Name = "Get ability",
   Callback = function()
     loadstring(game:HttpGet('https://pastebin.com/raw/hV0p40Fv'))()
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 23,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Jump Power",
+  MinValue = 5,
+  MaxValue = 500,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
   end
 })
 local Main = MakeTab({Name = "Doors"})
@@ -670,6 +790,26 @@ shadow.Unequipped:Connect(function()
         RightArm.RightShoulder.C1 = RightC1
         LeftArm.LeftShoulder.C1 = LeftC1
 end)
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 23,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Jump Power",
+  MinValue = 9,
+  MaxValue = 500,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
   end
 })
 local Main = MakeTab({Name = "Arsenal"})
@@ -957,6 +1097,26 @@ while wait() do
 end
   end
 })
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 23,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Jump Power",
+  MinValue = 9,
+  MaxValue = 500,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+  end
+})
 local Main = MakeTab({Name = "Dahood"})
 AddButton(Main, {
   Name = "Silent Aim",
@@ -1005,6 +1165,26 @@ AddButton(Main, {
   Name = "Fly gui",
   Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Breadido/upiversal/main/Universal%20Fly%20GUI.lua"))()
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Speed",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 23,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Set Jump Power",
+  MinValue = 9,
+  MaxValue = 500,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
   end
 })
 local Main = MakeTab({Name = "Players"})
