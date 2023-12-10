@@ -287,6 +287,12 @@ AddButton(Main, {
         tool.Parent = game.Players.LocalPlayer.Backpack
   end
 })
+AddButton(Main, {
+  Name = "ESP",
+  Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/QMptYXnL"))()
+  end
+})
 local Main = MakeTab({Name = "Tower of hell"})
 local section = AddSection(Main, {"Main"})
 AddButton(Main, {
