@@ -265,7 +265,7 @@ AddButton(Main, {
     Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
   end
 })
-local section = AddSection(Main, {"Teste"})
+local section = AddSection(Main, {"Teleports"})
 AddButton(Main, {
   Name = "Cafe",
   Callback = function()
@@ -365,51 +365,6 @@ AddButton(Main, {
             v:Destroy()
         end
 end
-  end
-})
-local section = AddSection(Main, {"FE"})
-AddButton(Main, {
-  Name = "Ender Leftclick to fling",
-  Callback = function()
-    game:GetService("StarterGui"):SetCore("SendNotification", { 
-            Title = "Notification";
-            Text = "Loading Ender";
-            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-        Duration = 16;
-            loadstring(game:HttpGet(('https://pastebin.com/raw/PQGzTpYm'),true))()
-  end
-})
-AddButton(Main, {
-  Name = "Demon Guy",
-  Callback = function()
-    game:GetService("StarterGui"):SetCore("SendNotification", { 
-            Title = "Notification";
-            Text = "Loading Caducus";
-            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-        Duration = 16;
-            loadstring(game:HttpGet(('https://pastebin.com/raw/GhG4RVSj'),true))()
-  end
-})
-AddButton(Main, {
-  Name = "Wall Walk",
-  Callback = function()
-    game:GetService("StarterGui"):SetCore("SendNotification", { 
-            Title = "Notification";
-            Text = "Loading Wall Walker";
-            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-        Duration = 16;
-        loadstring(game:HttpGetAsync("https://pastebin.com/raw/RY9cBbdG"))()
-  end
-})
-AddButton(Main, {
-  Name = "Elio Blasio",
-  Callback = function()
-    game:GetService("StarterGui"):SetCore("SendNotification", { 
-            Title = "Notification";
-            Text = "Loading Blasio";
-            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-        Duration = 16;
-        loadstring(game:HttpGetAsync("https://pastebin.com/raw/xvBXu6Yc"))()
   end
 })
 local Main = MakeTab({Name = "Tower of hell"})
