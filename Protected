@@ -196,6 +196,74 @@ end
 import('MurderMysteryCrasher')
   end
 })
+AddButton(Main, {
+  Name = "Get Emotes",
+  Callback = function()
+    require(EmoteModule).GeneratePage(EmoteList,Emotes,'Free Emotes');
+  end
+})
+local Toggle = AddToggle(Main, {
+  Name = "Player ESP",
+  Default = false,
+  Callback = function(Value)
+    getgenv().AllEsp = Value;
+        for i, v in pairs(folder:GetChildren()) do
+            if v:IsA("BillboardGui") and Players[tostring(v.Name)] then
+                if getgenv().AllEsp then
+                    v.Enabled = true;
+                else
+                    v.Enabled = false;
+                end;
+            end;
+        end;
+  end
+})
+local Toggle = AddToggle(Main, {
+  Name = "Murder ESP",
+  Default = false,
+  Callback = function(Value)
+    getgenv().MurderEsp = Value;
+        while getgenv().MurderEsp do
+            wait()
+            pcall(function()
+                for i, v in pairs(folder:GetChildren()) do
+                    if v:IsA("BillboardGui") and Players[tostring(v.Name)] then
+                        if Players[tostring(v.Name)].Character:FindFirstChild("Knife") or Players[tostring(v.Name)].Backpack:FindFirstChild("Knife")  then
+                            if getgenv().MurderEsp then
+                                v.Enabled = true;
+                            else
+                                v.Enabled = false;
+                            end;
+                        end
+                    end;
+                end;
+            end);
+        end;
+  end
+})
+local Toggle = AddToggle(Main, {
+  Name = "Sheriff ESP",
+  Default = false,
+  Callback = function(Value)
+    getgenv().SheriffEsp = Value;
+        while getgenv().SheriffEsp do
+            wait()
+            pcall(function()
+                for i, v in pairs(folder:GetChildren()) do
+                    if v:IsA("BillboardGui") and Players[tostring(v.Name)] then
+                        if Players[tostring(v.Name)].Character:FindFirstChild("Gun") or Players[tostring(v.Name)].Backpack:FindFirstChild("Gun")  then
+                            if getgenv().SheriffEsp then
+                                v.Enabled = true;
+                            else
+                                v.Enabled = false;
+                            end;
+                        end
+                    end;
+                end;
+            end);
+        end;
+  end
+})
 local Main = MakeTab({Name = "Prison Life"})
 local section = AddSection(Main, {"Mods"})
 AddButton(Main, {
