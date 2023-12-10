@@ -459,11 +459,22 @@ end)
 local Main = MakeTab({Name = "Players"})
 local Slider = AddSlider(Main, {
   Name = "Set Speed",
-  MinValue = 10,
-  MaxValue = 1000000,
+  MinValue = 9,
+  MaxValue = 100,
   Default = 23,
   Increase = 1,
   Callback = function(Value)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
   end
 })
+local Slider = AddSlider(Main, {
+  Name = "Jump Power",
+  MinValue = 9,
+  MaxValue = 500,
+  Default = 50,
+  Increase = 1,
+  Callback = function(Value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+  end
+})
+
