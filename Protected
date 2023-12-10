@@ -1167,6 +1167,46 @@ AddButton(Main, {
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Breadido/upiversal/main/Universal%20Fly%20GUI.lua"))()
   end
 })
+local Main = MakeTab({Name = "Natural Disaster"})
+local Toggle = AddToggle(Main, {
+  Name = "Walk On Water",
+  Default = false,
+  Callback = function(Value)
+    local water = game.Workspace.WaterLevel
+	if not Value then 
+		water.CanCollide = false
+		water.Size = Vector3.new(10, 1, 10)
+	end
+	if Value then 
+		water.CanCollide = true
+		water.Size = Vector3.new(1000, 1, 1000)
+	end
+  end
+})
+local Toggle = AddToggle(Main, {
+  Name = "Auto farm",
+  Default = false,
+  Callback = function(Value)
+    if Value then
+		event = runService.RenderStepped:Connect(function()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264, 195, 288)
+		end)
+	else
+		event:Disconnect()
+	end
+  end
+})
+AddButton(Main, {
+  Name = "Launch rocket",
+  Callback = function()
+    pcall(function()
+		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"]["SPACESHIP!!"].Shuttle.IgnitionButton.ClickDetector)
+		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleLower.ReleaseButtonLower.ClickDetector)
+		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].RocketStand.ConsoleUpper.ReleaseButtonUpper.ClickDetector)
+		fireclickdetector(game:GetService("Workspace").Structure["Launch Land"].LoadingTower.Console.ReleaseEntryBridge.ClickDetector)
+	end)
+  end
+})
 local Slider = AddSlider(Main, {
   Name = "Set Speed",
   MinValue = 9,
