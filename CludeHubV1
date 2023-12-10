@@ -80,74 +80,6 @@ AddButton(Main, {
 local Main = MakeTab({Name = "Prison Life"})
 local section = AddSection(Main, {"Guns"})
 AddButton(Main, {
-  Name = "Mod M9",
-  Callback = function()
-    local player = game:GetService("Players").LocalPlayer
-        local gun = player.Backpack:FindFirstChild("M9")
-        local sM = require(gun:FindFirstChild("GunStates"))
-        sM["Damage"] = 999
-        sM["MaxAmmo"] = 9999991
-        sM["StoredAmmo"] = 9999991
-        sM["FireRate"] = 0.05
-        sM["AmmoPerClip"] = 9999991
-        sM["Range"] = 5000
-        sM["ReloadTime"] = 0.05
-        sM["Bullets"] = 1
-        sM["AutoFire"] = false
-  end
-})
-AddButton(Main, {
-  Name = "MOD M4AI",
-  Callback = function()
-    local player = game:GetService("Players").LocalPlayer
-        local gun = player.Backpack:FindFirstChild("M4A1")
-        local sM = require(gun:FindFirstChild("GunStates"))
-        sM["Damage"] = 999
-        sM["MaxAmmo"] = 9999991
-        sM["StoredAmmo"] = 9999991
-        sM["FireRate"] = 0.05
-        sM["AmmoPerClip"] = 9999991
-        sM["Range"] = 5000
-        sM["ReloadTime"] = 0.05
-        sM["Bullets"] = 1
-        sM["AutoFire"] = false
-  end
-})
-AddButton(Main, {
-  Name = "Mod AK-47",
-  Callback = function()
-    local player = game:GetService("Players").LocalPlayer
-        local gun = player.Backpack:FindFirstChild("AK-47")
-        local sM = require(gun:FindFirstChild("GunStates"))
-        sM["Damage"] = 999
-        sM["MaxAmmo"] = 9999991
-        sM["StoredAmmo"] = 9999991
-        sM["FireRate"] = 0.05
-        sM["AmmoPerClip"] = 9999991
-        sM["Range"] = 5000
-        sM["ReloadTime"] = 0.05
-        sM["Bullets"] = 1
-        sM["AutoFire"] = false
-  end
-})
-AddButton(Main, {
-  Name = "MOD Remington",
-  Callback = function()
-    local player = game:GetService("Players").LocalPlayer
-        local gun = player.Backpack:FindFirstChild("Remington 870")
-        local sM = require(gun:FindFirstChild("GunStates"))
-        sM["Damage"] = 999
-        sM["MaxAmmo"] = 9999991
-        sM["StoredAmmo"] = 9999991
-        sM["FireRate"] = 0.05
-        sM["AmmoPerClip"] = 9999991
-        sM["Range"] = 5000
-        sM["ReloadTime"] = 0.05
-        sM["Bullets"] = 1
-        sM["AutoFire"] = false
-  end
-})
-AddButton(Main, {
   Name = "Get M9",
   Callback = function()
     local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M9"].ITEMPICKUP
@@ -157,12 +89,6 @@ AddButton(Main, {
 })
 AddButton(Main, {
   Name = "Get AK-47",
-  Callback = function()
-    
-  end
-})
-AddButton(Main, {
-  Name = "",
   Callback = function()
     
   end
@@ -190,12 +116,6 @@ AddButton(Main, {
     local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["hammer"].ITEMPICKUP
         local Event = game:GetService("Workspace").Remote.ItemHandler
         Event:InvokeServer(A_1)
-  end
-})
-AddButton(Main, {
-  Name = "",
-  Callback = function()
-    
   end
 })
 AddButton(Main, {
@@ -294,77 +214,6 @@ AddButton(Main, {
   Name = "Prison Cell",
   Callback = function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(910,99,2477
-  end
-})
-local section = AddSection(Main, {"Bypasses"})
-AddButton(Main, {
-  Name = "Respawn",
-  Callback = function()
-    local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
-        local plr = game.Players.LocalPlayer.Name
-        local gayevent = game:GetService("Workspace").Remote.loadchar
-        gayevent:InvokeServer(plr)
-  end
-})
-AddButton(Main, {
-  Name = "Tase Bypass",
-  Callback = function()
-    game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
-        game.Players.LocalPlayer.CharacterAdded:connect(function()
-        game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
-        game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
-        end)
-  end
-})
-AddButton(Main, {
-  Name = "HitBox Expender",
-  Callback = function()
-    game:GetService("StarterGui"):SetCore("SendNotification", { 
-            Title = "Notification";
-            Text = "Expanded Your Hitbox XD";
-            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
-        Duration = 16;
-    
-    _G.HeadSize = 15 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.9 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Red") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
-    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("","All")
-  end
-})
-AddButton(Main, {
-  Name = "Remove Shields",
-  Callback = function()
-    game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameProcessedEvent)
-            if gameProcessedEvent then return end
-            if inputObject.KeyCode == Enum.KeyCode.G then
-             for _,player in pairs(game.Players:GetPlayers()) do
-              local minecraft = game.Workspace:FindFirstChild(player.Name).Torso:FindFirstChild("ShieldFolder")
-              if minecraft then
-               minecraft:Destroy()
-              end
-              local fortnite = game.Workspace:FindFirstChild(player.Name):FindFirstChild("Riot Shield")
-              if fortnite then
-               fortnite:Destroy()
-              end
-             end
-            end
-         end)
-  end
-})
-AddButton(Main, {
-  Name = "kick all",
-  Callback = function()
-    game.Players.LocalPlayer:Kick("kicked all successfully")
-  end
-})
-AddButton(Main, {
-  Name = "Remove Doors",
-  Callback = function()
-    Workspace.Prison_Cellblock.doors:Destroy()
- 
-        for i,v in pairs(workspace:GetChildren())do
-                if v.Name == "Doors" then
-            v:Destroy()
-        end
-end
   end
 })
 local Main = MakeTab({Name = "Tower of hell"})
