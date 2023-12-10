@@ -77,6 +77,118 @@ AddButton(Main, {
     loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/Extended-Hitbox.lua"))()
   end
 })
+local Main = MakeTab({Name = "MM2"})
+AddButton(Main, {
+  Name = "Get all skin",
+  Callback = function()
+    local WeaponOwnedRange = {
+min=1,
+max=5
+}
+
+local DataBase, PlayerData = getrenv()._G.Database, getrenv()._G.PlayerData
+
+local newOwned = {}
+
+for i,v in next, DataBase.Item do
+newOwned[i] = math.random(WeaponOwnedRange.min, WeaponOwnedRange.max) -- newOwned[Weapon]: ItemCount
+end
+
+local PlayerWeapons = PlayerData.Weapons
+
+game:GetService("RunService"):BindToRenderStep("InventoryUpdate", 0, function()
+PlayerWeapons.Owned = newOwned
+end)
+
+game.Players.LocalPlayer.Character.Humanoid.Health = 0local WeaponOwnedRange = {
+min=1,
+max=5
+}
+
+local DataBase, PlayerData = getrenv()._G.Database, getrenv()._G.PlayerData
+
+local newOwned = {}
+
+for i,v in next, DataBase.Item do
+newOwned[i] = math.random(WeaponOwnedRange.min, WeaponOwnedRange.max) -- newOwned[Weapon]: ItemCount
+end
+
+local PlayerWeapons = PlayerData.Weapons
+
+game:GetService("RunService"):BindToRenderStep("InventoryUpdate", 0, function()
+PlayerWeapons.Owned = newOwned
+end)
+
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+  end
+})
+AddButton(Main, {
+  Name = "Coin Farm",
+  Callback = function()
+    -- dont know if it will work
+
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+local LocalPlayer = Players.LocalPlayer
+local HumanoidRootPart = LocalPlayer.Character.HumanoidRootPart
+
+local function collectCoins()
+    local currentCFrame = HumanoidRootPart.CFrame
+    local coinContainerName = "CoinContainer"
+    local coinName = "Coin"
+
+    for i, object in ipairs(Workspace:GetChildren()) do
+        if object:IsA("Model") and object:FindFirstChild(coinContainerName) then
+            local coin = object.CoinContainer:FindFirstChild("Coin_Server")
+            if coin and coin:FindFirstChild(coinName) then
+                HumanoidRootPart.CFrame = coin.Coin.CFrame
+            end
+        end
+    end
+
+    HumanoidRootPart.CFrame = currentCFrame
+end
+
+-- Continuously collect coins while the player is in the game
+while wait(1) do
+    collectCoins()
+end
+  end
+})
+AddButton(Main, {
+  Name = "Long Rang Knife",
+  Callback = function()
+    --// Made By YellowGreg \\--
+
+pcall(function()
+    local Knife = Client.Backpack:FindFirstChild("Knife") or Client.Character:FindFirstChild("Knife");
+    if Knife.Parent.Name == "Backpack" then
+      Humanoid:EquipTool(Knife);
+    end;
+    if Knife then
+      if Knife:IsA("Tool") then
+        for i, v in ipairs(Players:GetPlayers()) do
+          if v ~= Client and v.Character ~= nil and not table.find(getgenv().Whitelisted,v.Name) then
+            local EnemyRoot = v.Character.HumanoidRootPart;
+                            local EnemyPosition = EnemyRoot.Position;
+                            VirtualUser:ClickButton1(Vector2.new());
+                            firetouchinterest(EnemyRoot, Knife.Handle, 1);
+                            firetouchinterest(EnemyRoot, Knife.Handle, 0);
+                            lastAttack = tick();
+          end;
+        end;
+      end;
+    end;
+  end);
+end
+  end
+})
+AddButton(Main, {
+  Name = "Botão teste",
+  Callback = function()
+    
+  end
+})
 local Main = MakeTab({Name = "Prison Life"})
 local section = AddSection(Main, {"Mods"})
 AddButton(Main, {
