@@ -468,7 +468,7 @@ local Slider = AddSlider(Main, {
   end
 })
 local Slider = AddSlider(Main, {
-  Name = "Jump Power",
+  Name = "Set Jump Power",
   MinValue = 9,
   MaxValue = 500,
   Default = 50,
@@ -477,4 +477,13 @@ local Slider = AddSlider(Main, {
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
   end
 })
-
+local Slider = AddSlider(Main, {
+  Name = "Set Gravity",
+  MinValue = 9,
+  MaxValue = 100,
+  Default = 30,
+  Increase = 1,
+  Callback = function(Value)
+    game.Workspace.Gravity = Value
+  end
+})
