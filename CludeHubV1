@@ -1,7 +1,7 @@
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib")))()
 MakeWindow({
   Hub = {
-    Title = "CludeV1 | Script Hub☄️",
+    Title = "CludeV1 | Script Hub☄️  Library By REDzHUB",
     Animation = "by : Paul☄️"
   },
   Key = {
