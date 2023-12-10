@@ -130,6 +130,43 @@ local Toggle = AddToggle(Main, {
         end;
   end
 })
+AddKeybind(Main, {
+  Name = "Get Gun",
+  KeyCode = "Y",
+  Default = false,
+  Callback = function(Value)
+    if not CanGrab then return end
+        local gundrop = Workspace:FindFirstChild("GunDrop");
+        if gundrop and not lastCFrame then
+            lastCFrame = RootPart.CFrame;
+            pcall(function()
+                repeat
+                    RootPart.CFrame = gundrop.CFrame;
+                    RunService.Stepped:Wait();
+                until not gundrop:IsDescendantOf(Workspace);
+                RootPart.CFrame = lastCFrame;
+                lastCFrame = false;
+            end);
+        end;
+  end
+})
+local Toggle = AddToggle(Main, {
+  Name = "Kill Aura",
+  Default = false,
+  Callback = function(Value)
+    getgenv().KnifeAura = Value
+  end
+})
+local Slider = AddSlider(Main, {
+  Name = "Knife Range",
+  MinValue = 5,
+  MaxValue = 250,
+  Default = 25,
+  Increase = 1,
+  Callback = function(Value)
+    getgenv().KnifeRange = tonumber(Value) or 25;
+  end
+})
 local Main = MakeTab({Name = "Prison Life"})
 local section = AddSection(Main, {"Mods"})
 AddButton(Main, {
