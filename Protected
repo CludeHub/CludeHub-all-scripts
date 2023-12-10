@@ -1,7 +1,7 @@
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib")))()
 MakeWindow({
   Hub = {
-    Title = "CludeV1 | Script Hub☄️  Library By REDzHUB",
+    Title = "CludeV1 | Script Hub☄️  (Library By REDzHUB) ",
     Animation = "by : Paul☄️"
   },
   Key = {
@@ -151,12 +151,6 @@ AddButton(Main, {
 })
 local section = AddSection(Main, {"Teams"})
 AddButton(Main, {
-  Name = "Inamate",
-  Callback = function()
-    workspace.Remote.TeamEvent:FireServer("Bright orange")
-  end
-})
-AddButton(Main, {
   Name = "Officer",
   Callback = function()
     workspace.Remote.TeamEvent:FireServer("Bright blue")
@@ -179,12 +173,6 @@ AddButton(Main, {
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
   end
 })
-AddButton(Main, {
-  Name = "Neutral",
-  Callback = function()
-    Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
-  end
-})
 local section = AddSection(Main, {"Teleports"})
 AddButton(Main, {
   Name = "Cafe",
@@ -202,12 +190,6 @@ AddButton(Main, {
   Name = "Armory",
   Callback = function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(798,99,2260)
-  end
-})
-AddButton(Main, {
-  Name = "Back",
-  Callback = function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(980, 101, 2327)
   end
 })
 AddButton(Main, {
