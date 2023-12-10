@@ -1188,27 +1188,6 @@ AddButton(Main, {
   end
 })
 AddButton(Main, {
-  Name = "Highlight",
-  Callback = function()
-    ESP:ClearESP();
-    Highlights_Active = true;
-
-    for i, v in ipairs(Players:GetPlayers()) do
-        if v ~= Player then
-            v.CharacterAdded:Connect(function(Char)
-                ESP:AddOutline(Char)
-                ESP:AddNameTag(Char)
-            end)
-
-            if v.Character then
-                ESP:AddOutline(v.Character)
-                ESP:AddNameTag(v.Character)
-            end
-        end
-    end
-  end
-})
-AddButton(Main, {
   Name = "Emote",
   Callback = function()
     Events.UI.Purchase:InvokeServer("Emotes", "Test")
@@ -1232,12 +1211,6 @@ AddButton(Main, {
   Name = "Monster ESP",
   Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Evade/Monster-Esp.lua"))()
-  end
-})
-AddButton(Main, {
-  Name = "Boombox Skin",
-  Callback = function()
-    Events.UI.Purchase:InvokeServer("Skins", "Boombox")
   end
 })
 local Main = MakeTab({Name = "Players"})
