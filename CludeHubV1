@@ -456,6 +456,291 @@ shadow.Unequipped:Connect(function()
 end)
   end
 })
+local Main = MakeTab({Name = "Arsenal"})
+local section = AddSection(Main, {"Combat"})
+AddButton(Main, {
+  Name = "Infinite ammo",
+  Callback = function()
+    --// Credit To MMSVon For Making The Script \\--
+
+game:GetService("RunService").Stepped:connect(function() -- Loop made by MMSVon
+    pcall(function() -- It is used for calling functions that may possibly error so that it does not stop the script and we can handle it manually.
+        game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client.Variables.ammocount.Value = 999
+        game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client.Variables.ammocount2.Value = 999
+      end) 
+  end) --Loop end
+  end
+})
+AddButton(Main, {
+  Name = "Auto heal",
+  Callback = function()
+    --// Made By YellowGreg \\--
+local autoHealEnabled = true
+
+local function autoHeal()
+    spawn(function()
+        while autoHealEnabled do
+            wait()
+            pcall(function()
+                local player = game.Players.LocalPlayer
+                local character = player.Character
+                local humanoidRootPart = character.HumanoidRootPart
+
+                for i, v in pairs(game.Workspace.Debris:GetChildren()) do
+                    if v.Name == "DeadHP" then
+                        if autoHealEnabled then
+                            v.CFrame = humanoidRootPart.CFrame
+                        else
+                            print("Auto healing is turned off. DeadHP will not teleport.")
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+end
+
+-- Function to toggle auto heal on or off
+local function toggleAutoHeal(enabled)
+    autoHealEnabled = enabled
+    if enabled then
+        autoHeal()
+    end
+end
+  end
+})
+AddButton(Main, {
+  Name = "BHop",
+  Callback = function()
+    --// Made by YellowGreg \\--
+
+spawn(function()
+        while wait()
+        do game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Jump = true
+        end
+    end)
+  end
+})
+AddButton(Main, {
+  Name = "ESP BOX",
+  Callback = function()
+    --// Made By: AdvanceFalling Team \\--
+
+game:GetService("StarterGui"):SetCore("SendNotification",{ 	
+Title = "Made By:",  	
+Text = "AdvancedFalling Team",
+	Icon = "rbxthumb://type=Asset&id=9863339777&w=150&h=150",
+	Duration = 8
+})
+
+--// Setting \\--
+local settings = {
+   defaultcolor = Color3.fromRGB(255,255,255),
+   teamcheck = false, -- when true it wont show the esp box in your teammate
+   teamcolor = true, -- if false then it shows default color(white)
+};
+
+
+--// Service \\--
+local runService = game:GetService("RunService");
+local players = game:GetService("Players");
+--// Variable \\--
+local localPlayer = players.LocalPlayer;
+local camera = workspace.CurrentCamera;
+--// Function \\--
+local newVector2, newColor3, newDrawing = Vector2.new, Color3.new, Drawing.new;
+local tan, rad = math.tan, math.rad;
+local round = function(...) local a = {}; for i,v in next, table.pack(...) do a[i] = math.round(v); end return unpack(a); end;
+local wtvp = function(...) local a, b = camera.WorldToViewportPoint(camera, ...) return newVector2(a.X, a.Y), b, a.Z end;
+local espCache = {};
+local function createEsp(player)
+   local drawings = {};
+   
+   drawings.box = newDrawing("Square");
+   drawings.box.Thickness = 1;
+   drawings.box.Filled = false;
+   drawings.box.Color = settings.defaultcolor;
+   drawings.box.Visible = false;
+   drawings.box.ZIndex = 2;
+
+   drawings.boxoutline = newDrawing("Square");
+   drawings.boxoutline.Thickness = 4;
+   drawings.boxoutline.Filled = false;
+   drawings.boxoutline.Color = newColor3();
+   drawings.boxoutline.Visible = false;
+   drawings.boxoutline.ZIndex = 0.5;
+
+   espCache[player] = drawings;
+end
+local function removeEsp(player)
+   if rawget(espCache, player) then
+       for _, drawing in next, espCache[player] do
+           drawing:Remove();
+       end
+       espCache[player] = nil;
+   end
+end
+local function updateEsp(player, esp)
+   local character = player and player.Character;
+   if character then
+       local cframe = character:GetModelCFrame();
+       local position, visible, depth = wtvp(cframe.Position);
+       esp.box.Visible = visible;
+       esp.boxoutline.Visible = visible;
+
+       if cframe and visible then
+           local scaleFactor = 1 / (depth * tan(rad(camera.FieldOfView / 2)) * 2) * 1000;
+           local width, height = round(4 * scaleFactor, 5 * scaleFactor);
+           local x, y = round(position.X, position.Y);
+
+           esp.box.Size = newVector2(width, height);
+           esp.box.Position = newVector2(round(x - width / 2, y - height / 2));
+           esp.box.Color = settings.teamcolor and player.TeamColor.Color or settings.defaultcolor;
+
+           esp.boxoutline.Size = esp.box.Size;
+           esp.boxoutline.Position = esp.box.Position;
+       end
+   else
+       esp.box.Visible = false;
+       esp.boxoutline.Visible = false;
+   end
+end
+--// Main \\--
+for _, player in next, players:GetPlayers() do
+   if player ~= localPlayer then
+       createEsp(player);
+   end
+end
+players.PlayerAdded:Connect(function(player)
+   createEsp(player);
+end);
+players.PlayerRemoving:Connect(function(player)
+   removeEsp(player);
+end)
+runService:BindToRenderStep("esp", Enum.RenderPriority.Camera.Value, function()
+   for player, drawings in next, espCache do
+       if settings.teamcheck and player.Team == localPlayer.Team then
+           continue;
+       end
+			
+       if drawings and player ~= localPlayer then
+           updateEsp(player, drawings);
+       end
+   end
+end)
+  end
+})
+AddButton(Main, {
+  Name = "ESP Cham",
+  Callback = function()
+    --// Made By: AdvanceFalling Team \\--
+
+game:GetService("StarterGui"):SetCore("SendNotification",{ 	
+Title = "Made By:",  	
+Text = "AdvancedFalling Team",
+	Icon = "rbxthumb://type=Asset&id=9863339777&w=150&h=150",
+	Duration = 8
+})
+game:GetService("StarterGui"):SetCore("SendNotification",{ 	
+Title = "Note:",  	
+Text = "Cham Is BROKEN ALITTLE",
+	Duration = 10
+})
+--// Main \\--
+local client = game.Players.LocalPlayer
+local players = game:GetService("Players")
+local rs = game:GetService("RunService")
+local function clonePart(part, model, character)
+  if part:IsA("BasePart") then
+    local head = character:WaitForChild("Head")
+    local clone = part:Clone()
+    for i, v in ipairs(clone:GetChildren()) do
+      if not v:IsA("SpecialMesh") then
+        v:Destroy()
+        continue
+      end
+      v.TextureId = ""
+    end
+    clone.Color = Color3.fromRGB(0, 102, 204)
+    pcall(function()clone.Size = clone.Size * 0.6 clone.CanCollide = false end)
+    clone.Parent = model
+    rs.RenderStepped:connect(function()
+        if head:IsDescendantOf(workspace) then
+          clone.CFrame = part.CFrame
+          clone.Size = part.Size
+        else
+          model:Destroy()
+          return
+        end
+      end)
+  end
+end
+--// Config Color \\--
+local function chams(character)
+  local model = Instance.new("Model")
+  model.Name = character.Name
+  model.Parent = workspace
+  local cham = Instance.new("Highlight",model)
+  cham.Name = "cham"
+  cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop  
+  cham.OutlineColor = Color3.fromRGB(0,0,0)
+  cham.FillColor = Color3.fromRGB(204,0,0)
+  cham.FillTransparency = 0
+  cham.OutlineTransparency = 1
+  local new = cham:Clone()
+  new.Parent = character
+  new.FillColor = Color3.fromRGB(0,255,0)
+  new.DepthMode = Enum.HighlightDepthMode.Occluded  
+	for i,v in ipairs(character:GetChildren()) do
+		if character:FindFirstChild("Head") then
+			clonePart(v, model, character)
+		end
+	end
+end
+for i,v in ipairs(players:GetPlayers()) do
+	if v~= client then
+		if v.Character then
+			chams(v.Character)
+		end
+	end
+	v.CharacterAdded:connect(function()
+			chams(v.Character)
+		end)
+end
+players.PlayerAdded:connect(function()
+		if v~= client then
+			if v.Character then
+				chams(v.Character)
+			end
+		end
+		v.CharacterAdded:connect(function()
+				chams(v.Character)
+			end)
+	end)
+  end
+})
+AddButton(Main, {
+  Name = "Fast fire",
+  Callback = function()
+    local replicationstorage = game.ReplicatedStorage
+for i, v in pairs(replicationstorage.Weapons:GetDescendants()) do
+   if v.Name == "FireRate" then
+       v.Value = 0.02
+   end
+end
+  end
+})
+AddButton(Main, {
+  Name = "infinite ammo 2",
+  Callback = function()
+    --// Made By Wspboy12 \\--
+
+while wait() do
+  game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client.Variables.ammocount.Value = 999
+  game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client.Variables.ammocount2.Value = 999
+end
+  end
+})
 local Main = MakeTab({Name = "Players"})
 local Slider = AddSlider(Main, {
   Name = "Set Speed",
