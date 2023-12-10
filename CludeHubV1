@@ -1,7 +1,7 @@
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib")))()
 MakeWindow({
   Hub = {
-    Title = "CludeV1☄️",
+    Title = "CludeV1 | Script Hub☄️",
     Animation = "by : Paul☄️"
   },
   Key = {
@@ -184,3 +184,70 @@ AddButton(Main, {
     script2:Destroy()
   end
 })
+local Main = MakeTab({Name = "Legend of speed"})
+local section = AddSection(Main, {"Farm"})
+AddButton(Main, {
+  Name = "Auto hoop",
+  Callback = function()
+    _G.bruh = true
+while _G.bruh do 
+    wait()
+ 
+for _,v in next, game.Workspace:GetDescendants() do
+if v.Name == "" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    elseif v.Name == "" then
+        v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        elseif v.Name == "Hoop" then 
+            v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end
+end
+  end
+})
+AddButton(Main, {
+  Name = "auto gem",
+  Callback = function()
+    _G.bruh = true
+while _G.bruh do 
+    wait()
+ 
+for _,v in next, game.Workspace:GetDescendants() do
+if v.Name == "" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    elseif v.Name == "outergem" then
+        v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        elseif v.Name == "" then 
+            v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end
+end
+  end
+})
+AddButton(Main, {
+  Name = "Auto orb",
+  Callback = function()
+    _G.bruh = true
+while _G.bruh do 
+    wait()
+ 
+for _,v in next, game.Workspace:GetDescendants() do
+if v.Name == "outerOrb" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    elseif v.Name == "" then
+        v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        elseif v.Name == "" then 
+            v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end
+end
+  end
+})
+AddButton(Main, {
+  Name = "Auto level",
+  Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/17"))()
+  end
+})
+local Main = MakeTab({Name = "Blade Ball"})
+local section = AddSection(Main, {"Combat"})
