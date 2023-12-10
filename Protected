@@ -98,64 +98,35 @@ AddButton(Main, {
   end
 })
 local Toggle = AddToggle(Main, {
-  Name = "Player ESP",
+  Name = "Auto farm",
   Default = false,
   Callback = function(Value)
-    getgenv().AllEsp = Value;
-        for i, v in pairs(folder:GetChildren()) do
-            if v:IsA("BillboardGui") and Players[tostring(v.Name)] then
-                if getgenv().AllEsp then
-                    v.Enabled = true;
+    if not getgenv().AutofarmMethod then return end;
+        if getgenv().AutofarmMethod == "Coins" then
+            while getgenv().Autofarm do
+                task.wait();
+                local CoinContainer = Workspace:FindFirstChild("CoinContainer", true);
+                if CoinContainer and Client.PlayerGui.MainGUI.Game.CashBag.Visible == true then
+                    local coin = CoinContainer:FindFirstChild("Coin_Server");
+                    if coin then
+                        repeat
+                            RootPart.CFrame = CFrame.new(coin.Position - Vector3.new(0, 2.5, 0)) * CFrame.Angles(0, 0, math.rad(180));
+                            RunService.Stepped:Wait();
+                            if not getgenv().Autofarm then break end;
+                        until not coin:IsDescendantOf(Workspace) or coin.Name ~= "Coin_Server";
+                        task.wait(1.8);
+                    end;
                 else
-                    v.Enabled = false;
+                    task.wait(1.5);
                 end;
             end;
-        end;
-  end
-})
-local Toggle = AddToggle(Main, {
-  Name = "Murder ESP",
-  Default = false,
-  Callback = function(Value)
-    getgenv().MurderEsp = Value;
-        while getgenv().MurderEsp do
-            wait()
-            pcall(function()
-                for i, v in pairs(folder:GetChildren()) do
-                    if v:IsA("BillboardGui") and Players[tostring(v.Name)] then
-                        if Players[tostring(v.Name)].Character:FindFirstChild("Knife") or Players[tostring(v.Name)].Backpack:FindFirstChild("Knife")  then
-                            if getgenv().MurderEsp then
-                                v.Enabled = true;
-                            else
-                                v.Enabled = false;
-                            end;
-                        end
-                    end;
+        else
+            while getgenv().Autofarm do
+                wait();
+                if Client.PlayerGui.MainGUI.Game.CashBag.Visible == true then
+                    RootPart.CFrame = CFrame.new(-121.12338256836, 138.27394104004, 38.946128845215);
                 end;
-            end);
-        end;
-  end
-})
-local Toggle = AddToggle(Main, {
-  Name = "Sheriff ESP",
-  Default = false,
-  Callback = function(Value)
-    getgenv().SheriffEsp = Value;
-        while getgenv().SheriffEsp do
-            wait()
-            pcall(function()
-                for i, v in pairs(folder:GetChildren()) do
-                    if v:IsA("BillboardGui") and Players[tostring(v.Name)] then
-                        if Players[tostring(v.Name)].Character:FindFirstChild("Gun") or Players[tostring(v.Name)].Backpack:FindFirstChild("Gun")  then
-                            if getgenv().SheriffEsp then
-                                v.Enabled = true;
-                            else
-                                v.Enabled = false;
-                            end;
-                        end
-                    end;
-                end;
-            end);
+            end;
         end;
   end
 })
