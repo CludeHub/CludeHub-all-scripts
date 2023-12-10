@@ -257,6 +257,7 @@ AddButton(Main, {
     loadstring(game:HttpGet("https://pastebin.com/raw/NYTX0ui0"))()
   end
 })
+local section = AddSection(Main, {"Misc"})
 AddButton(Main, {
   Name = "ESP",
   Callback = function()
@@ -273,5 +274,144 @@ AddButton(Main, {
   Name = "Get ability",
   Callback = function()
     loadstring(game:HttpGet('https://pastebin.com/raw/hV0p40Fv'))()
+  end
+})
+local Main = MakeTab({Name = "Doors"})
+local section = AddSection(Main, {"Main"})
+AddButton(Main, {
+  Name = "crucfix",
+  Callback = function()
+    local shadow=game:GetObjects("rbxassetid://11631916882")[1]
+shadow.Parent = game.Players.LocalPlayer.Backpack
+local Players = game:GetService("Players")
+local Plr = Players.LocalPlayer
+local Char = Plr.Character or Plr.CharacterAdded:Wait()
+local Hum = Char:WaitForChild("Humanoid")
+local RightArm = Char:WaitForChild("RightUpperArm")
+local LeftArm = Char:WaitForChild("LeftUpperArm")
+local RightC1 = RightArm.RightShoulder.C1
+local LeftC1 = LeftArm.LeftShoulder.C1
+        local function setupCrucifix(tool)
+        RightArm.Name = "R_Arm"
+        LeftArm.Name = "L_Arm"
+        
+        RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
+        LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
+        for _, v in next, Hum:GetPlayingAnimationTracks() do
+            v:Stop()
+        end
+        end
+shadow.Equipped:Connect(function()
+setupCrucifix(shadow)
+game.Players.LocalPlayer:SetAttribute("Hidden", true)
+end)
+ 
+shadow.Unequipped:Connect(function()
+    game.Players.LocalPlayer:SetAttribute("Hidden", false)
+        RightArm.Name = "RightUpperArm"
+        LeftArm.Name = "LeftUpperArm"
+        
+        RightArm.RightShoulder.C1 = RightC1
+        LeftArm.LeftShoulder.C1 = LeftC1
+end)
+  end
+})
+AddButton(Main, {
+  Name = "no jump scare",
+  Callback = function()
+    game:GetService("ReplicatedStorage").Bricks.Jumpscare:Destroy()
+  end
+})
+AddButton(Main, {
+  Name = "light block",
+  Callback = function()
+    local cI=Instance.new("Tool")cI.Parent=game.Players.LocalPlayer.Backpack;cI.Name="Lighter"local cJ=Instance.new("Part")cJ.Parent=cI;cJ.Name="Handle"local cK=Instance.new("PointLight")cK.Parent=cJ;cK.Range=60;cK.Brightness=3 
+  end
+})
+AddButton(Main, {
+  Name = "skip level",
+  Callback = function()
+    pcall(function()
+local X = false;
+local Y = workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Door") for 
+i,v in ipairs(Y.Parent:GetDescendants()) do if 
+v.Name == "KeyObtain" then X = v 
+end 
+end;
+if X then 
+game.Players.LocalPlayer.Character:PivotTo(g(X.Hitbox.Position))
+wait(0.3)
+fireproximityprompt(X.ModulePrompt,0)
+game.Players.LocalPlayer.Character:PivotTo(g(Y.Door.Position))
+wait(0.3)
+fireproximityprompt(Y.Lock.UnlockPrompt,0)
+end;
+if h == 50 then 
+Y = workspace.CurrentRooms[tostring(h+1)]:WaitForChild("Door")
+end;
+game.Players.LocalPlayer.Character:PivotTo(g(Y.Door.Position))
+wait(0.3)
+Y.ClientOpen:FireServer()
+end)
+  end
+})
+AddButton(Main, {
+  Name = "get achievement s",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "head light",
+  Callback = function()
+    local U = Instance.new("SpotLight")
+U.Brightness = 1;
+U.Face=Enum.NormalId.Front;
+U.Range=90;
+U.Parent = game.Players.LocalPlayer.Character.Head;
+  end
+})
+AddButton(Main, {
+  Name = "Red crucfix",
+  Callback = function()
+    local shadow=game:GetObjects("rbxassetid://11799662307")[1]
+shadow.Parent = game.Players.LocalPlayer.Backpack
+local Players = game:GetService("Players")
+local Plr = Players.LocalPlayer
+local Char = Plr.Character or Plr.CharacterAdded:Wait()
+local Hum = Char:WaitForChild("Humanoid")
+local RightArm = Char:WaitForChild("RightUpperArm")
+local LeftArm = Char:WaitForChild("LeftUpperArm")
+local RightC1 = RightArm.RightShoulder.C1
+local LeftC1 = LeftArm.LeftShoulder.C1
+        local function setupCrucifix(tool)
+        RightArm.Name = "R_Arm"
+        LeftArm.Name = "L_Arm"
+        
+        RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
+        LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
+        for _, v in next, Hum:GetPlayingAnimationTracks() do
+            v:Stop()
+        end
+        end
+shadow.Equipped:Connect(function()
+setupCrucifix(shadow)
+game.Players.LocalPlayer:SetAttribute("Hidden", true)
+end)
+ 
+shadow.Unequipped:Connect(function()
+    game.Players.LocalPlayer:SetAttribute("Hidden", false)
+        RightArm.Name = "RightUpperArm"
+        LeftArm.Name = "LeftUpperArm"
+        
+        RightArm.RightShoulder.C1 = RightC1
+        LeftArm.LeftShoulder.C1 = LeftC1
+end)
   end
 })
