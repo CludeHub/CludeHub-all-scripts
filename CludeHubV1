@@ -79,6 +79,36 @@ AddButton(Main, {
 })
 local Main = MakeTab({Name = "Prison Life"})
 local section = AddSection(Main, {"Guns"})
+AddButton(Main, {
+  Name = "Get M9",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M9"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "Get AK-47",
+  Callback = function()
+    
+  end
+})
+AddButton(Main, {
+  Name = "Get Reminton",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
+AddButton(Main, {
+  Name = "Get M4AI",
+  Callback = function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M4A1"].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+  end
+})
 local Main = MakeTab({Name = "Tower of hell"})
 local section = AddSection(Main, {"Main"})
 AddButton(Main, {
