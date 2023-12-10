@@ -78,7 +78,7 @@ AddButton(Main, {
   end
 })
 local Main = MakeTab({Name = "Prison Life"})
-local section = AddSection(Main, {"Guns"})
+local section = AddSection(Main, {"Mods"})
 AddButton(Main, {
   Name = "Get M9",
   Callback = function()
@@ -88,25 +88,48 @@ AddButton(Main, {
   end
 })
 AddButton(Main, {
-  Name = "Get AK-47",
+  Name = "Hit Box",
   Callback = function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Notification";
+            Text = "Expanded Your Hitbox XD";
+            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+        Duration = 16;
     
+    _G.HeadSize = 15 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.9 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Red") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("","All")
   end
 })
 AddButton(Main, {
-  Name = "Get Reminton",
+  Name = "Remove Shield",
   Callback = function()
-    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP
-        local Event = game:GetService("Workspace").Remote.ItemHandler
-        Event:InvokeServer(A_1)
+    game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameProcessedEvent)
+            if gameProcessedEvent then return end
+            if inputObject.KeyCode == Enum.KeyCode.G then
+             for _,player in pairs(game.Players:GetPlayers()) do
+              local minecraft = game.Workspace:FindFirstChild(player.Name).Torso:FindFirstChild("ShieldFolder")
+              if minecraft then
+               minecraft:Destroy()
+              end
+              local fortnite = game.Workspace:FindFirstChild(player.Name):FindFirstChild("Riot Shield")
+              if fortnite then
+               fortnite:Destroy()
+              end
+             end
+            end
+         end)
   end
 })
 AddButton(Main, {
-  Name = "Get M4AI",
+  Name = "Destroy Door",
   Callback = function()
-    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M4A1"].ITEMPICKUP
-        local Event = game:GetService("Workspace").Remote.ItemHandler
-        Event:InvokeServer(A_1)
+    Workspace.Prison_Cellblock.doors:Destroy()
+ 
+        for i,v in pairs(workspace:GetChildren())do
+                if v.Name == "Doors" then
+            v:Destroy()
+        end
+end
   end
 })
 local section = AddSection(Main, {"Hack tool"})
@@ -147,55 +170,6 @@ AddButton(Main, {
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
         end)
         tool.Parent = game.Players.LocalPlayer.Backpack
-  end
-})
-local section = AddSection(Main, {"Teams"})
-AddButton(Main, {
-  Name = "Officer",
-  Callback = function()
-    workspace.Remote.TeamEvent:FireServer("Bright blue")
-  end
-})
-AddButton(Main, {
-  Name = "Criminal",
-  Callback = function()
-    local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
-        LCS = game.Workspace["Criminals Spawn"].SpawnLocation
-        LCS.CanCollide = false
-        LCS.Size = Vector3.new(51.05, 24.12, 54.76)
-        LCS.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        LCS.Transparency = 1
-        wait(0.5)
-        LCS.CFrame = CFrame.new(-920.510803, 92.2271957, 2138.27002, 0, 0, -1, 0, 1, 0, 1, 0, 0)
-        LCS.Size = Vector3.new(6, 0.2, 6)
-        LCS.Transparency = 0
-        wait()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
-  end
-})
-local section = AddSection(Main, {"Teleports"})
-AddButton(Main, {
-  Name = "Cafe",
-  Callback = function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(879,99,2247)
-  end
-})
-AddButton(Main, {
-  Name = "Yard",
-  Callback = function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(779,99,2477)
-  end
-})
-AddButton(Main, {
-  Name = "Armory",
-  Callback = function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(798,99,2260)
-  end
-})
-AddButton(Main, {
-  Name = "Prison Cell",
-  Callback = function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(910,99,2477
   end
 })
 local Main = MakeTab({Name = "Tower of hell"})
