@@ -251,3 +251,9 @@ AddButton(Main, {
 })
 local Main = MakeTab({Name = "Blade Ball"})
 local section = AddSection(Main, {"Combat"})
+AddButton(Main, {
+  Name = "Parry | Manual Spam",
+  Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/NYTX0ui0"))()
+  end
+})
