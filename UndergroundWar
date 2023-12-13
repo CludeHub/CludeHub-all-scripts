@@ -1,0 +1,92 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Underground War", HidePremium = false, SaveConfig = true, ConfigFolder = "Subscribete"})
+local Tab = Window:MakeTab({
+	Name = "Scripts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Kill Aura",
+	Callback = function()
+      		--// Setting \--
+local range = 50
+
+--// Variable \--
+local player = game:GetService("Players").LocalPlayer
+
+--// Script \--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "infinite Jump",
+	Callback = function()
+      		local InfiniteJumpEnabled = true
+
+game:GetService("UserInputService").JumpRequest:connect(function()
+
+    if InfiniteJumpEnabled then
+
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+
+    end
+
+end)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "volar",
+	Callback = function()
+      		loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Base Red",
+	Callback = function()
+      		tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(3, Enum.EasingStyle.Linear)
+tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(-25.404878616333008, 3.3999993801116943, 183.2745819091797)}):Play()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Base Blue",
+	Callback = function()
+      		tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(3, Enum.EasingStyle.Linear)
+tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(25.10882568359375, 3.3999993801116943, -182.879638671875)}):Play()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Esp",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://pastebin.com/raw/QQqiFGTE'),true))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "TP al ",
+	Callback = function()
+      		loadstring(game:HttpGet(("https://pastebin.com/raw/YNVbeqPy")))()
+  	end    
+})
