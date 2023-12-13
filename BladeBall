@@ -1,0 +1,32 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Blade Ball", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Combat",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Auto Parry",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Manual Spam",
+	Callback = function()   
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "ESP",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/God-Mode.lua"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Get Ability",
+	Callback = function()
+      		print("button pressed")
+  	end    
+})
