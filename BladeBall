@@ -33,3 +33,17 @@ loadstring(game:HttpGet('https://pastebin.com/raw/hV0p40Fv'))()
       		print("button pressed")
   	end    
 })
+Tab:AddButton({
+	Name = "day",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/7Rvxepux"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "night",
+	Callback = function()
+game.Lighting:SetMinutesAfterMidnight(0)
+      		print("button pressed")
+  	end    
+})
