@@ -26,6 +26,11 @@ Tab:AddButton({
       		print("button pressed")
   	end    
 })
+local Tab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
 Tab:AddButton({
 	Name = "Get Ability",
 	Callback = function()
