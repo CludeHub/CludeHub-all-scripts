@@ -1,0 +1,187 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Work At Pizza Place", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Remove Job",
+	Callback = function()
+            game.Workspace.JobButtons:destroy()
+end)
+
+exploittab:Button('Remove Manager Door', function()
+    game.Workspace.PizzaPlaceDoors.ManagerDoor:destroy()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Remove Manager Door",
+	Callback = function()
+            game.Workspace.PizzaPlaceDoors.ManagerDoor:destroy()
+      		print("button pressed")
+  	end    
+})
+Tab:AddToggle({
+	Name = "Spam Team",
+	Default = false,
+	Callback = function(Value)
+if Value then
+        local runService = game:GetService("RunService")
+        event = runService.RenderStepped:Connect(function()
+            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Cashier")
+            wait(0.2)
+            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Cook")
+            wait(0.2)
+            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Pizza Boxer")
+            wait(0.2)
+            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Delivery")
+            wait(0.2)
+            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Supplier")
+        end)
+    end
+    if not Value then
+        event:Disconnect()
+    end
+		print(Value)
+	end    
+})
+Tab:AddToggle({
+	Name = "Mute Alarm",
+	Default = false,
+	Callback = function(Value)
+if Value then
+        local runService = game:GetService("RunService")
+        event = runService.RenderStepped:Connect(function()
+            wait(0.5)
+            game:GetService("Workspace").Alarm.Alarm.Alarm:Destroy()
+        end)
+    end
+    if not Value then
+        event:Disconnect()
+    end
+		print(Value)
+	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Teleport",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Spawn",
+	Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(47, 4, 185)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Cashier",
+	Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(49, 5, 82)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Cook",
+	Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(36, 5, 62)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Pizza Boxer",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(47, 4, 185)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Delivery",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(55, 5, 18)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Supplier",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8, 14, -1033)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Manager",
+	Callback = function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(24, 5, 6)
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "day",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/7Rvxepux"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "night",
+	Callback = function()
+game.Lighting:SetMinutesAfterMidnight(0)
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddTextbox({
+	Name = "Set Speed",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Jump Power",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Gravity",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+	Value = "200"
+	else
+	game.Workspace.Gravity = Value
+	end
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Fov",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+		Value = "70"
+		end
+		game:GetService("Workspace").CurrentCamera.FieldOfView = Value -- Set it to the default value (70 is the default FOV)
+		print(Value)
+	end	  
+})
