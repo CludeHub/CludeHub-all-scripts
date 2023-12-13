@@ -18,47 +18,6 @@ Tab:AddButton({
       		print("button pressed")
   	end    
 })
-Tab:AddToggle({
-	Name = "Spam Team",
-	Default = false,
-	Callback = function(Value)
-if Value then
-        local runService = game:GetService("RunService")
-        event = runService.RenderStepped:Connect(function()
-            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Cashier")
-            wait(0.2)
-            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Cook")
-            wait(0.2)
-            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Pizza Boxer")
-            wait(0.2)
-            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Delivery")
-            wait(0.2)
-            game:GetService("ReplicatedStorage").PlayerChannel:FireServer("ChangeJob", "Supplier")
-        end)
-    end
-    if not Value then
-        event:Disconnect()
-    end
-		print(Value)
-	end    
-})
-Tab:AddToggle({
-	Name = "Mute Alarm",
-	Default = false,
-	Callback = function(Value)
-if Value then
-        local runService = game:GetService("RunService")
-        event = runService.RenderStepped:Connect(function()
-            wait(0.5)
-            game:GetService("Workspace").Alarm.Alarm.Alarm:Destroy()
-        end)
-    end
-    if not Value then
-        event:Disconnect()
-    end
-		print(Value)
-	end    
-})
 local Tab = Window:MakeTab({
 	Name = "Teleport",
 	Icon = "rbxassetid://4483345998",
