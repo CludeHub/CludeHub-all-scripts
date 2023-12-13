@@ -1,0 +1,136 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Tower Of Hell", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Auto Win",
+	Callback = function()
+            local P = game:GetService'Players'
+local HRP = P.LocalPlayer.Character.HumanoidRootPart
+local Sections = game:GetService("Workspace").tower.sections
+for _, Child in next, Sections:GetChildren() do
+  if Child.Name ~= "start" then
+    HRP.CFrame = Child.start.CFrame + Vector3.new(1,2,1)
+    task.wait()
+  end
+end
+HRP.CFrame = Sections.finish.FinishGlow.CFrame
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "kill part",
+	Callback = function()
+            for i,v in pairs(workspace.tower.sections:GetDescendants()) do
+  if v.Name == "kills" then
+    v.Parent.Transparency = 1
+    v:Destroy()
+  end
+end
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "TP to end",
+	Callback = function()
+local endzone = game.Workspace.tower.sections.finish.FinishGlow.CFrame
+local player = game.Players.LocalPlayer.Character
+player.HumanoidRootPart.CFrame = endzone
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/God-Mode.lua"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "God Mode",
+	Callback = function()
+            local old; old = hookmetamethod(game,"__index",function(self, idx)
+    if tostring(self) == "KillScript" and idx == "Parent" and Toggles["Godmode"] then
+        return wait(9e9)
+    end
+    return old(self,idx)
+end)
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Tools",
+	Callback = function()
+            for _,Tool in pairs(game.ReplicatedStorage.Gear:GetChildren()) do
+  if Tool:FindFirstChild("price") then
+    local Tools = Tool:Clone()
+    Tools.Parent = Player.Backpack
+  end
+end
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "day",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/7Rvxepux"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "night",
+	Callback = function()
+game.Lighting:SetMinutesAfterMidnight(0)
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddTextbox({
+	Name = "Set Speed",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Jump Power",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Gravity",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+	Value = "200"
+	else
+	game.Workspace.Gravity = Value
+	end
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Fov",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+		Value = "70"
+		end
+		game:GetService("Workspace").CurrentCamera.FieldOfView = Value -- Set it to the default value (70 is the default FOV)
+		print(Value)
+	end	  
+})
