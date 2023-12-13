@@ -1,0 +1,141 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Legend Of Speed", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Tab = Window:MakeTab({
+	Name = "Auto Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Auto Hoop",
+	Callback = function()
+              _G.bruh = true
+while _G.bruh do 
+    wait()
+ 
+for _,v in next, game.Workspace:GetDescendants() do
+if v.Name == "" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    elseif v.Name == "" then
+        v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        elseif v.Name == "Hoop" then 
+            v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end
+end
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Gem",
+	Callback = function()
+            _G.bruh = true
+while _G.bruh do 
+    wait()
+ 
+for _,v in next, game.Workspace:GetDescendants() do
+if v.Name == "" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    elseif v.Name == "outergem" then
+        v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        elseif v.Name == "" then 
+            v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end
+end
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Level",
+	Callback = function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/17"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Orb",
+	Callback = function()
+            _G.bruh = true
+while _G.bruh do 
+    wait()
+ 
+for _,v in next, game.Workspace:GetDescendants() do
+if v.Name == "outerOrb" then
+    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    elseif v.Name == "" then
+        v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        elseif v.Name == "" then 
+            v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    end
+end
+end
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "day",
+	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/7Rvxepux"))()
+      		print("button pressed")
+  	end    
+})
+Tab:AddButton({
+	Name = "night",
+	Callback = function()
+game.Lighting:SetMinutesAfterMidnight(0)
+      		print("button pressed")
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddTextbox({
+	Name = "Set Speed",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Jump Power",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Gravity",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+	Value = "200"
+	else
+	game.Workspace.Gravity = Value
+	end
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Fov",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+		Value = "70"
+		end
+		game:GetService("Workspace").CurrentCamera.FieldOfView = Value -- Set it to the default value (70 is the default FOV)
+		print(Value)
+	end	  
+})
