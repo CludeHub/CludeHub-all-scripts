@@ -9,12 +9,7 @@ Tab:AddButton({
 	Name = "Remove Job",
 	Callback = function()
             game.Workspace.JobButtons:destroy()
-end)
-
-exploittab:Button('Remove Manager Door', function()
-    game.Workspace.PizzaPlaceDoors.ManagerDoor:destroy()
-      		print("button pressed")
-  	end    
+        end
 })
 Tab:AddButton({
 	Name = "Remove Manager Door",
