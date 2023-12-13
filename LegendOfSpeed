@@ -72,16 +72,6 @@ end
       		print("button pressed")
   	end    
 })
-Tab:AddDropdown({
-	Name = "Select Egg",
-	Default = "Yellow Crystal",
-	Options = {"Yellow Crystal", "Blue Crystal", "Red Crystal", "Lightning Crystal", "Inferno Crystal", "Lava Crystal", "Snow Crystal", "Electro Legends Crystal", "Space Crystal", "Alien Crystal", "Electro Crystal", "Desert Crystal"},
-	Callback = function(Value)
-getgenv().Egg = Value
-end
-		print(Value)
-	end    
-})
 local Tab = Window:MakeTab({
 	Name = "Misc",
 	Icon = "rbxassetid://4483345998",
