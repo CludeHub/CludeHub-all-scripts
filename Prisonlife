@@ -1,14 +1,20 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Prison Life", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Prison Life", HidePremium = false, SaveConfig = true, ConfigFolder = "KrozoTest"})
+
 local Tab = Window:MakeTab({
-	Name = "Modded Gun",
+	Name = "Main",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+
+local Section = Tab:AddSection({
+	Name = "Modded Guns"
+})
+
 Tab:AddButton({
 	Name = "Mod M9",
 	Callback = function()
-local player = game:GetService("Players").LocalPlayer
+        local player = game:GetService("Players").LocalPlayer
         local gun = player.Backpack:FindFirstChild("M9")
         local sM = require(gun:FindFirstChild("GunStates"))
         sM["Damage"] = 999
@@ -20,13 +26,13 @@ local player = game:GetService("Players").LocalPlayer
         sM["ReloadTime"] = 0.05
         sM["Bullets"] = 1
         sM["AutoFire"] = true
-      		print("button pressed")
   	end    
 })
+
 Tab:AddButton({
-	Name = "Mod M4AI",
+	Name = "Mod M4A1",
 	Callback = function()
-local player = game:GetService("Players").LocalPlayer
+        local player = game:GetService("Players").LocalPlayer
         local gun = player.Backpack:FindFirstChild("M4A1")
         local sM = require(gun:FindFirstChild("GunStates"))
         sM["Damage"] = 999
@@ -38,13 +44,13 @@ local player = game:GetService("Players").LocalPlayer
         sM["ReloadTime"] = 0.05
         sM["Bullets"] = 1
         sM["AutoFire"] = true
-      		print("button pressed")
   	end    
 })
+
 Tab:AddButton({
 	Name = "Mod AK-47",
 	Callback = function()
-local player = game:GetService("Players").LocalPlayer
+        local player = game:GetService("Players").LocalPlayer
         local gun = player.Backpack:FindFirstChild("AK-47")
         local sM = require(gun:FindFirstChild("GunStates"))
         sM["Damage"] = 999
@@ -56,13 +62,13 @@ local player = game:GetService("Players").LocalPlayer
         sM["ReloadTime"] = 0.05
         sM["Bullets"] = 1
         sM["AutoFire"] = true
-      		print("button pressed")
   	end    
 })
+
 Tab:AddButton({
 	Name = "Mod Remington",
 	Callback = function()
-local player = game:GetService("Players").LocalPlayer
+        local player = game:GetService("Players").LocalPlayer
         local gun = player.Backpack:FindFirstChild("Remington 870")
         local sM = require(gun:FindFirstChild("GunStates"))
         sM["Damage"] = 999
@@ -74,86 +80,93 @@ local player = game:GetService("Players").LocalPlayer
         sM["ReloadTime"] = 0.05
         sM["Bullets"] = 1
         sM["AutoFire"] = true
-      		print("button pressed")
   	end    
 })
-local Tab = Window:MakeTab({
-	Name = "Get Guns",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+
+local Section = Tab:AddSection({
+	Name = "Get Guns"
 })
+
 Tab:AddButton({
-	Name = "Get M9",
+	Name = "Get M9!",
 	Callback = function()
-local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M9"].ITEMPICKUP
+        local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M9"].ITEMPICKUP
         local Event = game:GetService("Workspace").Remote.ItemHandler
         Event:InvokeServer(A_1)
-      		print("button pressed")
   	end    
 })
+
 Tab:AddButton({
-	Name = "Get AK-47",
+	Name = "Get AK-47!",
 	Callback = function()
-game:GetService("Workspace")["Prison_ITEMS"].giver["AK-47"].ITEMPICKUP
+        local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["AK-47"].ITEMPICKUP
         local Event = game:GetService("Workspace").Remote.ItemHandler
         Event:InvokeServer(A_1)
-      		print("button pressed")
   	end    
 })
+
 Tab:AddButton({
-	Name = "Get Remington",
+	Name = "Get Reminton!",
 	Callback = function()
-local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP
+        local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP
         local Event = game:GetService("Workspace").Remote.ItemHandler
         Event:InvokeServer(A_1)
-      		print("button pressed")
   	end    
 })
+
 Tab:AddButton({
-	Name = "Get M4A1",
+	Name = "Get M4A1!",
 	Callback = function()
-local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M4A1"].ITEMPICKUP
+        local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M4A1"].ITEMPICKUP
         local Event = game:GetService("Workspace").Remote.ItemHandler
         Event:InvokeServer(A_1)
-      		print("button pressed")
   	end    
 })
-local Tab = Window:MakeTab({
-	Name = "Tool",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
+
 Tab:AddButton({
 	Name = "Get Hammer",
 	Callback = function()
-local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["hammer"].ITEMPICKUP
+        local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["hammer"].ITEMPICKUP
         local Event = game:GetService("Workspace").Remote.ItemHandler
         Event:InvokeServer(A_1)
-      		print("button pressed")
   	end    
 })
+
 Tab:AddButton({
-	Name = "Get Keycard",
+	Name = "Get Keycard! | Someone Must drop this",
 	Callback = function()
-local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Keycard"].ITEMPICKUP
+        local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Keycard"].ITEMPICKUP
         local Event = game:GetService("Workspace").Remote.ItemHandler
         Event:InvokeServer(A_1)
-      		print("button pressed")
   	end    
 })
+
 Tab:AddButton({
-	Name = "Get Crude Knife",
+	Name = "Get Crude Knife! | Someone Must drop this",
 	Callback = function()
-local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Crude Knife"].ITEMPICKUP
+        local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Crude Knife"].ITEMPICKUP
         local Event = game:GetService("Workspace").Remote.ItemHandler
         Event:InvokeServer(A_1)
-      		print("button pressed")
   	end    
 })
+
+local Tab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
 Tab:AddButton({
-	Name = "TP Tool",
+	Name = "Fly",
 	Callback = function()
-mouse = game.Players.LocalPlayer:GetMouse()
+        loadstring(game:HttpGet("https://pastebin.com/raw/rFpi04KR"))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Tptool",
+	Callback = function()
+        mouse = game.Players.LocalPlayer:GetMouse()
         tool = Instance.new("Tool")
         tool.RequiresHandle = false
         tool.Name = "Equip to Click TP"
@@ -163,110 +176,3385 @@ mouse = game.Players.LocalPlayer:GetMouse()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
         end)
         tool.Parent = game.Players.LocalPlayer.Backpack
-      		print("button pressed")
   	end    
 })
-local Tab = Window:MakeTab({
-	Name = "Teleport",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+
+local Section = Tab:AddSection({
+	Name = "Teams"
 })
+
+Tab:AddButton({
+	Name = "Inmate",
+	Callback = function()
+        workspace.Remote.TeamEvent:FireServer("Bright orange")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Officer",
+	Callback = function()
+        workspace.Remote.TeamEvent:FireServer("Bright blue")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Criminal",
+	Callback = function()
+        local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+        LCS = game.Workspace["Criminals Spawn"].SpawnLocation
+        LCS.CanCollide = false
+        LCS.Size = Vector3.new(51.05, 24.12, 54.76)
+        LCS.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        LCS.Transparency = 1
+        wait(0.5)
+        LCS.CFrame = CFrame.new(-920.510803, 92.2271957, 2138.27002, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+        LCS.Size = Vector3.new(6, 0.2, 6)
+        LCS.Transparency = 0
+        wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(lastPos)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Neutral",
+	Callback = function()
+        Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Teleports"
+})
+
 Tab:AddButton({
 	Name = "Cafe",
 	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(879,99,2247)
-      		print("button pressed")
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(879,99,2247)
   	end    
 })
+
 Tab:AddButton({
 	Name = "Yard",
 	Callback = function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(779,99,2477)
-      		print("button pressed")
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(779,99,2477)
   	end    
 })
+
 Tab:AddButton({
-	Name = "Snow City",
+	Name = "Armory",
 	Callback = function()
-local plr = game.Players.LocalPlayer
-            local char = plr.Character
-            char.HumanoidRootPart.CFrame = CFrame.new(-866.386841, 4.00088787, 2165.70654, -0.499959469, -9.93534854e-08, -0.866048813, -4.44803661e-08, 1, -8.90424445e-08, 0.866048813, -5.99544503e-09, -0.499959469)
-      		print("button pressed")
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(798,99,2260)
   	end    
 })
+
 Tab:AddButton({
-	Name = "Highway Legends",
+	Name = "Back",
 	Callback = function()
-local plr = game.Players.LocalPlayer
-            local char = plr.Character
-            char.HumanoidRootPart.CFrame = CFrame.new(3682.60254, 71.5308151, 5592.50879, -0.0193620101, 3.62180188e-08, -0.999812543, 4.99353519e-08, 1, 3.52577771e-08, 0.999812543, -4.92433294e-08, -0.0193620101)
-      		print("button pressed")
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(980, 101, 2327)
   	end    
 })
+
+Tab:AddButton({
+	Name = "Prison Cells",
+	Callback = function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(910,99,2477)
+  	end    
+})
+
 local Tab = Window:MakeTab({
-	Name = "Misc",
+	Name = "Toggles",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
+
+local Section = Tab:AddSection({
+	Name = "Options"
+})
+
 Tab:AddButton({
-	Name = "day",
+	Name = "Respawn",
 	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/7Rvxepux"))()
-      		print("button pressed")
+        local lastPos = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").position
+        local plr = game.Players.LocalPlayer.Name
+        local gayevent = game:GetService("Workspace").Remote.loadchar
+        gayevent:InvokeServer(plr)
   	end    
 })
+
 Tab:AddButton({
-	Name = "night",
+	Name = "Tase Bypass",
 	Callback = function()
-game.Lighting:SetMinutesAfterMidnight(0)
-      		print("button pressed")
+        game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+        game.Players.LocalPlayer.CharacterAdded:connect(function()
+        game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
+        game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
+        end)
   	end    
 })
+
+Tab:AddButton({
+	Name = "Hitbox Expander",
+	Callback = function()
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Notification";
+            Text = "Expanded Your Hitbox XD";
+            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+        Duration = 16;
+    
+    _G.HeadSize = 15 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.9 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Red") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Done!","All")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Anti Sheild | G to remove shields",
+	Callback = function()
+        game:GetService("UserInputService").InputBegan:connect(function(inputObject, gameProcessedEvent)
+            if gameProcessedEvent then return end
+            if inputObject.KeyCode == Enum.KeyCode.G then
+             for _,player in pairs(game.Players:GetPlayers()) do
+              local minecraft = game.Workspace:FindFirstChild(player.Name).Torso:FindFirstChild("ShieldFolder")
+              if minecraft then
+               minecraft:Destroy()
+              end
+              local fortnite = game.Workspace:FindFirstChild(player.Name):FindFirstChild("Riot Shield")
+              if fortnite then
+               fortnite:Destroy()
+              end
+             end
+            end
+           end)
+    end
+})
+
+Tab:AddButton({
+	Name = "Kill All!",
+	Callback = function()
+
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Remove Doors",
+	Callback = function()
+        Workspace.Prison_Cellblock.doors:Destroy()
+ 
+        for i,v in pairs(workspace:GetChildren())do
+                if v.Name == "Doors" then
+            v:Destroy()
+        end
+end
+  	end    
+})
+
+Tab:AddButton({
+	Name = "ESP",
+	Callback = function()
+        getgenv().enabled = true --Toggle on/off
+        getgenv().filluseteamcolor = true --Toggle fill color using player team color on/off
+        getgenv().outlineuseteamcolor = true --Toggle outline color using player team color on/off
+        getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
+        getgenv().outlinecolor = Color3.new(1, 1, 1) --Change outline color, no need to edit if using team color
+        getgenv().filltrans = 0.7 --Change fill transparency
+        getgenv().outlinetrans = 0.3 --Change outline transparency
+         
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
+  	end    
+})
+
 local Tab = Window:MakeTab({
-	Name = "Player",
+	Name = "Fe",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-Tab:AddTextbox({
-	Name = "Set Speed",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-		print(Value)
-	end	  
+
+local Section = Tab:AddSection({
+	Name = "Reanimation"
 })
-Tab:AddTextbox({
-	Name = "Set Jump Power",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-		print(Value)
-	end	  
+
+Tab:AddButton({
+	Name = "Ender | Leftclick to fling",
+	Callback = function()
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Notification";
+            Text = "Loading Ender";
+            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+        Duration = 16;
+            loadstring(game:HttpGet(('https://pastebin.com/raw/PQGzTpYm'),true))()
+  	end    
 })
-Tab:AddTextbox({
-	Name = "Set Gravity",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-if Value == "" then
-	Value = "200"
-	else
-	game.Workspace.Gravity = Value
-	end
-		print(Value)
-	end	  
+
+Tab:AddButton({
+	Name = "Caducus | Edgy demon guy",
+	Callback = function()
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Notification";
+            Text = "Loading Caducus";
+            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+        Duration = 16;
+            loadstring(game:HttpGet(('https://pastebin.com/raw/GhG4RVSj'),true))()
+  	end    
 })
-Tab:AddTextbox({
-	Name = "Set Fov",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-if Value == "" then
-		Value = "70"
-		end
-		game:GetService("Workspace").CurrentCamera.FieldOfView = Value -- Set it to the default value (70 is the default FOV)
-		print(Value)
-	end	  
+
+Tab:AddButton({
+	Name = "Wall Walker | Uhh idk walk walls thats it!",
+	Callback = function()
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Notification";
+            Text = "Loading Wall Walker";
+            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+        Duration = 16;
+        loadstring(game:HttpGetAsync("https://pastebin.com/raw/RY9cBbdG"))()
+  	end    
 })
+
+Tab:AddButton({
+	Name = "Elio Blasio",
+	Callback = function()
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Notification";
+            Text = "Loading Blasio";
+            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+        Duration = 16;
+        loadstring(game:HttpGetAsync("https://pastebin.com/raw/xvBXu6Yc"))()
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Prison life Guis",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "Scripts"
+})
+
+Tab:AddButton({
+	Name = "Artenis",
+	Callback = function()
+        setclipboard("https://discord.gg/pTSg34Jz3n")
+print("copied the discord")
+if game.PlaceId == 155615604 then
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+             local Window = Library.CreateLib("Artenis", "Serpent")
+            local Credits = Window:NewTab("Main")
+            local CreditsSection = Credits:NewSection("Credits")
+            CreditsSection:NewLabel("Locals")
+            CreditsSection:NewLabel("Thx")
+
+
+    local Tab = Window:NewTab("Ui")
+    local UiSection = Tab:NewSection("Toggle")
+    UiSection:NewKeybind("Toggle Ui", "this will hide the ui(does not inculde animation)", Enum.KeyCode.RightControl, function()
+        Library:ToggleUI()
+    end)
+
+    local Tab = Window:NewTab("LocalPlayer")
+    local LocalPlayerSection = Tab:NewSection("Movement")
+   LocalPlayerSection:NewSlider("Walkspeed", "if you sprint, you have to adjust again", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+ LocalPlayerSection:NewSlider("JumpPower", "Turns you into a pogostick.", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)                              
+                                                                                                                                   
+    
+    local Tab = Window:NewTab("Admin")
+    local AdminSection = Tab:NewSection("madness")
+    AdminSection:NewButton("Septex", "Gives You Commands!", function()
+                loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+            end)
+    AdminSection:NewButton("Inf Yield", "gives you more cmds", function()
+                loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+            end)
+            local AdminSection = Tab:NewSection("Septex Commands")
+        AdminSection:NewLabel(":rank player - gives player commands")
+            AdminSection:NewLabel(":kill player - kills player")
+            AdminSection:NewLabel(":sa player - spam arrest player")
+            AdminSection:NewLabel(":crim player - makes player criminal")
+            AdminSection:NewLabel(":bring player - brings player")
+            AdminSection:NewLabel(":goto player - makes you go to player")
+            AdminSection:NewLabel(":void player - voids player")
+            AdminSection:NewLabel(":key player - gives player keycard")
+            AdminSection:NewLabel(":cuffs player - gives player handcuffs")
+            AdminSection:NewLabel(":trap player - traps player")
+            AdminSection:NewLabel(":yard player - brings player to yard")
+            AdminSection:NewLabel(":base player - brings player to criminal base")
+            AdminSection:NewLabel(":prison player - brings player to prison")
+            AdminSection:NewLabel(":lk - loopkills player")
+            AdminSection:NewLabel(":aura - gives player kill aura")
+            AdminSection:NewLabel(":virus - makes anyone who touch player dies")
+            AdminSection:NewLabel(":oof - kills everyone")
+            AdminSection:NewLabel(":spike - lag spike")
+            AdminSection:NewLabel(":bspike - big lag spike")
+            AdminSection:NewLabel(":lag - lags the server")
+            AdminSection:NewLabel(":crash - crashes the server")
+            AdminSection:NewLabel(":tk player - teleport you to player and kills them")
+            AdminSection:NewLabel(":ltk player - loops tpkill")
+            AdminSection:NewLabel(":logs - prints all used cmds")
+            local Tab = Window:NewTab("Troll")
+            local TrollSection = Tab:NewSection("FLY")
+            TrollSection:NewButton("Flycar (AirWav)", "superman but car", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/VLBwAgwT'),true))()
+            end)
+    
+            local TrollSection = Tab:NewSection("Dances")
+            TrollSection:NewButton("NullWare V3", "i went through links for you", function()
+                loadstring(game:HttpGet(('https://pastebin.com/raw/jUxDxBsp'),true))()
+            end)
+    
+    coroutine.wrap(UVUZD_fake_script)()
+game.Player.LocalPlayer:kick("go to prison bro")
+
+    else
+
+end
+  	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Kriff Ziz hub"
+})
+
+Tab:AddButton({
+	Name = "Extender Hub! | Basically All My Scripts here",
+	Callback = function()
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Script Quality| Made By ProEternalx1 |Contact Me If theres Problems", "BloodTheme")
+
+local Tab = Window:NewTab("Home")
+local Section = Tab:NewSection("Extender Hub Showcase")
+Section:NewButton("Click", "ButtonInfo", function()
+    setclipboard("https://discord.gg/wnS6ywxPTr")
+end)
+
+local Section = Tab:NewSection("Choose Your Quality")
+
+Section:NewButton("LOW QUALITY", "ButtonInfo", function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Loading Low Quality Script | Extender Hub On Top","All")
+    wait(1)
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Extender Hub V4 | Low Quality", "Ocean")
+
+local Tab = Window:NewTab("Versions")
+local Section = Tab:NewSection("V1")
+local Section = Tab:NewSection("V2")
+local Section = Tab:NewSection("V3")
+local Section = Tab:NewSection("V4 | Latest Version")
+local Section = Tab:NewSection("V5")
+
+local Section = Tab:NewSection("Update")
+local Section = Tab:NewSection("Renamed 5 Buttons To Different Names")
+local Section = Tab:NewSection("Made Custom Hitbox Work")
+local Section = Tab:NewSection("Revamped Modded Guns")
+local Section = Tab:NewSection("Fixed Hitbox script")
+
+local Tab = Window:NewTab("LEAKS")
+local Section = Tab:NewSection("V5 Leaks")
+local Section = Tab:NewSection("Making More Scripts In Script Hub")
+local Section = Tab:NewSection("Renaming Alot Of Things")
+local Section = Tab:NewSection("Making Aimbot Better")
+local Section = Tab:NewSection("Making A Better Tracers")
+local Section = Tab:NewSection("Fixed Options")
+
+local Tab = Window:NewTab("Home")
+local Section = Tab:NewSection("Created By ProEternalx1")
+local Section = Tab:NewSection("yezsh did expand script")
+local Section = Tab:NewSection("Welcome To Externder Hub")
+Section:NewSlider("Walkspeed", "Walkspeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("Jump Power", "Walkspeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Tab = Window:NewTab("Kriff Ziz Hub")
+local Section = Tab:NewSection("Prison Hub Made By ProEternalx1")
+Section:NewButton("Click (press , to open", "You have to be r15", function()
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Kriff Ziz | Made By ProEternalx1 |Contact Me If theres Problems", "Midnight")
+
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("local player")
+Section:NewLabel("Walkspeed")
+Section:NewSlider("Walkspeed", "Walkspeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewLabel("Jump Power")
+Section:NewSlider("JumpPower", "JumpPower", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Section = Tab:NewSection("Fly Script | E To Disable Flight!")
+Section:NewButton("Fly", "Fly Around", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/rFpi04KR"))()
+end)
+
+local Tab = Window:NewTab("Misc")
+
+local Section = Tab:NewSection("Admin | Gives Admin!")
+Section:NewButton("Get Admin!", "Get Yourself A Free Admin!", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+end)
+
+
+local Section = Tab:NewSection("Noclip! | Reset To Stop Noclip!")
+Section:NewButton("noclip", "walk anywhere without getting blocked by a wall!", function()
+    local StealthMode = true -- If game has an anticheat that checks the logs
+
+local Indicator
+
+if not StealthMode then
+    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+    print("NOCLIP: Press E to Activate")
+    Indicator = Instance.new("TextLabel", ScreenGui)
+    Indicator.AnchorPoint = Vector2.new(0, 1)
+    Indicator.Position = UDim2.new(0, 0, 1, 0)
+    Indicator.Size = UDim2.new(0, 200, 0, 50)
+    Indicator.BackgroundTransparency = 1
+    Indicator.TextScaled = true
+    Indicator.TextStrokeTransparency = 0
+    Indicator.TextColor3 = Color3.new(0, 0, 0)
+    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+    Indicator.Text = "Noclip: Enabled"
+end
+
+local noclip = false
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+    if key == "e" then
+        noclip = not noclip
+
+        if not StealthMode then
+            Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+        end
+    end
+end)
+
+while true do
+    player = game.Players.LocalPlayer
+    character = player.Character
+
+    if noclip then
+        for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                end
+            end)
+        end
+    end
+
+    game:GetService("RunService").Stepped:wait()
+end
+end)
+
+local Section = Tab:NewSection("Teleport! | Reset To Stop Noclip!")
+Section:NewButton("tptool", "walk anywhere without getting blocked by a wall!", function()
+    mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Equip to Click TP"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+local Tab = Window:NewTab("Weapons")
+local Section = Tab:NewSection("local weapons")
+Section:NewButton("Get All Weapons | Updated! NEW/BETTER VERSION", "Gets Every Weapons", function()
+    for i,v in pairs(Workspace.Prison_ITEMS.giver:GetChildren()) do
+        lol = Workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+        print(lol)
+        end
+        end)
+
+local Section = Tab:NewSection("Mod")
+
+Section:NewLabel("AK-47")
+
+Section:NewButton("MOD AK-47", "Mod Your AK-47!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("AK-47")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+ 
+Section:NewLabel("M9")
+
+Section:NewButton("MOD M9", "Mod Your M9!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("M9")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+Section:NewLabel("Remington 870")
+
+Section:NewButton("MOD Remington 870", "Mod Your Remington 870!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Remington 870")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+local Tab = Window:NewTab("Updates!")
+
+local Section = Tab:NewSection("Update")
+
+Section:NewLabel("Added Admin Commands! | Click F9 To Open Script! | credits to the owners!")
+
+Section:NewLabel("Added Modded Guns! | It Will Mod You Gun Yeah")
+
+Section:NewLabel("Added Misc! | I Added Misc Cuz Yes")
+
+Section:NewLabel("Changed The Color Script! | I Changed The Color Because Pro")
+
+Section:NewLabel("Added Weapons! | I Added Weapons So Its Better")
+
+Section:NewLabel("Added Updates! | dont care im adding updates")
+
+Section:NewLabel("Added Credits! | dont care im adding credits also")
+
+local Tab = Window:NewTab("Credits!")
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Prison Hub | Made By ProEternalx1 |Contact Me If theres Problems", "Midnight")
+
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("local player")
+Section:NewLabel("Walkspeed")
+Section:NewSlider("Walkspeed", "Walkspeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewLabel("Jump Power")
+Section:NewSlider("JumpPower", "JumpPower", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Section = Tab:NewSection("Fly Script | E To Disable Flight!")
+Section:NewButton("Fly", "Fly Around", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/rFpi04KR"))()
+end)
+
+local Tab = Window:NewTab("Misc")
+
+local Section = Tab:NewSection("Admin | Gives Admin!")
+Section:NewButton("Get Admin!", "Get Yourself A Free Admin!", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+end)
+
+
+local Section = Tab:NewSection("Noclip! | Reset To Stop Noclip!")
+Section:NewButton("noclip", "walk anywhere without getting blocked by a wall!", function()
+    local StealthMode = true -- If game has an anticheat that checks the logs
+
+local Indicator
+
+if not StealthMode then
+    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+    print("NOCLIP: Press E to Activate")
+    Indicator = Instance.new("TextLabel", ScreenGui)
+    Indicator.AnchorPoint = Vector2.new(0, 1)
+    Indicator.Position = UDim2.new(0, 0, 1, 0)
+    Indicator.Size = UDim2.new(0, 200, 0, 50)
+    Indicator.BackgroundTransparency = 1
+    Indicator.TextScaled = true
+    Indicator.TextStrokeTransparency = 0
+    Indicator.TextColor3 = Color3.new(0, 0, 0)
+    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+    Indicator.Text = "Noclip: Enabled"
+end
+
+local noclip = false
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+    if key == "e" then
+        noclip = not noclip
+
+        if not StealthMode then
+            Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+        end
+    end
+end)
+
+while true do
+    player = game.Players.LocalPlayer
+    character = player.Character
+
+    if noclip then
+        for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                end
+            end)
+        end
+    end
+
+    game:GetService("RunService").Stepped:wait()
+end
+end)
+
+local Section = Tab:NewSection("Teleport! | Reset To Stop Noclip!")
+Section:NewButton("tptool", "walk anywhere without getting blocked by a wall!", function()
+    mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Equip to Click TP"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+local Tab = Window:NewTab("Weapons")
+local Section = Tab:NewSection("local weapons")
+Section:NewButton("Get All Weapons | Outdated", "Gets Every Weapons", function()
+    for i,v in pairs(Workspace.Prison_ITEMS.giver:GetChildren()) do
+        lol = Workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+        print(lol)
+        end
+        end)
+
+local Section = Tab:NewSection("Mod")
+
+Section:NewLabel("AK-47")
+
+Section:NewButton("MOD AK-47", "Mod Your AK-47!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("AK-47")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+ 
+Section:NewLabel("M9")
+
+Section:NewButton("MOD M9", "Mod Your M9!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("M9")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+Section:NewLabel("Remington 870")
+
+Section:NewButton("MOD Remington 870", "Mod Your Remington 870!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Remington 870")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 45000
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+Section:NewLabel("Taser")
+
+Section:NewButton("MOD Taser", "Mod Your Taser!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Taser")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+local Tab = Window:NewTab("Updates!")
+
+local Section = Tab:NewSection("Update")
+
+Section:NewLabel("Added Admin Commands! | Click F9 To Open Script! | credits to the owners!")
+
+Section:NewLabel("Added Modded Guns! | It Will Mod You Gun Yeah")
+
+Section:NewLabel("Added Misc! | I Added Misc Cuz Yes")
+
+Section:NewLabel("Changed The Color Script! | I Changed The Color Because Pro")
+
+Section:NewLabel("Added Weapons! | I Added Weapons So Its Better")
+
+Section:NewLabel("Added Updates! | dont care im adding updates")
+
+Section:NewLabel("Added Credits! | dont care im adding credits also")
+
+local Tab = Window:NewTab("Credits!")
+
+local Section = Tab:NewSection("Credits")
+
+Section:NewLabel("Credits For The Owner Of Admin CMD")
+
+local Tab = Window:NewTab("Date And Time!")
+
+local Section = Tab:NewSection("Time And Date")
+
+Section:NewLabel("1/18/2023")
+
+end)
+
+local Tab = Window:NewTab("Animation Packs")
+local Section = Tab:NewSection("Emotes")
+
+Section:NewButton("Click (press , to open", "You have to be r15", function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Gi7331/scripts/main/Emote.lua"))()
+end)
+
+local Tab = Window:NewTab("Flag Wars")
+local Section = Tab:NewSection("Modded Guns")
+
+Section:NewButton("Click", "ButtonInfo", function() 
+    local mt = getrawmetatable(game)
+setreadonly(mt, false)
+local index = mt.__index
+
+local Mods = {
+    -- Guns (Spas, Sniper, etc)
+    ["RecoilMax"] = 0.1,
+    ["RecoilMin"] = 0.1,
+    ["MuzzleFlashSize0"] = 0,
+    ["MuzzleFlashSize1"] = 0,
+    ["FlashBrightness"] = 0,
+    ["AmmoCapacity"] = 9e9,
+    ["ShotCooldown"] = 0,
+    ["CurrentAmmo"] = 9e9,
+    ["BulletSpeed"] = 9e9,
+    ["FireMode"] = "Automatic",
+    ["GravityFactor"] = 0,
+    ["MaxSpread"] = 0,
+    ["MinSpread"] = 0,
+    ["HitDamage"] = 500,
+    ["NumProjectiles"] = 1,
+    -- Melee (Shovel, Sword, etc)
+    ["Cooldown"] = 0.5,
+    ["Value"] = 0.5,
+    ["DirtDamage"] = 500000,
+    ["SwingCooldown"] = 0.5,
+    ["HitRate"] = 0.5,
+}
+
+mt.__index = function(a,b)
+    if Mods[tostring(a)] then
+        if tostring(b) == "Value" then
+            return Mods[tostring(a)]
+        end
+    end
+    return index(a,b)
+end
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Done!","All")
+end)
+
+
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Expand Your Hitbox")
+
+Section:NewButton("Click", "ButtonInfo", function()
+_G.HeadSize = 20 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.9 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Red") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Done!","All")
+end)
+
+
+local Section = Tab:NewSection("ESP")
+Section:NewButton("Click", "See Players", function()
+    getgenv().enabled = true --Toggle on/off
+getgenv().filluseteamcolor = true --Toggle fill color using player team color on/off
+getgenv().outlineuseteamcolor = true --Toggle outline color using player team color on/off
+getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
+getgenv().outlinecolor = Color3.new(1, 1, 1) --Change outline color, no need to edit if using team color
+getgenv().filltrans = 0.7 --Change fill transparency
+getgenv().outlinetrans = 0.3 --Change outline transparency
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
+end)
+
+local Section = Tab:NewSection("Tp To Random User")
+Section:NewButton("Click", "See Players", function()
+
+end)
+
+local Section = Tab:NewSection("Custom Hitbox")
+
+Section:NewSlider("Custom Hitbox", "SliderInfo", 110, 0, function(s) -- 110 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.Brick = s
+end)
+
+local Section = Tab:NewSection("Tracer")
+
+Section:NewButton("Aimbot", "ButtonInfo", function()
+    local dwCamera = workspace.CurrentCamera
+local dwRunService = game:GetService("RunService")
+local dwUIS = game:GetService("UserInputService")
+local dwEntities = game:GetService("Players")
+local dwLocalPlayer = dwEntities.LocalPlayer
+local dwMouse = dwLocalPlayer:GetMouse()
+
+local settings = {
+    Aimbot = true,
+    Aiming = false,
+    Aimbot_AimPart = "Head",
+    Aimbot_TeamCheck = true,
+    Aimbot_Draw_FOV = true,
+    Aimbot_FOV_Radius = 60,
+    Aimbot_FOV_Color = Color3.fromRGB(255,255,255)
+}
+
+local fovcircle = Drawing.new("Circle")
+fovcircle.Visible = settings.Aimbot_Draw_FOV
+fovcircle.Radius = settings.Aimbot_FOV_Radius
+fovcircle.Color = settings.Aimbot_FOV_Color
+fovcircle.Thickness = 1
+fovcircle.Filled = false
+fovcircle.Transparency = 1
+
+fovcircle.Position = Vector2.new(dwCamera.ViewportSize.X / 2, dwCamera.ViewportSize.Y / 2)
+
+dwUIS.InputBegan:Connect(function(i)
+    if i.UserInputType == Enum.UserInputType.MouseButton2 then
+        settings.Aiming = true
+    end
+end)
+
+dwUIS.InputEnded:Connect(function(i)
+    if i.UserInputType == Enum.UserInputType.MouseButton2 then
+        settings.Aiming = false
+    end
+end)
+
+dwRunService.RenderStepped:Connect(function()
+    
+    local dist = math.huge
+    local closest_char = nil
+
+    if settings.Aiming then
+
+        for i,v in next, dwEntities:GetChildren() do 
+
+            if v ~= dwLocalPlayer and
+            v.Character and
+            v.Character:FindFirstChild("HumanoidRootPart") and
+            v.Character:FindFirstChild("Humanoid") and
+            v.Character:FindFirstChild("Humanoid").Health > 0 then
+
+                if settings.Aimbot_TeamCheck == true and
+                v.Team ~= dwLocalPlayer.Team or
+                settings.Aimbot_TeamCheck == false then
+
+                    local char = v.Character
+                    local char_part_pos, is_onscreen = dwCamera:WorldToViewportPoint(char[settings.Aimbot_AimPart].Position)
+
+                    if is_onscreen then
+
+                        local mag = (Vector2.new(dwMouse.X, dwMouse.Y) - Vector2.new(char_part_pos.X, char_part_pos.Y)).Magnitude
+
+                        if mag < dist and mag < settings.Aimbot_FOV_Radius then
+
+                            dist = mag
+                            closest_char = char
+
+                        end
+                    end
+                end
+            end
+        end
+
+        if closest_char ~= nil and
+        closest_char:FindFirstChild("HumanoidRootPart") and
+        closest_char:FindFirstChild("Humanoid") and
+        closest_char:FindFirstChild("Humanoid").Health > 0 then
+
+            dwCamera.CFrame = CFrame.new(dwCamera.CFrame.Position, closest_char[settings.Aimbot_AimPart].Position)
+        end
+    end
+end)
+end)
+
+local Tab = Window:NewTab("UI Toggles")
+local Section = Tab:NewSection("Toggles")
+
+    Section:NewKeybind("Close/Open Ui", "KeybindInfo", Enum.KeyCode.B, function()
+        Library:ToggleUI()
+    end)
+
+    Section:NewKeybind("TP Hold Z to tp", "KeybindInfo", Enum.KeyCode.Z, function()
+        local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+ 
+Mouse.Button1Down:connect(
+    function()
+        if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Z) then
+            return
+        end
+        if not Mouse.Target then
+            return
+        end
+        Plr.Character:MoveTo(Mouse.Hit.p)
+    end
+)
+    end)
+    
+
+    Section:NewKeybind("Chatspammer", "KeybindInfo", Enum.KeyCode.M, function()
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(5)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Im Tracing You Like Im Tracing Your Mom","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Im Tracing You Like Im Tracing Your Mom","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Im Tracing You Like Im Tracing Your Mom","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Im Tracing You Like Im Tracing Your Mom","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Im Tracing You Like Im Tracing Your Mom","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : I Wonder Why I Wonder How You Died","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub Has A Pro Gaming Chair","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Roses Are Red Violets Are Blue You Just Died Out Of You","All")
+        wait(1)
+        game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Extender Hub > V.j Hub","All")
+        wait(1)
+    end)
+
+local Tab = Window:NewTab("Script Gui")
+local Section = Tab:NewSection("Script Hub")
+
+Section:NewButton("Artenis Z/Softbed", "Bedwars", function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : Loaded Vape V4","All")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+end)
+
+Section:NewButton("Keyboard Gui", "For Scripts", function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : Loaded Keyboard Gui","All")
+end)
+
+Section:NewButton("Phantom Forces", "For Scripts", function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : Loaded Phatom Forces","All")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Wheeleee/AIMWARE/main/Startup"))()
+end)
+
+local Section = Tab:NewSection("Arsenal")
+
+Section:NewButton("Owl Hub", "Executes Owl Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+end)
+
+Section:NewButton("V.G Hub", "Executes V.G Hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
+
+local Section = Tab:NewSection("Combat Warriors")
+
+Section:NewButton("Nova Hub", "Executes Nova Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SussyImposterRed/Scripts/main/NOVA_HUB_SOURCE"))()
+end)
+
+Section:NewButton("Hydra Hub", "Executes Hydra Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CheeseOnGithub/cheese-hook/main/main%20hydra%20ui.lua",true))()
+end)
+
+local Section = Tab:NewSection("Zombie Attack")
+
+Section:NewButton("Zombie Hub", "Executes Zombie Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/anisnouacer1/My-Roblox-Scripts/main/Zombie%20Attack.lua"))()
+end)
+
+local Section = Tab:NewSection("Evade")
+
+Section:NewButton("Evade Hub", "Executes Evade Hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/9Strew/roblox/main/gamescripts/evade.lua'))() 
+end)
+
+local Section = Tab:NewSection("Edward The Man Eating Train")
+
+Section:NewButton("Edward Hub", "Executes Edward Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/0edward", true))()
+end)
+
+Section:NewButton("Choo Choo Hub", "Executes Choo Choo Hub", function()
+    for i,v in pairs(getgc(true)) do
+        if type(v) == "table" and rawget(v,"IntValue_MaxDamageRange") ~= nil then
+     --add other tables below this--
+            v.IntValue_PelletCount = 100
+            v.IntValue_MaxMagazine = 1000
+            v.IntValue_MaxReserve = 1000
+        end
+     end
+end)
+
+end)
+
+Section:NewButton("HIGH QUALITY", "ButtonInfo", function()
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Notification";
+            Text = "Loaded High Quality Script!";
+            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+        Duration = 16;
+
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Notification";
+            Text = "This Was Made By Hubble Bubble Scripter!";
+            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+        Duration = 16;
+
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Extender Hub V3 | HIGH QUALITY", "BloodTheme")
+
+local Tab = Window:NewTab("Versions")
+local Section = Tab:NewSection("V1")
+local Section = Tab:NewSection("V2")
+local Section = Tab:NewSection("V3 | Latest Version")
+local Section = Tab:NewSection("V4")
+local Section = Tab:NewSection("V5")
+
+local Tab = Window:NewTab("Updates")
+local Section = Tab:NewSection("Renamed 5 Buttons To Different Names")
+local Section = Tab:NewSection("Made Custom Hitbox Work")
+local Section = Tab:NewSection("Revamped Modded Guns")
+local Section = Tab:NewSection("Fixed Hitbox script")
+local Section = Tab:NewSection("MADE FE SCRIPTS")
+
+local Tab = Window:NewTab("LEAKS")
+local Section = Tab:NewSection("V5 Leaks")
+local Section = Tab:NewSection("Making More Scripts In Script Hub")
+local Section = Tab:NewSection("Renaming Alot Of Things")
+local Section = Tab:NewSection("Making Aimbot Better")
+local Section = Tab:NewSection("Making A Better Tracers")
+local Section = Tab:NewSection("Fixed Options")
+
+local Tab = Window:NewTab("Home")
+local Section = Tab:NewSection("Created By ProEternalx1")
+local Section = Tab:NewSection("yezsh did expand script")
+local Section = Tab:NewSection("Welcome To Externder Hub")
+Section:NewSlider("Walkspeed", "Walkspeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("Jump Power", "Walkspeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+
+local Tab = Window:NewTab("Flag Wars")
+local Section = Tab:NewSection("Modded Guns")
+
+Section:NewButton("Click", "ButtonInfo", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Succesfully Modded Your Guns!";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16; 
+    local mt = getrawmetatable(game)
+setreadonly(mt, false)
+local index = mt.__index
+
+local Mods = {
+    -- Guns (Spas, Sniper, etc)
+    ["RecoilMax"] = 0.1,
+    ["RecoilMin"] = 0.1,
+    ["MuzzleFlashSize0"] = 0,
+    ["MuzzleFlashSize1"] = 0,
+    ["FlashBrightness"] = 0,
+    ["AmmoCapacity"] = 9e9,
+    ["ShotCooldown"] = 0,
+    ["CurrentAmmo"] = 9e9,
+    ["BulletSpeed"] = 9e9,
+    ["FireMode"] = "Automatic",
+    ["GravityFactor"] = 0,
+    ["MaxSpread"] = 0,
+    ["MinSpread"] = 0,
+    ["HitDamage"] = 500,
+    ["NumProjectiles"] = 1,
+    -- Melee (Shovel, Sword, etc)
+    ["Cooldown"] = 0.5,
+    ["Value"] = 0.5,
+    ["DirtDamage"] = 500000,
+    ["SwingCooldown"] = 0.5,
+    ["HitRate"] = 0.5,
+}
+
+mt.__index = function(a,b)
+    if Mods[tostring(a)] then
+        if tostring(b) == "Value" then
+            return Mods[tostring(a)]
+        end
+    end
+    return index(a,b)
+end
+end)
+
+local Section = Tab:NewSection("Prison Hub Made By ProEternalx1")
+Section:NewButton("Click", "Prison", function()
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Kriff Ziz | Made By ProEternalx1 |Contact Me If theres Problems", "Midnight")
+
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("local player")
+Section:NewLabel("Walkspeed")
+Section:NewSlider("Walkspeed", "Walkspeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewLabel("Jump Power")
+Section:NewSlider("JumpPower", "JumpPower", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Section = Tab:NewSection("Fly Script | E To Disable Flight!")
+Section:NewButton("Fly", "Fly Around", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/rFpi04KR"))()
+end)
+
+local Tab = Window:NewTab("Misc")
+
+local Section = Tab:NewSection("Admin | Gives Admin!")
+Section:NewButton("Get Admin!", "Get Yourself A Free Admin!", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+end)
+
+
+local Section = Tab:NewSection("Noclip! | Reset To Stop Noclip!")
+Section:NewButton("noclip", "walk anywhere without getting blocked by a wall!", function()
+    local StealthMode = true -- If game has an anticheat that checks the logs
+
+local Indicator
+
+if not StealthMode then
+    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+    print("NOCLIP: Press E to Activate")
+    Indicator = Instance.new("TextLabel", ScreenGui)
+    Indicator.AnchorPoint = Vector2.new(0, 1)
+    Indicator.Position = UDim2.new(0, 0, 1, 0)
+    Indicator.Size = UDim2.new(0, 200, 0, 50)
+    Indicator.BackgroundTransparency = 1
+    Indicator.TextScaled = true
+    Indicator.TextStrokeTransparency = 0
+    Indicator.TextColor3 = Color3.new(0, 0, 0)
+    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+    Indicator.Text = "Noclip: Enabled"
+end
+
+local noclip = false
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+    if key == "O" then
+        noclip = not noclip
+
+        if not StealthMode then
+            Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+        end
+    end
+end)
+
+while true do
+    player = game.Players.LocalPlayer
+    character = player.Character
+
+    if noclip then
+        for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                end
+            end)
+        end
+    end
+
+    game:GetService("RunService").Stepped:wait()
+end
+end)
+
+local Section = Tab:NewSection("Teleport! | Reset To Stop Noclip!")
+Section:NewButton("tptool", "walk anywhere without getting blocked by a wall!", function()
+    mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Equip to Click TP"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+local Tab = Window:NewTab("Weapons")
+local Section = Tab:NewSection("local weapons")
+Section:NewButton("Get All Weapons | Updated! NEW/BETTER VERSION", "Gets Every Weapons", function()
+    for i,v in pairs(Workspace.Prison_ITEMS.giver:GetChildren()) do
+        lol = Workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+        print(lol)
+        end
+        end)
+
+local Section = Tab:NewSection("Mod")
+
+Section:NewLabel("AK-47")
+
+Section:NewButton("MOD AK-47", "Mod Your AK-47!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("AK-47")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+ 
+Section:NewLabel("M9")
+
+Section:NewButton("MOD M9", "Mod Your M9!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("M9")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+Section:NewLabel("Remington 870")
+
+Section:NewButton("MOD Remington 870", "Mod Your Remington 870!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Remington 870")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+local Tab = Window:NewTab("Updates!")
+
+local Section = Tab:NewSection("Update")
+
+Section:NewLabel("Added Admin Commands! | Click F9 To Open Script! | credits to the owners!")
+
+Section:NewLabel("Added Modded Guns! | It Will Mod You Gun Yeah")
+
+Section:NewLabel("Added Misc! | I Added Misc Cuz Yes")
+
+Section:NewLabel("Changed The Color Script! | I Changed The Color Because Pro")
+
+Section:NewLabel("Added Weapons! | I Added Weapons So Its Better")
+
+Section:NewLabel("Added Updates! | dont care im adding updates")
+
+Section:NewLabel("Added Credits! | dont care im adding credits also")
+
+local Tab = Window:NewTab("Credits!")
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Prison Hub | Made By ProEternalx1 |Contact Me If theres Problems", "Midnight")
+
+local Tab = Window:NewTab("Player")
+local Section = Tab:NewSection("local player")
+Section:NewLabel("Walkspeed")
+Section:NewSlider("Walkspeed", "Walkspeed", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewLabel("Jump Power")
+Section:NewSlider("JumpPower", "JumpPower", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+local Section = Tab:NewSection("Fly Script | E To Disable Flight!")
+Section:NewButton("Fly", "Fly Around", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/rFpi04KR"))()
+end)
+
+local Tab = Window:NewTab("Misc")
+
+local Section = Tab:NewSection("Admin | Gives Admin!")
+Section:NewButton("Get Admin!", "Get Yourself A Free Admin!", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/PrisonLife'),true))()
+end)
+
+
+local Section = Tab:NewSection("Noclip! | Reset To Stop Noclip!")
+Section:NewButton("noclip", "walk anywhere without getting blocked by a wall!", function()
+    local StealthMode = true -- If game has an anticheat that checks the logs
+
+local Indicator
+
+if not StealthMode then
+    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+    print("NOCLIP: Press E to Activate")
+    Indicator = Instance.new("TextLabel", ScreenGui)
+    Indicator.AnchorPoint = Vector2.new(0, 1)
+    Indicator.Position = UDim2.new(0, 0, 1, 0)
+    Indicator.Size = UDim2.new(0, 200, 0, 50)
+    Indicator.BackgroundTransparency = 1
+    Indicator.TextScaled = true
+    Indicator.TextStrokeTransparency = 0
+    Indicator.TextColor3 = Color3.new(0, 0, 0)
+    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+    Indicator.Text = "Noclip: Enabled"
+end
+
+local noclip = false
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+    if key == "e" then
+        noclip = not noclip
+
+        if not StealthMode then
+            Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+        end
+    end
+end)
+
+while true do
+    player = game.Players.LocalPlayer
+    character = player.Character
+
+    if noclip then
+        for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                end
+            end)
+        end
+    end
+
+    game:GetService("RunService").Stepped:wait()
+end
+end)
+
+local Section = Tab:NewSection("Teleport! | Reset To Stop Noclip!")
+Section:NewButton("tptool", "walk anywhere without getting blocked by a wall!", function()
+    mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Equip to Click TP"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+local Tab = Window:NewTab("Weapons")
+local Section = Tab:NewSection("local weapons")
+Section:NewButton("Get All Weapons | Updated", "Gets Every Weapons", function()
+    for i,v in pairs(Workspace.Prison_ITEMS.giver:GetChildren()) do
+        lol = Workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+        print(lol)
+        end
+        end)
+
+local Section = Tab:NewSection("Mod")
+
+Section:NewLabel("AK-47")
+
+Section:NewButton("MOD AK-47", "Mod Your AK-47!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("AK-47")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+ 
+Section:NewLabel("M9")
+
+Section:NewButton("MOD M9", "Mod Your M9!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("M9")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 1
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+Section:NewLabel("Remington 870")
+
+Section:NewButton("MOD Remington 870", "Mod Your Remington 870!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Remington 870")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 45000
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+Section:NewLabel("Taser")
+
+Section:NewButton("MOD Taser", "Mod Your Taser!", function()
+    local player = game:GetService("Players").LocalPlayer
+local gun = player.Backpack:FindFirstChild("Taser")
+local sM = require(gun:FindFirstChild("GunStates"))
+sM["Damage"] = 40
+sM["MaxAmmo"] = 9999991
+sM["StoredAmmo"] = 9999991
+sM["FireRate"] = 0.05
+sM["AmmoPerClip"] = 9999991
+sM["Range"] = 5000
+sM["ReloadTime"] = 0.05
+sM["Bullets"] = 1
+sM["AutoFire"] = true
+end)
+
+local Tab = Window:NewTab("Updates!")
+
+local Section = Tab:NewSection("Update")
+
+Section:NewLabel("Added Admin Commands! | Click F9 To Open Script! | credits to the owners!")
+
+Section:NewLabel("Added Modded Guns! | It Will Mod You Gun Yeah")
+
+Section:NewLabel("Added Misc! | I Added Misc Cuz Yes")
+
+Section:NewLabel("Changed The Color Script! | I Changed The Color Because Pro")
+
+Section:NewLabel("Added Weapons! | I Added Weapons So Its Better")
+
+Section:NewLabel("Added Updates! | dont care im adding updates")
+
+Section:NewLabel("Added Credits! | dont care im adding credits also")
+
+local Tab = Window:NewTab("Credits!")
+
+local Section = Tab:NewSection("Credits")
+
+Section:NewLabel("Credits For The Owner Of Admin CMD")
+
+local Tab = Window:NewTab("Date And Time!")
+
+local Section = Tab:NewSection("Time And Date")
+
+Section:NewLabel("1/18/2023")
+
+end)
+
+
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Expand Your Hitbox")
+
+Section:NewButton("Click", "ButtonInfo", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Expanded Your Hitbox XD";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+
+_G.HeadSize = 15 _G.Disabled = true game:GetService('RunService').RenderStepped:connect(function() if _G.Disabled then for i,v in next, game:GetService('Players'):GetPlayers() do if v.Name ~= game:GetService('Players').LocalPlayer.Name then pcall(function() v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize) v.Character.HumanoidRootPart.Transparency = 0.9 v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Red") v.Character.HumanoidRootPart.Material = "Neon" v.Character.HumanoidRootPart.CanCollide = false end) end end end end)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Done!","All")
+end)
+
+
+local Section = Tab:NewSection("Mouse Fe Fling")
+Section:NewButton("Click", "ButtonInfo", function()
+    for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+        if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then
+        game:GetService("RunService").Heartbeat:connect(function()
+        v.Velocity = Vector3.new(0,-30,0)
+        wait(0.5)
+        end)
+        end
+        end
+         
+        function rmesh(HatName)
+        for _,mesh in next, workspace[game.Players.LocalPlayer.Name][HatName]:GetDescendants() do
+        if mesh:IsA("Mesh") or mesh:IsA("SpecialMesh") then
+        mesh:Remove()
+        end
+        end
+        end
+         
+        function create(part, parent, position, rotation)
+        part.AccessoryWeld:Remove()
+        Instance.new("Attachment",part)
+        Instance.new("AlignPosition",part)
+        Instance.new("AlignOrientation",part)
+        Instance.new("Attachment",parent)
+        part.AlignPosition.Attachment0 = part.Attachment
+        part.AlignOrientation.Attachment0 = part.Attachment
+        part.AlignPosition.Attachment1 = parent.Attachment
+        part.AlignOrientation.Attachment1 = parent.Attachment
+        part.Attachment.Position = position
+        part.Attachment.Orientation = rotation
+        part.AlignPosition.Responsiveness = 200
+        part.AlignOrientation.Responsiveness = 200
+        part.AlignPosition.MaxForce = 9999999
+        part.AlignPosition.RigidityEnabled = false
+        part.AlignOrientation.MaxTorque = 9999999
+        end
+         
+        local LocalPlayer = game.Players.LocalPlayer
+         
+        function eswait(num)
+        if num == 0 or num == nil then
+        game:service("RunService").Stepped:wait(0)
+        else
+        for i = 0, num do
+        game:service("RunService").Stepped:wait(0)
+        end
+        end
+        end
+         
+        function makepart(hat,part)
+        Instance.new('Part',workspace[LocalPlayer.Name])
+        workspace[LocalPlayer.Name].Part.Name = 'lerp'..hat
+        workspace[LocalPlayer.Name]['lerp'..hat].CanCollide = false
+        workspace[LocalPlayer.Name]['lerp'..hat].Size = workspace[LocalPlayer.Name][hat].Handle.Size
+        workspace[LocalPlayer.Name]['lerp'..hat].Transparency = 1
+        Instance.new('Weld',workspace[LocalPlayer.Name]['lerp'..hat])
+        create(workspace[LocalPlayer.Name][hat].Handle,workspace[LocalPlayer.Name]['lerp'..hat],Vector3.new(),Vector3.new())
+        workspace[LocalPlayer.Name]['lerp'..hat].Weld.Part0 = workspace[LocalPlayer.Name]['lerp'..hat]
+        workspace[LocalPlayer.Name]['lerp'..hat].Weld.Part1 = workspace[LocalPlayer.Name][part]
+        workspace[LocalPlayer.Name]['lerp'..hat].Weld.C0 = workspace[LocalPlayer.Name]['lerp'..hat].CFrame:inverse() * workspace[LocalPlayer.Name][part].CFrame * CFrame.new(0,0,0) * CFrame.Angles(math.rad(0),math.rad(0),0)
+        end
+         
+        local hatsine = 0
+         
+        local hatchange = 1
+         
+        function clerp(hat,ppx,ppy,pppz,rrrx,rrry,rrz,lppx,lppy,lpppz,lrrrx,lrrry,lrrz,speed)
+        coroutine.wrap(function()
+        while true do
+        hatsine = hatsine + speed
+        workspace[game.Players.LocalPlayer.Name]['lerp'..hat].Weld.C0 = workspace[game.Players.LocalPlayer.Name]['lerp'..hat].Weld.C0:lerp(CFrame.new(ppx + lppx * math.sin(hatsine/11), ppy + lppy * math.sin(hatsine/11), pppz + lpppz * math.sin(hatsine/11)) * CFrame.Angles(math.rad(rrrx + lrrrx * math.sin(hatsine/11)), math.rad(rrry + lrrry * math.sin(hatsine/11)), math.rad(rrz + lrrz * math.sin(hatsine/11))),0.1)
+        eswait()
+        end
+        end)()
+        end
+         
+        local player = game.Players.LocalPlayer
+        local character1 = player.Character
+        local mouse = player:GetMouse()
+         
+        local fakebody = Instance.new("Part", character1)
+        fakebody.Transparency = 1
+        fakebody.Anchored = true
+        fakebody.CanCollide = false
+        fakebody.Position = character1.Head.Position
+        fakebody.Name = "FPart"
+        wait()
+        _G.ReanimationType = "PDeath" --PDeath, Fling, Simple
+        _G.Velocity = Vector3.new(36,0,0)
+        _G.FlingBlock = true
+        _G.FlingBlockTransparency = 1
+        _G.HighlightFlingBlock = true
+        _G.FlingBlockPosition = "FPart"
+        _G.HighlightFlingBlockColor = Color3.fromRGB(255,0,0)
+         
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/GelatekWasTaken/Reanimation.lua/main/Main/Main.lua"))()
+        wait(1)
+         
+        mouse.KeyDown:connect(function(key)
+            if key == "e" then
+            character1.Reanimate.FPart.Position = mouse.Hit.p
+            end
+        end)
+         
+        rmesh('Pink Hair')
+        rmesh('Kate Hair')
+         
+        makepart('Kate Hair','Right Arm')
+        clerp('Kate Hair',0,1,0,0,0,0,0,0,0,0,0,0,1)
+         
+        makepart('Pink Hair','Right Arm')
+        clerp('Pink Hair',0,0.5,-2,-90,0,0,0,0,0,0,0,0,1)
+         
+        local Scale = game.Players.LocalPlayer.Character.Torso.Size.X/2*(game.Players.LocalPlayer.Character.Torso:FindFirstChild("ScaleInserted") ~= nil and game.Players.LocalPlayer.Character.Torso:FindFirstChild("ScaleInserted").Scale.Z or 1)*0.8
+        local Speed = 20*Scale
+        local Gravity = 0.1
+         
+        local Player = game.Players.LocalPlayer
+        local Character = Player.Character.Reanimate
+        local Humanoid = Character.Humanoid
+        Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll,false)
+        local Torso = Character.HumanoidRootPart
+        local Mouse = game.Players.LocalPlayer:GetMouse()
+        local RenderStepped = game:GetService("RunService").RenderStepped
+        local Camera = Workspace.CurrentCamera
+        Camera:ClearAllChildren()
+        local Model = Instance.new("Model",Character)
+        local IgnoreList = {Character,Workspace.Terrain}
+         
+        local Part0Joint = CFrame.new(Vector3.new(1,0.75,0)*Scale*1.25)
+        local Part1Joint = CFrame.new(Vector3.new(-0.5,0.75,0)*Scale*1.25)
+        local RotationOffset = CFrame.Angles(math.rad(90),math.rad(0),0)
+        local Gangster = false
+         
+        local Part0JointHead = CFrame.new(Vector3.new(0,1,0)*Scale*1.25)
+        local Part1JointHead = CFrame.new(Vector3.new(0,-0.5,0)*Scale*1.25)
+        local RotationOffsetHead = CFrame.Angles(0,0,0)
+         
+        local Handle = Instance.new("Part",Model)
+        Handle.CanCollide = false
+        Handle.Name = "Handle"
+        Handle.Position = Vector3.new(0,100,0)
+        Handle:BreakJoints()
+        Handle.FormFactor = "Custom"
+        Handle.Size = Vector3.new(0.2,0.2,0.2)
+        Handle.TopSurface = "SmoothNoOutlines"
+        Handle.BottomSurface = "SmoothNoOutlines"
+        Handle.FrontSurface = "SmoothNoOutlines"
+        Handle.BackSurface = "SmoothNoOutlines"
+        Handle.RightSurface = "SmoothNoOutlines"
+        Handle.LeftSurface = "SmoothNoOutlines"
+        Handle.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Handle)
+        Mesh.Scale = Vector3.new(0.25,1,0.4) / 0.2 * Scale
+        local HandleWeld = Instance.new("Motor6D")
+        HandleWeld.Part0 = Character["Right Arm"]
+        HandleWeld.Part1 = Handle
+        HandleWeld.C0 = CFrame.new(Vector3.new(0,-1,0)*Scale) * CFrame.Angles(math.rad(-105),0,0)
+        HandleWeld.Parent = Handle
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("CylinderMesh",Part)
+        Mesh.Scale = Vector3.new(0.07,0.2,0.07) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(-0.115,-0.475,-0.190)*Scale) * CFrame.Angles(0,0,0)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("CylinderMesh",Part)
+        Mesh.Scale = Vector3.new(0.07,0.2,0.07) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0.115,-0.475,0.190)*Scale) * CFrame.Angles(0,0,0)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("CylinderMesh",Part)
+        Mesh.Scale = Vector3.new(0.07,0.2,0.07) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(-0.115,-0.475,0.190)*Scale) * CFrame.Angles(0,0,0)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("CylinderMesh",Part)
+        Mesh.Scale = Vector3.new(0.07,0.2,0.07) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0.115,-0.475,-0.190)*Scale) * CFrame.Angles(0,0,0)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.23,0.2,0.1) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0,-0.475,-0.175)*Scale) * CFrame.Angles(0,0,0)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.23,0.2,0.1) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0,-0.475,0.175)*Scale) * CFrame.Angles(0,0,0)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.1,0.2,0.38) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(-0.1,-0.475,0)*Scale) * CFrame.Angles(0,0,0)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.1,0.2,0.38) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0.1,-0.475,0)*Scale) * CFrame.Angles(0,0,0)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.1,0.3,0.05) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.Angles(math.rad(15),0,0) * CFrame.new(Vector3.new(0,0.25,-0.75)*Scale) * CFrame.Angles(math.rad(-10),0,0)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.1,0.05,0.625) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.Angles(math.rad(15),0,0) * CFrame.new(Vector3.new(0,0.1,-0.435)*Scale)
+        PartWeld.Parent = Part
+         
+        for i = 0,80,10 do
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.25,0.15,0.03555*2) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0,0.15,0.315)*Scale) * CFrame.Angles(math.rad(i-65),0,0) * CFrame.new(Vector3.new(0,0.2,0)*Scale)
+        PartWeld.Parent = Part
+        end
+         
+        local Barrel = Instance.new("Part",Model)
+        Barrel.CanCollide = false
+        Barrel.Position = Vector3.new(0,100,0)
+        Barrel:BreakJoints()
+        Barrel.FormFactor = "Custom"
+        Barrel.Size = Vector3.new(0.2,0.2,0.2)
+        Barrel.TopSurface = "SmoothNoOutlines"
+        Barrel.BottomSurface = "SmoothNoOutlines"
+        Barrel.FrontSurface = "SmoothNoOutlines"
+        Barrel.BackSurface = "SmoothNoOutlines"
+        Barrel.RightSurface = "SmoothNoOutlines"
+        Barrel.LeftSurface = "SmoothNoOutlines"
+        Barrel.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Barrel)
+        Mesh.Scale = Vector3.new(0.25,0.2,2) / 0.2 * Scale
+        local BarrelWeld = Instance.new("Motor6D")
+        BarrelWeld.Part0 = Handle
+        BarrelWeld.Part1 = Barrel
+        BarrelWeld.C0 = CFrame.Angles(math.rad(15),0,0) * CFrame.new(Vector3.new(0,0.5,-0.7)*Scale)
+        BarrelWeld.Parent = Barrel
+         
+        local Barrel1 = Barrel
+         
+        local Barrel2 = Instance.new("Part",Model)
+        Barrel2.CanCollide = false
+        Barrel2.Position = Vector3.new(0,100,0)
+        Barrel2:BreakJoints()
+        Barrel2.FormFactor = "Custom"
+        Barrel2.Size = Vector3.new(0.2,0.2,0.2)
+        Barrel2.TopSurface = "SmoothNoOutlines"
+        Barrel2.BottomSurface = "SmoothNoOutlines"
+        Barrel2.FrontSurface = "SmoothNoOutlines"
+        Barrel2.BackSurface = "SmoothNoOutlines"
+        Barrel2.RightSurface = "SmoothNoOutlines"
+        Barrel2.LeftSurface = "SmoothNoOutlines"
+        Barrel2.BrickColor = BrickColor.new("Really black")
+        local Mesh = Instance.new("BlockMesh",Barrel2)
+        Mesh.Scale = Vector3.new(0.25,0.25,2) / 0.2 * Scale
+        local Barrel2Weld = Instance.new("Motor6D")
+        Barrel2Weld.Part0 = Barrel
+        Barrel2Weld.Part1 = Barrel2
+        Barrel2Weld.C0 = CFrame.new(Vector3.new(0,0.225,0)*Scale)
+        Barrel2Weld.Parent = Barrel2
+         
+        local RealBarrel = Instance.new("Part",Model)
+        RealBarrel.CanCollide = false
+        RealBarrel.Position = Vector3.new(0,100,0)
+        RealBarrel:BreakJoints()
+        RealBarrel.FormFactor = "Custom"
+        RealBarrel.Size = Vector3.new(0.2,0.2,0.2)
+        RealBarrel.TopSurface = "SmoothNoOutlines"
+        RealBarrel.BottomSurface = "SmoothNoOutlines"
+        RealBarrel.FrontSurface = "SmoothNoOutlines"
+        RealBarrel.BackSurface = "SmoothNoOutlines"
+        RealBarrel.RightSurface = "SmoothNoOutlines"
+        RealBarrel.LeftSurface = "SmoothNoOutlines"
+        RealBarrel.BrickColor = BrickColor.new("Dark grey metallic")
+        local Mesh = Instance.new("CylinderMesh",RealBarrel)
+        Mesh.Scale = Vector3.new(0.2,2,0.2) / 0.2 * Scale
+        local RealBarrelWeld = Instance.new("Motor6D")
+        RealBarrelWeld.Part0 = Barrel
+        RealBarrelWeld.Part1 = RealBarrel
+        RealBarrelWeld.C0 = CFrame.new(Vector3.new(0,0.1,-0.01)*Scale) * CFrame.Angles(math.rad(-90),0,0)
+        RealBarrelWeld.Parent = RealBarrel
+         
+        for i = 1,75,15 do
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.05,0.065,0.05) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Handle
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0,0.525,-0.515)*Scale) * CFrame.Angles(math.rad(i),0,0) * CFrame.new(Vector3.new(0,0,0.2)*Scale)
+        PartWeld.Parent = Part
+        end
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Really black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.05,0.11,0.1) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Barrel2
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0.06,0.135,0.925)*Scale)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Really black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.05,0.11,0.1) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Barrel2
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(-0.06,0.135,0.925)*Scale)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Really black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.025,0.1,0.1) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Barrel2
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0,0.135,-0.925)*Scale)
+        PartWeld.Parent = Part
+         
+        local Part = Instance.new("Part",Model)
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.Transparency = 1
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Really black")
+        local Mesh = Instance.new("BlockMesh",Part)
+        Mesh.Scale = Vector3.new(0.1,0.1,0.1) / 0.2 * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = Barrel
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0,0,-5)*Scale)
+        PartWeld.Parent = Part
+         
+        local Light = Instance.new("PointLight",Part)
+        Light.Color = BrickColor.new("Gold").Color
+        Light.Enabled = true
+        Light.Shadows = true
+        Light.Brightness = 0
+        Light.Range = 6
+         
+        local Part = Instance.new("Part",Model)
+        Part.Material = "Neon"
+        Part.CanCollide = false
+        Part.Position = Vector3.new(0,100,0)
+        Part:BreakJoints()
+        Part.FormFactor = "Custom"
+        Part.Size = Vector3.new(0.2,0.2,0.2)
+        Part.TopSurface = "SmoothNoOutlines"
+        Part.BottomSurface = "SmoothNoOutlines"
+        Part.FrontSurface = "SmoothNoOutlines"
+        Part.BackSurface = "SmoothNoOutlines"
+        Part.RightSurface = "SmoothNoOutlines"
+        Part.LeftSurface = "SmoothNoOutlines"
+        Part.BrickColor = BrickColor.new("Bright yellow")
+        Part.Transparency = 0.25
+        local RecoilMesh = Instance.new("SpecialMesh",Part)
+        RecoilMesh.MeshType = "FileMesh"
+        RecoilMesh.MeshId = "http://www.roblox.com/Asset/?id=1323306"
+        RecoilMesh.TextureId = "http://www.roblox.com/Asset/?id=98896228"
+        RecoilMesh.Scale = Vector3.new(0.175,0,0.175) * Scale
+        local PartWeld = Instance.new("Motor6D")
+        PartWeld.Part0 = RealBarrel
+        PartWeld.Part1 = Part
+        PartWeld.C0 = CFrame.new(Vector3.new(0,0.95,0)*Scale)
+        PartWeld.Parent = Part
+         
+        function ShootBullet(Target,barrel)
+        local barrel = barrel or Barrel
+        local Bullet = Instance.new("Part",Workspace)
+        Barrel.CanCollide = false
+        Bullet.FormFactor = "Custom"
+        Bullet.Size = Vector3.new(0.2,0.2,5)*Scale
+        Bullet.TopSurface = "Smooth"
+        Bullet.BottomSurface = "Smooth"
+        Bullet.Anchored = true
+        Bullet.CanCollide = false
+        Bullet.CFrame = CFrame.new((barrel.CFrame*CFrame.new(0,0,-barrel.Size.Z*barrel.Mesh.Scale.Z/2)).p,Target)*CFrame.new(0,0,-Bullet.Size.Z/2)
+        Bullet.Transparency = 0.1
+        Bullet.BrickColor = BrickColor.new("Gold")
+        --[[local Mesh = Instance.new("SpecialMesh",Bullet)
+        Mesh.MeshType = "FileMesh"
+        Mesh.Scale = Vector3.new(0.5,0.5,0.2)
+        Mesh.MeshId = "http://www.roblox.com/asset/?id=2697549"
+        --Mesh.TextureId = "http://www.roblox.com/asset/?id=2697544"]]
+        local Mesh = Instance.new("BlockMesh",Bullet)
+        Mesh.Scale = Vector3.new(0.2,0.2,5)*Scale/Bullet.Size
+        IgnoreList[#IgnoreList+1] = Bullet
+        RenderStepped:wait()
+        for i = Speed,1000,Speed do -- Loop to do the bullet movement and stuff.
+        local ray,Hit,Pos,SurfaceNormal;
+        ray = Ray.new(Bullet.Position,((Bullet.CFrame*CFrame.Angles(math.rad(-Gravity),0,0)*CFrame.new(0,0,-Speed)).p-Bullet.Position).unit*Speed)
+        Hit,Pos,SurfaceNormal = Workspace:FindPartOnRayWithIgnoreList(ray,IgnoreList)
+        Bullet.CFrame = Bullet.CFrame*CFrame.Angles(math.rad(-Gravity),0,0)*CFrame.new(0,0,-Speed)
+        if Hit ~= nil then
+        local Hum = Hit.Parent:FindFirstChild("Humanoid") or Hit.Parent.Parent:FindFirstChild("Humanoid") or (Hit.Parent.Parent.Parent ~= nil and Hit.Parent.Parent.Parent:FindFirstChild("Humanoid"))
+        if Hum ~= nil then
+        Hum:TakeDamage((((Gangster and math.random(0,0) or math.random(0,0))*Scale)/100)*Hum.MaxHealth)
+        end
+        break
+        end
+        RenderStepped:wait()
+        end
+        Bullet:Destroy()
+        end
+         
+        Mouse.Button1Down:connect(function()
+        if not Down and not DB then
+        Down = true
+        while Down do
+        if Humanoid.Health == 0 then break end
+        if not DB then
+        DB = true
+        local Sound = Instance.new("Sound",Barrel)
+        Sound.SoundId = "http://www.roblox.com/Asset/?id=165946426" -- 132373574
+        Sound.Volume = 5*Scale
+        Sound.Pitch = (math.random(70,110)/100)/((Scale < 0.25 and 0.25) or (Scale > 4 and 4) or Scale)
+        Sound:Play()
+        Spawn(function()
+        ShootBullet(Mouse.Hit.p,Barrel1)
+        end)
+        RecoilMesh.VertexColor = Vector3.new(1,math.random(160,245)/255,20/255)
+        PartWeld.C0 = PartWeld.C0 * CFrame.Angles(0,math.rad(math.random(-40,40)),0)
+        local Shell = Instance.new("Part",Workspace)
+        Shell.FormFactor = "Custom"
+        Shell.BrickColor = BrickColor.new("Bright yellow")
+        Shell.Size = Vector3.new(0.2,0.5,0.2)*Scale
+        Shell.CFrame = Barrel.CFrame*CFrame.new(0.5,0.5,0)*CFrame.Angles(math.rad(-90),0,0)
+        Shell.Velocity = ((Barrel.CFrame*CFrame.new(5,0,math.random(-2,2))).p-Barrel.CFrame.p)*5*Scale
+        local Mesh = Instance.new("CylinderMesh",Shell)
+        Mesh.Scale = Vector3.new(0.2,0.5,0.2)*Scale/Shell.Size
+        Spawn(function()
+        wait(5)
+        Shell:Destroy()
+        end)
+        for i = 1,20,7.5 do
+        character1.Reanimate.FPart.Position = mouse.Hit.p
+        RotationOffset = RotationOffset*CFrame.Angles(math.rad(7.5),0,0)
+        Part1Joint = Part1Joint*CFrame.new(Vector3.new(0,-0.15,0)*Scale)
+        Barrel2Weld.C0 = Barrel2Weld.C0*CFrame.new(Vector3.new(0,0,0.15)*Scale)
+        Light.Brightness = Light.Brightness+38
+        RecoilMesh.Scale = RecoilMesh.Scale+(Vector3.new(0,0.375,0)*Scale)
+        RenderStepped:wait()
+        end
+        wait(0.02)
+        for i = 1,20,3.75 do
+        character1.Reanimate.FPart.Position = mouse.Hit.p
+        RotationOffset = RotationOffset*CFrame.Angles(math.rad(-3.75),0,0)
+        Part1Joint = Part1Joint*CFrame.new(Vector3.new(0,0.075,0)*Scale)
+        Barrel2Weld.C0 = Barrel2Weld.C0*CFrame.new(Vector3.new(0,0,-0.075)*Scale)
+        Light.Brightness = Light.Brightness-19
+        RecoilMesh.Scale = RecoilMesh.Scale+(Vector3.new(0,-0.1875,0)*Scale)
+        RenderStepped:wait()
+        end
+        wait(0.02)
+        DB = false
+        end
+        end
+        end
+        end)
+         
+        Mouse.Button1Up:connect(function()
+        Down = false
+        end)
+         
+        Mouse.KeyDown:connect(function(Key)
+        if Key:lower() == "g" and not DB then
+        DB = true
+        if Gangster == true then
+        for i = 1,70,5 do
+        RotationOffset = RotationOffset*CFrame.Angles(0,math.rad(-5),0)
+        RenderStepped:wait()
+        end
+        Gangster = false
+        else
+        for i = 1,70,5 do
+        RotationOffset = RotationOffset*CFrame.Angles(0,math.rad(5),0)
+        RenderStepped:wait()
+        end
+        Gangster = true
+        end
+        DB = false
+        end
+        end)
+         
+        local Weld = Instance.new("Weld")
+        Weld.Part0 = Torso
+        Weld.Part1 = Character["Right Arm"]
+        Weld.Parent = Torso
+         
+        local Weld2 = Instance.new("Weld")
+        Weld2.Part0 = Torso
+        Weld2.Part1 = Character.Head
+        Weld2.Parent = Torso
+         
+        local RA = Character["Right Arm"]
+         
+        game:GetService("RunService"):BindToRenderStep("Pistol",Enum.RenderPriority.Character.Value,function()
+        local Point = Torso.CFrame:vectorToObjectSpace(Mouse.Hit.p-Torso.CFrame.p)
+        if Point.Z > 0 then
+        if Point.X > 0 then
+        Torso.CFrame = CFrame.new(Torso.Position,Vector3.new(Mouse.Hit.X,Torso.Position.Y,Mouse.Hit.Z))*CFrame.Angles(0,math.rad(90),0)
+        elseif Point.X < 0 then
+        Torso.CFrame = CFrame.new(Torso.Position,Vector3.new(Mouse.Hit.X,Torso.Position.Y,Mouse.Hit.Z))*CFrame.Angles(0,math.rad(-90),0)
+        end
+        end
+         
+        local CFr = (Torso.CFrame*Part0Joint):toObjectSpace(CFrame.new((Torso.CFrame*Part0Joint).p,Mouse.Hit.p))--RayEnd))
+        Weld.C0 = Part0Joint * (CFr-CFr.p) * RotationOffset
+        Weld.C1 = Part1Joint
+        Weld.Part0 = Torso
+        Weld.Part1 = RA
+        local CFr = (Torso.CFrame*Part0JointHead):toObjectSpace(CFrame.new((Torso.CFrame*Part0JointHead).p,Mouse.Hit.p))--RayEnd))
+        Weld2.C0 = Part0JointHead * (CFr-CFr.p) * RotationOffsetHead
+        Weld2.C1 = Part1JointHead
+        Weld2.Part0 = Torso
+        Weld2.Part1 = Character.Head
+        local Last = Scale
+        Scale = game.Players.LocalPlayer.Character.Torso.Size.X/2*(game.Players.LocalPlayer.Character.Torso:FindFirstChild("ScaleInserted") ~= nil and game.Players.LocalPlayer.Character.Torso:FindFirstChild("ScaleInserted").Scale.Z or 1)*0.8
+        Speed = 20*Scale
+        if Scale ~= Last then
+        Part0Joint = CFrame.new(Vector3.new(1,0.75,0)*Scale*1.25)
+        Part1Joint = CFrame.new(Vector3.new(-0.5,0.75,0)*Scale*1.25)
+        Part0JointHead = CFrame.new(Vector3.new(0,1,0)*Scale*1.25)
+        Part1JointHead = CFrame.new(Vector3.new(0,-0.5,0)*Scale*1.25)
+        end
+        end)
+         
+         
+end)
+
+local Section = Tab:NewSection("ESP")
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "Notification";
+    Text = "Loaded ESP now you can see players trough walls";
+    Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+Duration = 16;
+
+Section:NewButton("Click", "See Players", function()
+    getgenv().enabled = true --Toggle on/off
+getgenv().filluseteamcolor = true --Toggle fill color using player team color on/off
+getgenv().outlineuseteamcolor = true --Toggle outline color using player team color on/off
+getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
+getgenv().outlinecolor = Color3.new(1, 1, 1) --Change outline color, no need to edit if using team color
+getgenv().filltrans = 0.7 --Change fill transparency
+getgenv().outlinetrans = 0.3 --Change outline transparency
+ 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
+end)
+
+local Section = Tab:NewSection("Tp To Random User")
+Section:NewButton("Click", "See Players", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Dont Click This Its Not Working";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Soz its not working";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "This Is Not Working Rn XD";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+end)
+
+local Section = Tab:NewSection("Custom Hitbox")
+
+Section:NewSlider("Custom Hitbox", "SliderInfo", 110, 0, function(s) -- 110 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid._G.HeadSize = s
+end)
+
+local Section = Tab:NewSection("Universal Aimbot")
+
+Section:NewButton("Aimbot", "ButtonInfo", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Loaded Tracers";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+
+    local dwCamera = workspace.CurrentCamera
+local dwRunService = game:GetService("RunService")
+local dwUIS = game:GetService("UserInputService")
+local dwEntities = game:GetService("Players")
+local dwLocalPlayer = dwEntities.LocalPlayer
+local dwMouse = dwLocalPlayer:GetMouse()
+
+local settings = {
+    Aimbot = true,
+    Aiming = false,
+    Aimbot_AimPart = "Head",
+    Aimbot_TeamCheck = true,
+    Aimbot_Draw_FOV = true,
+    Aimbot_FOV_Radius = 60,
+    Aimbot_FOV_Color = Color3.fromRGB(255,255,255)
+}
+
+local fovcircle = Drawing.new("Circle")
+fovcircle.Visible = settings.Aimbot_Draw_FOV
+fovcircle.Radius = settings.Aimbot_FOV_Radius
+fovcircle.Color = settings.Aimbot_FOV_Color
+fovcircle.Thickness = 1
+fovcircle.Filled = false
+fovcircle.Transparency = 1
+
+fovcircle.Position = Vector2.new(dwCamera.ViewportSize.X / 2, dwCamera.ViewportSize.Y / 2)
+
+dwUIS.InputBegan:Connect(function(i)
+    if i.UserInputType == Enum.UserInputType.MouseButton2 then
+        settings.Aiming = true
+    end
+end)
+
+dwUIS.InputEnded:Connect(function(i)
+    if i.UserInputType == Enum.UserInputType.MouseButton2 then
+        settings.Aiming = false
+    end
+end)
+
+dwRunService.RenderStepped:Connect(function()
+    
+    local dist = math.huge
+    local closest_char = nil
+
+    if settings.Aiming then
+
+        for i,v in next, dwEntities:GetChildren() do 
+
+            if v ~= dwLocalPlayer and
+            v.Character and
+            v.Character:FindFirstChild("HumanoidRootPart") and
+            v.Character:FindFirstChild("Humanoid") and
+            v.Character:FindFirstChild("Humanoid").Health > 0 then
+
+                if settings.Aimbot_TeamCheck == true and
+                v.Team ~= dwLocalPlayer.Team or
+                settings.Aimbot_TeamCheck == false then
+
+                    local char = v.Character
+                    local char_part_pos, is_onscreen = dwCamera:WorldToViewportPoint(char[settings.Aimbot_AimPart].Position)
+
+                    if is_onscreen then
+
+                        local mag = (Vector2.new(dwMouse.X, dwMouse.Y) - Vector2.new(char_part_pos.X, char_part_pos.Y)).Magnitude
+
+                        if mag < dist and mag < settings.Aimbot_FOV_Radius then
+
+                            dist = mag
+                            closest_char = char
+
+                        end
+                    end
+                end
+            end
+        end
+
+        if closest_char ~= nil and
+        closest_char:FindFirstChild("HumanoidRootPart") and
+        closest_char:FindFirstChild("Humanoid") and
+        closest_char:FindFirstChild("Humanoid").Health > 0 then
+
+            dwCamera.CFrame = CFrame.new(dwCamera.CFrame.Position, closest_char[settings.Aimbot_AimPart].Position)
+        end
+    end
+end)
+end)
+
+local Tab = Window:NewTab("FE")
+local Section = Tab:NewSection("Netless")
+Section:NewButton("Click", "Executes", function()
+    for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+        if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+        game:GetService("RunService").Heartbeat:connect(function()
+        v.Velocity = Vector3.new(0,35,0)
+        wait(0.5)
+        end)
+        end
+        end
+         
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+            Title = "Notification";
+            Text = "Netless activated";
+            Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+        Duration = 16;
+end)
+
+local Section = Tab:NewSection("Force Reset | Important When U Used Fe Already")
+Section:NewButton("Click", "Resets You To Die", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Resseting You Please Wait";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    game.Players.LocalPlayer.Character.Humanoid.Name = 1
+local l = game.Players.LocalPlayer.Character["1"]:Clone()
+l.Parent = game.Players.LocalPlayer.Character
+l.Name = "Humanoid"
+wait()
+game.Players.LocalPlayer.Character["1"]:Destroy()
+game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Animate.Disabled = true
+wait()
+game.Players.LocalPlayer.Character.Animate.Disabled = false
+game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+wait()
+local prt = Instance.new("Model", workspace);
+Instance.new("Part", prt).Name="Torso";
+Instance.new("Part", prt).Name="Head";
+Instance.new("Humanoid", prt).Name="Humanoid";
+game.Players.LocalPlayer.Character=prt
+end)
+local Section = Tab:NewSection("Ender | Leftclick to fling my di--")
+Section:NewButton("Click", "Executes Ender Di--", function()
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "Notification";
+    Text = "Loading Ender";
+    Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+Duration = 16;
+    loadstring(game:HttpGet(('https://pastebin.com/raw/PQGzTpYm'),true))()
+end)
+local Section = Tab:NewSection("Caducus | Edgy Looking emo")
+Section:NewButton("Click", "Executes Caducus Sh--", function()
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+    Title = "Notification";
+    Text = "Loading Caducus";
+    Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+Duration = 16;
+    loadstring(game:HttpGet(('https://pastebin.com/raw/GhG4RVSj'),true))()
+end)
+local Section = Tab:NewSection("WallWalker | Walks On Some Walls")
+Section:NewButton("Click", "Executes", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Loading Wall Walker";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    loadstring(game:HttpGetAsync("https://pastebin.com/raw/RY9cBbdG"))()
+end)
+local Section = Tab:NewSection("Sonic | Go faster")
+Section:NewButton("Click", "Executes", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Loading Sonic";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    loadstring(game:HttpGetAsync("https://pastebin.com/raw/SyF5t70A"))()
+end)
+local Section = Tab:NewSection("Memer Dance | Dance Yourself To Get Bit---")
+Section:NewButton("Click", "Executes", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Loading Meme";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    loadstring(game:HttpGetAsync("https://pastebin.com/raw/0QfjMKrF"))()
+end)
+local Section = Tab:NewSection("Chill")
+Section:NewButton("Click", "Executes", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Loading Chill Chill";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    loadstring(game:HttpGetAsync("https://pastebin.com/raw/QjjD7gx1"))()
+end)
+local Section = Tab:NewSection("Joy")
+Section:NewButton("Click", "Executes", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Loading Joy";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    loadstring(game:HttpGetAsync("https://pastebin.com/raw/LEAQuKj0"))()
+end)
+local Section = Tab:NewSection("Classic Fighter Gale")
+Section:NewButton("Click", "Executes", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Loading The Classic Fighter";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    loadstring(game:HttpGetAsync("https://pastebin.com/raw/5jBTETjn"))()
+end)
+local Section = Tab:NewSection("Elio Blasio")
+Section:NewButton("Click", "Executes", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Loading Blasio";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    loadstring(game:HttpGetAsync("https://pastebin.com/raw/xvBXu6Yc"))()
+end)
+
+local Section = Tab:NewSection("Clown Xester")
+Section:NewButton("Click", "Executes", function()
+    game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Notification";
+        Text = "Loading Clown";
+        Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+    Duration = 16;
+    loadstring(game:HttpGetAsync("https://pastebin.com/raw/RPwyPvEi"))()
+end)
+
+local Tab = Window:NewTab("UI Toggles")
+local Section = Tab:NewSection("Toggles")
+
+    Section:NewKeybind("Close/Open Ui", "KeybindInfo", Enum.KeyCode.B, function()
+        Library:ToggleUI()
+    end)
+
+    Section:NewKeybind("TP Hold Z to tp", "KeybindInfo", Enum.KeyCode.Z, function()
+        local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+ 
+Mouse.Button1Down:connect(
+    function()
+        if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.Z) then
+            return
+        end
+        if not Mouse.Target then
+            return
+        end
+        Plr.Character:MoveTo(Mouse.Hit.p)
+    end
+)
+    end)
+    
+
+local Tab = Window:NewTab("Script Gui")
+local Section = Tab:NewSection("Script Hub")
+
+Section:NewButton("Artenis Z/Softbed", "Bedwars", function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : Loaded Vape V4","All")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+end)
+
+Section:NewButton("Keyboard Gui", "For Scripts", function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : Loaded Keyboard Gui","All")
+end)
+
+Section:NewButton("Phantom Forces", "For Scripts", function()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("System : Loaded Phatom Forces","All")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Wheeleee/AIMWARE/main/Startup"))()
+end)
+
+local Section = Tab:NewSection("Arsenal")
+
+Section:NewButton("Owl Hub", "Executes Owl Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+end)
+
+Section:NewButton("V.G Hub", "Executes V.G Hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+end)
+
+local Section = Tab:NewSection("Combat Warriors")
+
+Section:NewButton("Nova Hub", "Executes Nova Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SussyImposterRed/Scripts/main/NOVA_HUB_SOURCE"))()
+end)
+
+Section:NewButton("Hydra Hub", "Executes Hydra Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CheeseOnGithub/cheese-hook/main/main%20hydra%20ui.lua",true))()
+end)
+
+local Section = Tab:NewSection("Zombie Attack")
+
+Section:NewButton("Zombie Hub", "Executes Zombie Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/anisnouacer1/My-Roblox-Scripts/main/Zombie%20Attack.lua"))()
+end)
+
+local Section = Tab:NewSection("Evade")
+
+Section:NewButton("Evade Hub", "Executes Evade Hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/9Strew/roblox/main/gamescripts/evade.lua'))() 
+end)
+
+local Section = Tab:NewSection("Edward The Man Eating Train")
+
+Section:NewButton("Edward Hub", "Executes Edward Hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe2/ToraIsMe2/main/0edward", true))()
+end)
+
+Section:NewButton("Choo Choo Hub", "Executes Choo Choo Hub", function()
+    for i,v in pairs(getgc(true)) do
+        if type(v) == "table" and rawget(v,"IntValue_MaxDamageRange") ~= nil then
+     --add other tables below this--
+            v.IntValue_PelletCount = 100
+            v.IntValue_MaxMagazine = 1000
+            v.IntValue_MaxReserve = 1000
+        end
+     end
+end)
+
+
+local Section = Tab:NewSection("Kat")
+Section:NewButton("Knife Ability Test", "Executes KAT hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+end)
+
+end)
+  	end    
+})
+
+OrionLib:Init()
