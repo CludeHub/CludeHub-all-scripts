@@ -8,25 +8,28 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "Auto Parry",
 	Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/yBawVcE7"))()
       		print("button pressed")
   	end    
 })
 Tab:AddButton({
 	Name = "Manual Spam",
 	Callback = function()   
+loadstring(game:HttpGet("https://pastebin.com/raw/0srXxmjC"))()
       		print("button pressed")
   	end    
 })
 Tab:AddButton({
 	Name = "ESP",
 	Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/YellowGreg/RobloxScripts/main/Zombie-Attack/God-Mode.lua"))()
+            loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-3d-Box-ESP-5346"))()
       		print("button pressed")
   	end    
 })
 Tab:AddButton({
 	Name = "Get Ability",
 	Callback = function()
+loadstring(game:HttpGet('https://pastebin.com/raw/hV0p40Fv'))()
       		print("button pressed")
   	end    
 })
