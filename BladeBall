@@ -59,10 +59,44 @@ local Tab = Window:MakeTab({
 })
 Tab:AddTextbox({
 	Name = "Set Speed",
-	Default = "input",
+	Default = "",
 	TextDisappear = true,
 	Callback = function(Value)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Jump Power",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Gravity",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+	Value = "200"
+	else
+	game.Workspace.Gravity = Value
+	end
+		print(Value)
+	end	  
+})
+Tab:AddTextbox({
+	Name = "Set Fov",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+		Value = "70"
+		end
+		game:GetService("Workspace").CurrentCamera.FieldOfView = Value -- Set it to the default value (70 is the default FOV)
 		print(Value)
 	end	  
 })
