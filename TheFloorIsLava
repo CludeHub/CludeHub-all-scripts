@@ -1,0 +1,160 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "The Floor Is Lava", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+local Tab1 = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab2 = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tab3 = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab1:AddToggle({
+	Name = "Auto Farm Method 1",
+	Default = false,
+	Callback = function(Value)
+            getgenv().DeezNuts = Value
+game:GetService('RunService').Stepped:connect(function()
+if getgenv().DeezNuts then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=game:GetService("Workspace").ZLobby.Union.CFrame*CFrame.new(0,5,0)
+end
+end)
+		print(Value)
+	end    
+})
+
+Tab1:AddToggle({
+	Name = "Auto Farm Method 2",
+	Default = false,
+	Callback = function(Value)
+            getgenv().Tween = Value
+game:GetService('RunService').Stepped:connect(function()
+if getgenv().Tween then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11) end end)
+while Tween do wait()
+Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(0,600,1), 50) 
+Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(0,600,0), 50)
+Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(0,500,0), 50)
+Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(0,500,1000), 50)
+Tween(game.Players.LocalPlayer.Character.HumanoidRootPart, Vector3.new(1000,500,0), 50)
+            end
+    
+		print(Value)
+	end    
+})
+Tab1:AddToggle({
+	Name = "Auto Farm Method 3",
+	Default = false,
+	Callback = function(Value)
+            getgenv().Wow = Value
+game:GetService('RunService').Stepped:connect(function()
+if getgenv().Wow then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(math.huge,math.huge,math.huge)
+end end)
+		print(Value)
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Auto Collect Coins",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Get High Coins",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Auto Buy Items 1",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Auto Buy Items 2",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Auto Buy Items 3",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+Tab2:AddToggle({
+	Name = "Auto Buy Items 4",
+	Default = false,
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+Tab3:AddTextbox({
+	Name = "Set Speed",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		print(Value)
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "Set Jump Power",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+		print(Value)
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "Set Gravity",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+	Value = "200"
+	else
+	game.Workspace.Gravity = Value
+	end
+		print(Value)
+	end	  
+})
+Tab3:AddTextbox({
+	Name = "Set Fov",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+if Value == "" then
+		Value = "70"
+		end
+		game:GetService("Workspace").CurrentCamera.FieldOfView = Value -- Set it to the default value (70 is the default FOV)
+		print(Value)
+	end	  
+})
