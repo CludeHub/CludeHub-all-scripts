@@ -1,102 +1,80 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Blade Ball", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-local Tab = Window:MakeTab({
-	Name = "Combat",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-Tab:AddButton({
-	Name = "Auto Parry",
-	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/yBawVcE7"))()
-      		print("button pressed")
-  	end    
-})
-Tab:AddButton({
-	Name = "Manual Spam",
-	Callback = function()   
-loadstring(game:HttpGet("https://pastebin.com/raw/0srXxmjC"))()
-      		print("button pressed")
-  	end    
-})
-Tab:AddButton({
-	Name = "ESP",
-	Callback = function()
-            loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-3d-Box-ESP-5346"))()
-      		print("button pressed")
-  	end    
-})
-local Tab = Window:MakeTab({
-	Name = "Misc",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-Tab:AddButton({
-	Name = "Get Ability",
-	Callback = function()
-loadstring(game:HttpGet('https://pastebin.com/raw/hV0p40Fv'))()
-      		print("button pressed")
-  	end    
-})
-Tab:AddButton({
-	Name = "day",
-	Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/7Rvxepux"))()
-      		print("button pressed")
-  	end    
-})
-Tab:AddButton({
-	Name = "night",
-	Callback = function()
-game.Lighting:SetMinutesAfterMidnight(0)
-      		print("button pressed")
-  	end    
-})
-local Tab = Window:MakeTab({
-	Name = "Player",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-Tab:AddTextbox({
-	Name = "Set Speed",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-		print(Value)
-	end	  
-})
-Tab:AddTextbox({
-	Name = "Set Jump Power",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-		print(Value)
-	end	  
-})
-Tab:AddTextbox({
-	Name = "Set Gravity",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-if Value == "" then
-	Value = "200"
+local sex = loadstring(game:HttpGet('https://raw.githubusercontent.com/3345-c-a-t-s-u-s/Garry-UI/main/source'))()
+
+local Window = sex:Create('CludeHub','BLADE BALL','Script')
+local ExampleTab = Window:CreateTab('main','earth')
+
+ExampleTab:CreateButton("Auto Parry OP",function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/yBawVcE7"))()
+	print('press button')
+end)
+
+ExampleTab:CreateButton("Spam Gui",function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/0srXxmjC"))()
+	print('press button')
+end)
+
+ExampleTab:CreateToggle("auto Spam V3",false,function(val)
+	print('toggle',val)
+end)
+
+ExampleTab:CreateToggle("auto Spam V2",false,function(val)
+	print('toggle',val)
+end)
+
+ExampleTab:CreateToggle("auto Spam V1",false,function(val)
+	print('toggle',val)
+end)
+local ExampleTab = Window:CreateTab('misc','earth')
+ExampleTab:CreateLabel("Misc")
+
+ExampleTab:CreateToggle("Get Socks",false,function(val)
+	print('toggle',val)
+end)
+
+ExampleTab:CreateKeybind("",Enum.KeyCode.E,function(val)
+	print('keybind',val)
+end)
+local ExampleTab = Window:CreateTab('Player','earth')
+ExampleTab:CreateSlider("Set Speed",1,100,10,function(val)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
+	print('slider',val)
+end)
+
+ExampleTab:CreateSlider("Set Jump Power",1,100,10,function(val)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = val
+	print('slider',val)
+end)
+
+ExampleTab:CreateSlider("Set Gravity",1,100,10,function(val)
+        if val == "" then
+	val = "200"
 	else
-	game.Workspace.Gravity = Value
+	game.Workspace.Gravity = val
+        end
+	print('slider',val)
+end)
+
+ExampleTab:CreateSlider("Parry Range",1,100,10,function(val)
+	print('slider',val)
+end)
+Window:CreateButton('earth',false,function(val)
+	print('set time')
+	if val then
+		Window:Notify('Time Change','Night',1.5)
+		game:GetService('TweenService'):Create(game:GetService('Lighting'),TweenInfo.new(0.5),{ClockTime = 0}):Play()
+	else
+		Window:Notify('Time Change','Day',1.5)
+		game:GetService('TweenService'):Create(game:GetService('Lighting'),TweenInfo.new(0.5),{ClockTime = 14}):Play()
 	end
-		print(Value)
-	end	  
-})
-Tab:AddTextbox({
-	Name = "Set Fov",
-	Default = "",
-	TextDisappear = true,
-	Callback = function(Value)
-if Value == "" then
-		Value = "70"
-		end
-		game:GetService("Workspace").CurrentCamera.FieldOfView = Value -- Set it to the default value (70 is the default FOV)
-		print(Value)
-	end	  
-})
+end)
+
+Window:CreateButton('ads',false,function(val)
+	print('fov change')
+	if val then
+		Window:Notify('FOV Change','120',1)
+		game:GetService('TweenService'):Create(workspace.CurrentCamera,TweenInfo.new(0.5),{FieldOfView = 120}):Play()
+	else
+		Window:Notify('FOV Change','70',1)
+		game:GetService('TweenService'):Create(workspace.CurrentCamera,TweenInfo.new(0.5),{FieldOfView = 70}):Play()
+	end
+end)
