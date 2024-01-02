@@ -1,4 +1,4 @@
-local sex = loadstring(game:HttpGet('https://raw.githubusercontent.com/3345-c-a-t-s-u-s/Garry-UI/main/source'))()
+local sex = loadstring(game:HttpGet('https://raw.githubusercontent.com/CludeHub/CludeHub/main/CludeHub'))()
 
 local Window = sex:Create('CludeHub','Zombie Attack','Script')
 local ExampleTab = Window:CreateTab('Combat','earth')
