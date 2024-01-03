@@ -156,7 +156,6 @@ ExampleTab2:CreateButton("Use permanent item",function()
  print('press button')    
 end)
 end
-elseif game.PlaceId == 11520107397 or game.PlaceId == 11828384869 or game.PlaceId == 9431156611 then
 local sex = loadstring(game:HttpGet('https://raw.githubusercontent.com/CludeHub/CludeHub/main/CludeHub'))()
 
 local Window = sex:Create('Slap Battle','Slap Battle','Creator')
@@ -632,4 +631,3 @@ ExampleTab4:CreateSlider("Set Gravity",1,100,10,function(val)
 	end 
 	print('slider',val)     
 end)
-end
