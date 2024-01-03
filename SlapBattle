@@ -1,3 +1,161 @@
+if game.PlaceId == 9431156611 then
+local bypass;
+    bypass = hookmetamethod(game, "__namecall", function(method, ...) 
+        if getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Events.Ban then
+            return
+        elseif getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Events.AdminGUI then
+            return
+        elseif getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Events.WS then
+            return
+        elseif getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Events.WS2 then
+            return
+        end
+        return bypass(method, ...)
+    end)
+
+local AntiLava = Instance.new("Part", workspace)
+AntiLava.Name = "AntiLava"
+AntiLava.Position = Vector3.new(-238, -43, 401)
+AntiLava.Size = Vector3.new(150,30,150)
+AntiLava.Anchored = true
+AntiLava.Transparency = 1
+AntiLava.CanCollide = false
+
+local AntiAcid = Instance.new("Part", workspace)
+AntiAcid.Position = Vector3.new(-70, -20, -725)
+AntiAcid.Name = "AntiAcid"
+AntiAcid.Size = Vector3.new(155, 35, 144)
+AntiAcid.Anchored = true
+AntiAcid.Transparency = 1
+AntiLava.CanCollide = false
+
+local sex = loadstring(game:HttpGet('https://raw.githubusercontent.com/CludeHub/CludeHub/main/CludeHub'))()
+
+local Window = sex:Create('Slap Royale','Slap Battle','Creator')
+
+local ExampleTab1 = Window:CreateTab('Combat','earth')
+local ExampleTab2 = Window:CreateTab('Misc','earth')
+local ExampleTab3 = Window:CreateTab('Antis','earth')
+
+ExampleTab1:CreateToggle("Slap Aura",false,function(val)  
+        slapAura = val
+            if val == true then
+                while slapAura do
+                    task.wait(.005)  
+                    pcall(function()    
+                        for Index, Player in next, game.Players:GetPlayers() do
+                            if Player ~= game.Players.LocalPlayer and Player.Character and Player.Character:FindFirstChild("entered") then
+                                if Player.Character:FindFirstChild("Head") then
+                                    if Player.Character.Head:FindFirstChild("UnoReverseCard") == nil and Player.Character:FindFirstChild("rock") == nil then
+                                        if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+                                            local Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - Player.Character.HumanoidRootPart.Position).Magnitude
+                                            task.wait()
+                                            if 25 >= Magnitude then
+                                                shared.gloveHits[getGlove()]:FireServer(Player.Character:WaitForChild("Head"))
+                                            end
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end)
+                end 
+        end
+	print('toggle',val)     
+end)
+
+ExampleTab3:CreateToggle("Anti Acid",false,function(val)  
+        AntiAcid.CanCollide = val
+	print('toggle',val)     
+end)
+
+ExampleTab3:CreateToggle("Anti Lava",false,function(val)     
+        AntiLava.CanCollide = val
+	print('toggle',val)     
+end)
+
+ExampleTab1:CreateToggle("Glove ESP",false,function(val)     
+            GloveESP = val
+if GloveESP == false then
+for i, v in ipairs(game.Players:GetChildren()) do
+                if v.Character and v.Character:FindFirstChild("Head") and v.Character.Head:FindFirstChild("GloveEsp") then
+ v.Character.Head.GloveEsp:Destroy()
+                end
+            end
+end
+while GloveESP do
+for i, v in ipairs(game.Players:GetChildren()) do
+                if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Head") and v.Character.inMatch.Value == true and v.Character.Head:FindFirstChild("GloveEsp") == nil then
+GloveEsp = Instance.new("BillboardGui", v.Character.Head)
+GloveEsp.Adornee = v.Character.Head
+GloveEsp.Name = "GloveEsp"
+GloveEsp.Size = UDim2.new(0, 100, 0, 150)
+GloveEsp.StudsOffset = Vector3.new(0, 1, 0)
+GloveEsp.AlwaysOnTop = true
+GloveEsp.StudsOffset = Vector3.new(0, 3, 0)
+GloveEspText = Instance.new("TextLabel", GloveEsp)
+GloveEspText.BackgroundTransparency = 1
+GloveEspText.Size = UDim2.new(0, 100, 0, 100)
+GloveEspText.TextSize = 24
+GloveEspText.Font = Enum.Font.SourceSansSemibold
+GloveEspText.TextColor3 = Color3.new(255, 255, 255)
+GloveEspText.TextStrokeTransparency = 0
+GloveEspText.Text = v.Glove.Value
+                end
+            end
+task.wait()
+            end
+	print('toggle',val)     
+end)
+
+ExampleTab1:CreateToggle("Remove zone",false,function(val)     
+            RemoveZone = val
+game.Players.LocalPlayer.Character:WaitForChild("inZone").Changed:Connect(function()
+if RemoveZone then
+game.Players.LocalPlayer.Character:WaitForChild("inZone").Value = false
+end
+end)
+	print('toggle',val)     
+end)
+
+ExampleTab2:CreateButton("Bomb Bus",function()	
+            repeat task.wait()
+until game.Players.LocalPlayer.Backpack:FindFirstChild("Bomb")
+            for i, v in ipairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                if v.Name == "Bomb" then
+                    game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                    v:Activate()
+                end
+            end
+ print('press button')    
+end)
+
+ExampleTab2:CreateButton("Leave Bus",function()	 
+            game:GetService("ReplicatedStorage").Events.BusJumping:FireServer()
+repeat task.wait()
+until game.Players.LocalPlayer.PlayerGui:FindFirstChild("JumpPrompt")
+game.Players.LocalPlayer.PlayerGui.JumpPrompt:Destroy()
+ print('press button')    
+end)
+
+ExampleTab1:CreateButton("Get 250 power",function()	 
+            for i = 1, 2 do
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["True Power"])
+game.Players.LocalPlayer.Character["True Power"]:Activate()
+            end
+ print('press button')    
+end)
+
+ExampleTab2:CreateButton("Use permanent item",function()	
+            for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.Name == "Bull's essence" or v.Name == "Potion of Strength" or v.Name == "Boba" or v.Name == "Speed Potion" or v.Name == "Frog Potion" or v.Name == "Strength Brew" or v.Name == "Frog Brew" or v.Name == "Speed Brew" then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                        v:Activate()
+                    end
+            end
+ print('press button')    
+end)
+end
 local sex = loadstring(game:HttpGet('https://raw.githubusercontent.com/CludeHub/CludeHub/main/CludeHub'))()
 
 local Window = sex:Create('Slap Battle','Slap Battle','Creator')
