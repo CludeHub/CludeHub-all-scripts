@@ -162,6 +162,7 @@ local Window = sex:Create('Slap Battle','Slap Battle','Creator')
 
 local ExampleTab1 = Window:CreateTab('Combat','earth')
 local ExampleTab2 = Window:CreateTab('misc','earth')
+local ExampleTab5 = Window:CreateTab('visual','earth')
 local ExampleTab3 = Window:CreateTab('Antis','earth')
 local ExampleTab4 = Window:CreateTab('Player','earth')
 
