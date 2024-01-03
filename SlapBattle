@@ -1,4 +1,3 @@
-if game.PlaceId == 9431156611 then
 local bypass;
         bypass = hookmetamethod(game, "__namecall", function(method, ...) 
             if getnamecallmethod() == "FireServer" and method == game.ReplicatedStorage.Ban then
@@ -508,5 +507,4 @@ ExampleTab:CreateSlider("Set Gravity",1,100,10,function(val)
 	game.Workspace.Gravity = val  
 	end 
 	print('slider',val)     
-end)
 end)
