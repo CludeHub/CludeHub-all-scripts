@@ -1,0 +1,88 @@
+-- Clude Gui Script
+-- By Paul Paras
+-- Roblox user paulparasplaythis
+-- Instances:
+
+local cka = Instance.new("ScreenGui")
+local frame = Instance.new("Frame")
+local titler = Instance.new("TextLabel")
+local button = Instance.new("TextButton")
+local button2 = Instance.new("TextButton")
+local button3 = Instance.new("TextButton")
+local button4 = Instance.new("TextButton")
+local button5 = Instance.new("TextButton")
+local button6 = Instance.new("TextButton")
+local button7 = Instance.new("TextButton")
+local button8 = Instance.new("TextButton")
+local button9 = Instance.new("TextButton")
+local button10 = Instance.new("TextButton")
+local button11 = Instance.new("TextButton")
+local button12 = Instance.new("TextButton")
+local button13 = Instance.new("TextButton")
+local button14 = Instance.new("TextButton")
+local button15 = Instance.new("TextButton")
+local button16 = Instance.new("TextButton")
+local button17 = Instance.new("TextButton")
+local button18 = Instance.new("TextButton")
+local button19 = Instance.new("TextButton")
+local button20 = Instance.new("TextButton")
+local button21 = Instance.new("TextButton")
+local button22 = Instance.new("TextButton")
+local button23 = Instance.new("TextButton")
+local button24 = Instance.new("TextButton")
+local button25 = Instance.new("TextButton")
+local button26 = Instance.new("TextButton")
+local button27 = Instance.new("TextButton")
+local button28 = Instance.new("TextButton")
+local button29 = Instance.new("TextButton")
+local button30 = Instance.new("TextButton")
+local button31 = Instance.new("TextButton")
+local button32 = Instance.new("TextButton")
+local button33 = Instance.new("TextButton")
+
+
+--Properties:
+
+cka.Name = "cka"
+cka.Parent = game.CoreGui
+
+frame.Name = "frame"
+frame.Parent = cka
+frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+frame.Transparency = 0
+frame.BorderColor3 = Color3.fromRGB(0, 0, 155)
+frame.BorderSizePixel = 3
+frame.Position = UDim2.new(0, 120.746, 0, 0)
+frame.Size = UDim2.new(0, 481, 0, 272)
+
+titler.Name = "titler"
+titler.Parent = frame
+titler.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+titler.BorderColor3 = Color3.fromRGB(255, 0, 0)
+titler.BorderSizePixel = 0
+titler.Size = UDim2.new(0, 481, 0, 40)
+titler.Font = Enum.Font.SourceSans
+titler.Text = "☄️Welcome To CludeHub Script☄️"
+titler.TextColor3 = Color3.fromRGB(255, 255, 255)
+titler.TextSize = 28.000
+
+button.Name = "button"
+button.Parent = frame
+button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+button.Transparency = 0.1
+button.BorderColor3 = Color3.fromRGB(0, 128, 0)
+button.BorderSizePixel = 0
+button.Position = UDim2.new(0, 154, 0, 134)
+button.Size = UDim2.new(0, 180, 0, 60)
+button.Font = Enum.Font.SourceSans
+button.Text = "Continue"
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.TextSize = 39.000
+button.TextWrapped = true
+
+-- Script
+button.MouseButton1Down:connect(function()
+frame:Destroy()
+-- you script here ↓
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/AllGame/main/Local-Id-081726986551865381872552"))()
+end)
