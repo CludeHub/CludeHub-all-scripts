@@ -1,0 +1,205 @@
+local NEVERLOSE = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NerverLoseLibEdited.lua"))()
+local Loader = loadstring(game:HttpGet("https://raw.githubusercontent.com/CludeHub/SourceCludeLib/refs/heads/main/NL_LOADER.lua"))()
+
+Loader:Load(true, "https://www.roblox.com/game-pass/1233310627/NEVERLOSE-CC-LOADER", 1233310627, function()
+
+local Window = NEVERLOSE:AddWindow("CLUDEHUB","Steal A Brainrot",'original')
+
+Window:AddTabLabel('Home')
+
+local MainTab = Window:AddTab('Main','list')
+
+local Anti = MainTab:AddSection("Anti","left")
+local Steal = MainTab:AddSection("Steal","right")
+local Esp = MainTab:AddSection("Esp","left")
+local Bypass = MainTab:AddSection("Bypass","right")
+local AutoBuy = MainTab:AddSection("Auto Buy","left")
+local Attack = MainTab:AddSection("Attack","right")
+local Rebirth = MainTab:AddSection("Rebirth","left")
+local AutoCollect = MainTab:AddSection("AutoCollect","right")
+local AutoLock = MainTab:AddSection("AutoLock","left")
+local Player = MainTab:AddSection('Player',"left")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AutoLock:AddToggle("Auto Lock Base", false, function(val)
+end)
+
+Rebirth:AddToggle("Auto Rebirth", false, function(val)
+end)
+
+AutoCollect:AddToggle("Enable Auto Collect", false, function(val)
+end)
+
+AutoCollect:AddToggle("Auto Collect When Full", false, function(val)
+end)
+
+
+
+Attack:AddToggle("Auto Attack Nearby", false, function(val)
+end)
+
+Attack:AddToggle("Auto slap", false, function(val)
+end)
+
+Attack:AddToggle("Auto Medusa", false, function(val)
+end)
+
+
+
+
+AutoBuy:AddDropdown("Select Brainrot", {
+    "Frigo Camelo",
+    "Orangutini Ananassini",
+    "Rhino Toasterino",
+    "Bombardiro Crocodilo",
+    "Bombombini Gusini",
+    "Avocadorilla",
+    "Cavallo Virtuoso",
+    "Gorillo Watermelondrillo",
+    "Tob Tobi Tobi",
+    "Lerulerulerule",
+    "La Vacca Saturno Saturnita",
+    "Chimpanzini Spiderini",
+    "Los Tralaleritos",
+    "Las Tralaleritas",
+    "Graipuss Medussi",
+    "La Grande Combinasion",
+    "Nuclearo Dinossauro",
+    "Garama and Madundung",
+    "Torrtuginni Dragonfrutini",
+    "Pot Hotspot"
+}, "", function(val)
+    print("Selected:", val)
+end)
+
+AutoBuy:AddToggle('Auto Buy', false, function(val)
+end)
+
+Anti:AddToggle("Anti Ragdoll", false, function(val)
+end)
+
+Anti:AddToggle("Anti Slide", false, function(val)
+end)
+
+Anti:AddToggle("Anti Rocket", false, function(val)
+end)
+
+Anti:AddToggle("Anti Admin Panel", false, function(val)
+end)
+
+Anti:AddToggle("Anti Steal", false, function(val)
+end)
+
+
+Bypass:AddButton("Bypass Anti Cheat", function()
+end)
+
+Bypass:AddButton("Bypass Anti Speed", function()
+end)
+
+Bypass:AddButton("Bypass Anti Noclip", function()
+end)
+
+Bypass:AddButton("Anti Kick", function()
+end)
+
+Esp:AddToggle("Enable Esp", false, function(val)
+    print("Enable Esp:", val)
+end)
+
+Esp:AddToggle("Esp highest Value", false, function(val)
+    print("Esp highest Value:", val)
+end)
+
+Esp:AddToggle("Esp Secret", false, function(val)
+    print("Esp Secret:", val)
+end)
+
+Esp:AddToggle("Esp Mythic", false, function(val)
+    print("Esp Mythic:", val)
+end)
+
+Esp:AddToggle("Esp Epic", false, function(val)
+    print("Esp Epic:", val)
+end)
+
+Esp:AddToggle("Esp Player", false, function(val)
+    print("Esp Player:", val)
+end)
+
+Esp:AddToggle("Esp unlocked base", false, function(val)
+    print("Esp unlocked base:", val)
+end)
+
+
+Steal:AddButton("Teleport to base", function()
+    print("Teleport to base pressed")
+end)
+
+Steal:AddButton("Steal Highest Value", function()
+    print("Steal Highest Value pressed")
+end)
+
+Steal:AddButton("Tp to highest value", function()
+    print("Tp to highest value pressed")
+end)
+
+Steal:AddToggle("Auto Steal", false, function(val)
+    print("Auto Steal:", val)
+end)
+
+Steal:AddToggle("Auto Tp to base", false, function(val)
+    print("Auto Tp to base:", val)
+end)
+
+Steal:AddToggle("Invisible Steal", false, function(val)
+    print("Invisible Steal:", val)
+end)
+
+-- WalkSpeed
+local walkSpeedValue = 16
+Player:AddSlider("Speed", 1, 200, 16, function(val)
+    walkSpeedValue = val
+end)
+Player:AddButton("Apply Speed", function()
+    if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeedValue
+    end
+end)
+
+-- JumpPower
+local jumpValue = 50
+Player:AddSlider("Jump", 1, 200, 50, function(val)
+    jumpValue = val
+end)
+Player:AddButton("Apply Jump", function()
+    if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = jumpValue
+    end
+end)
+
+-- Gravity
+local gravityValue = 196.2
+Player:AddSlider("Gravity", 0, 500, 196, function(val)
+    gravityValue = val
+end)
+Player:AddButton("Apply Gravity", function()
+    game.Workspace.Gravity = gravityValue
+end)
+end)
